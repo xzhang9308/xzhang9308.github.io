@@ -1,7 +1,7 @@
 ---
-title: "Varun Jampani - Publications"
+title: "Xi Zhang - Publications"
 layout: gridlay
-excerpt: "Varun Jampani -- Publications."
+excerpt: "Xi Zhang -- Publications."
 sitemap: false
 permalink: /publications/
 ---
