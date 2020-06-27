@@ -33,15 +33,15 @@ My work lies at the intersection of Computer Vision and Machine Learning. Specif
 <div class="col-sm-4" style="display:table-cell; vertical-align:middle; text-align:left">
 
   <ul style="overflow: hidden">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/profile_pic.jpeg" class="img-responsive" width="100%" />
+  <img src="{{ site.url }}{{ site.baseurl }}/images/xizhang.jpg" class="img-responsive" width="100%" />
   </ul>
 
   <!-- <br clear="all" /> -->
 
-  <A HREF="mailto:&#118;&#097;&#114;&#117;&#110;&#106;&#097;&#109;&#112;&#097;&#110;&#105;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#118;&#097;&#114;&#117;&#110;&#106;&#097;&#109;&#112;&#097;&#110;&#105;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</A> <br>
-  Google Research <br>
-  355 Main Street<br>
-  Cambridge, MA, USA.<br>
+  xzhang9308@gmail.com <br>
+  Shanghai Jiao Tong University <br>
+  800 Dongchuan RD. <br>
+  Minhang, Shanghai, China. <br>
 
 
 </div>
