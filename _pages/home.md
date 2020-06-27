@@ -1,7 +1,7 @@
 ---
 title: "Xi Zhang - Home"
 layout: gridlay
-excerpt: "Varun Jampani"
+excerpt: "Xi Zhang"
 sitemap: false
 permalink: /
 ---
