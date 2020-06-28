@@ -12,10 +12,9 @@ permalink: /
 
 <div class="col-sm-8">
 
-I am a researcher at Google Research in Cambridge, MA, USA. Prior to that, I was a researcher at Nvidia Research in Westford, MA, USA. I completed my PhD at [Perceiving Systems](https://ps.is.tuebingen.mpg.de) department, Max-Planck Institute (MPI) for Intelligent Systems in T&uuml;bingen, Germany. My PhD advisor was [Prof. Peter V. Gehler](http://files.is.tue.mpg.de/pgehler//).
-I did my bachelors and masters in Computer Science at [IIIT-Hyderabad](https://www.iiit.ac.in), India.
+I’m a Ph.D. candidate at Shanghai Jiao Tong University supervised by [Prof. Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ). I received my B.Sc. degree in mathematics and physics basic science from University of Electronic Science and Technology of China in 2015. I am currently pursuing the Ph.D. degree with the Department of Electronic Engineering at Shanghai Jiao Tong University, China. I am also a visiting Ph.D. student with the Department of Electrical and Computer Engineering at McMaster University, Canada.  
 
-My work lies at the intersection of Computer Vision and Machine Learning. Specifically, I am working on leveraging machine learning techniques for better inference in computer vision models. The main research question is how to make use of learning techniques such as deep neural networks and random forests for inference in structured prediction frameworks.
+My research interests include image processing, computer vision and deep learning, especially in areas of image/video compression, restoration, cognitive computing and visual reasoning.
 
 <!-- **_I am looking for motivated students for collaborations and internships. If interested, please drop me an email with your CV._** -->
 
@@ -38,7 +37,7 @@ My work lies at the intersection of Computer Vision and Machine Learning. Specif
 
   <!-- <br clear="all" /> -->
 
-  xzhang9308@gmail.com <br>
+  [xzhang9308@gmail.com] <br>
   Shanghai Jiao Tong University <br>
   800 Dongchuan RD. <br>
   Minhang, Shanghai, China. <br>
