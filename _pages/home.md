@@ -12,7 +12,7 @@ permalink: /
 
 <div class="col-sm-8">
 
-I am a Ph.D. candidate at Shanghai Jiao Tong University supervised by [Prof. Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ). I received my B.Sc. degree in Mathematics and Physics Basic Science from University of Electronic Science and Technology of China in 2015. I am currently pursuing the Ph.D. degree with the Department of Electronic Engineering at Shanghai Jiao Tong University, China. I was also a visiting Ph.D. student with the Department of Electrical and Computer Engineering at McMaster University, Canada.  
+I am a Ph.D. candidate at Shanghai Jiao Tong University, supervised by [Prof. Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ). I received my B.Sc. degree in Mathematics and Physics Basic Science from University of Electronic Science and Technology of China in 2015. I am currently pursuing the Ph.D. degree with the Department of Electronic Engineering at Shanghai Jiao Tong University, China. I was also a visiting Ph.D. student with the Department of Electrical and Computer Engineering at McMaster University, Canada.  
 
 My research interests include image processing, computer vision and deep learning, especially in areas of image/video compression, restoration, cognitive computing and visual reasoning.
 
@@ -37,7 +37,7 @@ My research interests include image processing, computer vision and deep learnin
 
   <!-- <br clear="all" /> -->
   <a href="mailto:xzhang9308@gmail.com">xzhang9308@gmail.com</a> <br>
-  Shanghai Jiao Tong University <br>
+  """"""""&nbsp Shanghai Jiao Tong University <br>
   800 Dongchuan RD. <br>
   Minhang, Shanghai, China. <br>
 
@@ -113,72 +113,5 @@ My research interests include image processing, computer vision and deep learnin
 <br clear="all"/>
 
 #### <a href="{{ site.url }}{{ site.baseurl }}/publications">see all publications</a>
-
-</div>
-
-<div class="col-sm-12">
-
-### Theses
-
-{% for publi in site.data.theseslist limit:6 %}
-
-<div class="col-sm-11 clearfix">
- <div class="well">
- <pubtit>{{ publi.title }}</pubtit>
-
- <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="200px" style="float: left" />
-
- <p>{{ publi.description }}</p>
-
- <p><em>{{ publi.authors }}</em></p>
-
- <p>{{ publi.venue }}</p>
-
- {% if publi.number_link == 1 %}
- <p><a href="{{ publi.link1.url }}">{{ publi.link1.display }}</a></p>
- {% endif %}
-
- {% if publi.number_link == 2 %}
- <p><a href="{{ publi.link1.url }}">{{ publi.link1.display }}</a>
- /
- <a href="{{ publi.link2.url }}">{{ publi.link2.display }}</a></p>
- {% endif %}
-
- {% if publi.number_link == 3 %}
- <p><a href="{{ publi.link1.url }}">{{ publi.link1.display }}</a>
- /
- <a href="{{ publi.link2.url }}">{{ publi.link2.display }}</a>
- /
- <a href="{{ publi.link3.url }}">{{ publi.link3.display }}</a></p>
- {% endif %}
-
- {% if publi.number_link == 4 %}
- <p><a href="{{ publi.link1.url }}">{{ publi.link1.display }}</a>
- /
- <a href="{{ publi.link2.url }}">{{ publi.link2.display }}</a>
- /
- <a href="{{ publi.link3.url }}">{{ publi.link3.display }}</a>
- /
- <a href="{{ publi.link4.url }}">{{ publi.link4.display }}</a></p>
- {% endif %}
-
- {% if publi.number_link == 5 %}
- <p><a href="{{ publi.link1.url }}">{{ publi.link1.display }}</a>
- /
- <a href="{{ publi.link2.url }}">{{ publi.link2.display }}</a>
- /
- <a href="{{ publi.link3.url }}">{{ publi.link3.display }}</a>
- /
- <a href="{{ publi.link4.url }}">{{ publi.link4.display }}</a>
- /
- <a href="{{ publi.link5.url }}">{{ publi.link5.display }}</a></p>
- {% endif %}
-
- </div>
-</div>
-
-{% endfor %}
-
-<p> &nbsp; </p>
 
 </div>
