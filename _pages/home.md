@@ -12,13 +12,13 @@ permalink: /
 
 <div class="col-sm-8">
 
-I’m a Ph.D. candidate at Shanghai Jiao Tong University supervised by [Prof. Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ). I received my B.Sc. degree in mathematics and physics basic science from University of Electronic Science and Technology of China in 2015. I am currently pursuing the Ph.D. degree with the Department of Electronic Engineering at Shanghai Jiao Tong University, China. I am also a visiting Ph.D. student with the Department of Electrical and Computer Engineering at McMaster University, Canada.  
+I am a Ph.D. candidate at Shanghai Jiao Tong University supervised by [Prof. Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ). I received my B.Sc. degree in Mathematics and Physics Basic Science from University of Electronic Science and Technology of China in 2015. I am currently pursuing the Ph.D. degree with the Department of Electronic Engineering at Shanghai Jiao Tong University, China. I was also a visiting Ph.D. student with the Department of Electrical and Computer Engineering at McMaster University, Canada.  
 
 My research interests include image processing, computer vision and deep learning, especially in areas of image/video compression, restoration, cognitive computing and visual reasoning.
 
 <!-- **_I am looking for motivated students for collaborations and internships. If interested, please drop me an email with your CV._** -->
 
-**_If you are interested in research collaboration, please drop me an email with your CV._**
+<!-- **_If you are interested in research collaboration, please drop me an email with your CV._** -->
 
 ### News
 {% for article in site.data.news limit:9 %}
@@ -36,8 +36,7 @@ My research interests include image processing, computer vision and deep learnin
   </ul>
 
   <!-- <br clear="all" /> -->
-
-  [xzhang9308@gmail.com] <br>
+  <a href="mailto:xzhang9308@gmail.com">xzhang9308@gmail.com</a> <br>
   Shanghai Jiao Tong University <br>
   800 Dongchuan RD. <br>
   Minhang, Shanghai, China. <br>
