@@ -3,19 +3,19 @@
   description: Learning 3D object viewpoint from unannotated image collections via self-supervision.
   authors: S. K. Mustikovela, V. Jampani, S. D. Mello, S. Liu, U. Iqbal, C. Rother and J. Kautz
   venue: Computer Vision and Pattern Recognition, CVPR'20
-  number_link: 4
-  link1:
-    url: https://arxiv.org/pdf/2004.01793.pdf
-    display: pdf
-  link2:
-    url: https://research.nvidia.com/sites/default/files/pubs/2020-03_Self-Supervised-Viewpoint-Learning/00322_video.mp4
-    display: video
-  link3:
-    url: https://research.nvidia.com/publication/2020-03_Self-Supervised-Viewpoint-Learning
-    display: project page
-  link4:
-    url: https://github.com/NVlabs/SSV
-    display: code (github)
+  # number_link: 4
+  # link1:
+  #   url: https://arxiv.org/pdf/2004.01793.pdf
+  #   display: pdf
+  # link2:
+  #   url: https://research.nvidia.com/sites/default/files/pubs/2020-03_Self-Supervised-Viewpoint-Learning/00322_video.mp4
+  #   display: video
+  # link3:
+  #   url: https://research.nvidia.com/publication/2020-03_Self-Supervised-Viewpoint-Learning
+  #   display: project page
+  # link4:
+  #   url: https://github.com/NVlabs/SSV
+  #   display: code (github)
 
 
 
