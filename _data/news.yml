@@ -1,8 +1,5 @@
-- date: April, 2020
-  headline: <a href="https://github.com/NVlabs/SSV">Code</a> for 'Self-Supervised Viewpoint Learning' is released.
-
 - date: February, 2020
-  headline: Papers on 'Self-supervised viewpoint learning', 'Two-shot SVBRDF and shape estimation', 'Self-supervised 3D human pose estimation' and 'Self-supervised point cloud estimation' accepted to CVPR'20.
+  headline: Papers on 'DAVD-Net: Deep Audio-aided Video Decompression of Talking Heads' is accepted to CVPR'20 (Oral).
 
 - date: February, 2020
   headline: Co-organizing a <a href="https://nvlabs.github.io/eccv2020-limited-labels-data-tutorial/"> tutorial </a> on 'New Frontiers for Learning with Limited Labels or Data' at ECCV'20.
