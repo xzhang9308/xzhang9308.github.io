@@ -37,7 +37,7 @@ My research interests include image processing, computer vision and deep learnin
 
   <!-- <br clear="all" /> -->
   <a href="mailto:xzhang9308@gmail.com">xzhang9308@gmail.com</a> <br>
-  """"""""&nbsp Shanghai Jiao Tong University <br>
+  &nbsp;&nbsp;&nbsp;&nbsp; Shanghai Jiao Tong University <br>
   800 Dongchuan RD. <br>
   Minhang, Shanghai, China. <br>
 
