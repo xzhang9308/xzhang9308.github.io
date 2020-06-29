@@ -1,9 +1,9 @@
 - title: DAVD-Net&#58; Deep Audio-aided Video Decompression of Talking Heads
   image: davd_cvpr20.png
-  description: Restore compressed talking head videos with audio side information
+  description: A novel DCNN architecture for restoration of heavily compressed talking head videos with audio side information.
   authors: Xi Zhang, Xiaolin Wu, Xinliang Zhai, Xianye Ben and Chengjie Tu
   venue: Computer Vision and Pattern Recognition, CVPR'20 (Oral)
-  number_link: 3
+  number_link: 4
   link1:
     url: https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_DAVD-Net_Deep_Audio-Aided_Video_Decompression_of_Talking_Heads_CVPR_2020_paper.pdf
     display: pdf
@@ -13,25 +13,23 @@
   link3:
     url: https://xzhang9308.github.io/poster/davd_cvpr20.pdf
     display: poster
-
-- title:  Two-shot Spatially-varying BRDF and Shape Estimation
-  image: two_shot_brdf_teaser.png
-  description: Practical SVBRDF and shape estimation with two-shot mobile capture.
-  authors: M. Boss, V. Jampani, K. Kim, H. Lensch and J. Kautz
-  venue: Computer Vision and Pattern Recognition, CVPR'20
-  number_link: 4
-  link1:
-    url: https://arxiv.org/pdf/2004.00403.pdf
-    display: pdf
-  link2:
-    url: https://www.youtube.com/watch?v=Bvjoolt2-iY
-    display: video
-  link3:
-    url: https://markboss.me/publication/cvpr20-two-shot-brdf/
-    display: project page
   link4:
     url:
     display: code (coming soon)
+
+- title: Cognitive Deficit of Deep Learning in Numerosity
+  image: numerosity_aaai19.png
+  description: A recurrent neural network capable of subitizing by encoding a mechanism of mathematical morphology into the convolutional kernels.
+  authors: Xiaolin Wu, Xi Zhang and Xiao Shu
+  venue: AAAI Conference on Artificial Intelligence, AAAI'19 (Spotlight)
+  number_link: 2
+  link1:
+    url: https://www.aaai.org/ojs/index.php/AAAI/article/download/3928
+    display: pdf
+  link2:
+    url: https://xzhang9308.github.io/poster/numerosity_aaai19.pdf
+    display: poster
+
 
 
 - title:  Self-Supervised 3D Human Pose Estimation via Part-Guided Novel Image Synthesis
@@ -49,8 +47,6 @@
   link3:
     url: 
     display: code (coming soon)
-
-
 
 - title: From Image Collections to Point Clouds with Self-supervised Shape and Pose Networks
   image: pointcloud_learning_cvpr20_teaser.png
