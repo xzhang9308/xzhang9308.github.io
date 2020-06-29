@@ -24,13 +24,11 @@
   venue: AAAI Conference on Artificial Intelligence, AAAI'19 (Spotlight)
   number_link: 2
   link1:
-    url: https://www.aaai.org/ojs/index.php/AAAI/article/download/3928
+    url: https://www.aaai.org/ojs/index.php/AAAI/article/view/3928
     display: pdf
   link2:
     url: https://xzhang9308.github.io/poster/numerosity_aaai19.pdf
     display: poster
-
-
 
 - title:  Self-Supervised 3D Human Pose Estimation via Part-Guided Novel Image Synthesis
   image: poseseg_cvpr20_teaser.png
