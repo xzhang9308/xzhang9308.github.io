@@ -71,7 +71,7 @@ permalink: /publications/
 <p> &nbsp; </p>
 
 
-### Theses
+<!-- ### Theses
 
 {% for publi in site.data.theseslist limit:6 %}
 
@@ -132,7 +132,9 @@ permalink: /publications/
 
 {% endfor %}
 
-<p> &nbsp; </p>
+<p> &nbsp; </p> -->
+
+
 
 <!-- ## Full List
 
