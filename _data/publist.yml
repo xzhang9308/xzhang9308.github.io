@@ -1,7 +1,7 @@
-- title: Self-supervised Viewpoint Learning from Image Collections
+- title: DAVD-Net&#58; Deep Audio-aided Video Decompression of Talking Heads
   image: ssv_cvpr20_teaser.png
   description: Learning 3D object viewpoint from unannotated image collections via self-supervision.
-  authors: S. K. Mustikovela, V. Jampani, S. D. Mello, S. Liu, U. Iqbal, C. Rother and J. Kautz
+  authors: **_X. Zhang_**, X. Wu 
   venue: Computer Vision and Pattern Recognition, CVPR'20
   # number_link: 4
   # link1:
