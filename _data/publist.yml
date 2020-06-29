@@ -1,8 +1,8 @@
 - title: DAVD-Net&#58; Deep Audio-aided Video Decompression of Talking Heads
-  image: ssv_cvpr20_teaser.png
+  image: davd_cvpr20.png
   description: Restore compressed talking head videos with audio side information
-  authors: X. Zhang, X. Wu, X. Zhai, X. Ben and C. Tu
-  venue: Computer Vision and Pattern Recognition, CVPR'20
+  authors: Xi Zhang, Xiaolin Wu, Xinliang Zhai, Xianye Ben and Chengjie Tu
+  venue: Computer Vision and Pattern Recognition, CVPR'20 (Oral)
   number_link: 3
   link1:
     url: https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_DAVD-Net_Deep_Audio-Aided_Video_Decompression_of_Talking_Heads_CVPR_2020_paper.pdf
@@ -11,9 +11,8 @@
     url: https://youtu.be/zgD_LlqDL40
     display: video
   link3:
-    url: https://github.com/xzhang9308/xzhang9308.github.io/poster/davd_cvpr20.pdf
+    url: https://xzhang9308.github.io/poster/davd_cvpr20.pdf
     display: poster
-
 
 - title:  Two-shot Spatially-varying BRDF and Shape Estimation
   image: two_shot_brdf_teaser.png
