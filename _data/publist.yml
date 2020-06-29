@@ -6,16 +6,16 @@
   number_link: 4
   link1:
     url: https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_DAVD-Net_Deep_Audio-Aided_Video_Decompression_of_Talking_Heads_CVPR_2020_paper.pdf
-    display: pdf
+    display: PDF
   link2:
     url: https://youtu.be/zgD_LlqDL40
-    display: video
+    display: Video
   link3:
     url: https://xzhang9308.github.io/poster/davd_cvpr20.pdf
-    display: poster
+    display: Poster
   link4:
     url:
-    display: code (coming soon)
+    display: Code (coming soon)
 
 
 - title: Cognitive Deficit of Deep Learning in Numerosity
@@ -26,10 +26,10 @@
   number_link: 2
   link1:
     url: https://www.aaai.org/ojs/index.php/AAAI/article/view/3928
-    display: pdf
+    display: [PDF]
   link2:
     url: https://xzhang9308.github.io/poster/numerosity_aaai19.pdf
-    display: poster
+    display: [Poster]
 
 
 - title: Nonlinear Prediction of Multidimensional Signals via Deep Regression with Applications to Image Coding
@@ -40,7 +40,7 @@
   number_link: 1
   link1:
     url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8683863
-    display: pdf
+    display: [PDF]
 
 
 - title: Near-Lossless L∞-Constrained Image Decompression via Deep Neural Network
@@ -51,7 +51,7 @@
   number_link: 1
   link1:
     url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8712819
-    display: pdf
+    display: [PDF]
 
 
 - title: Illumination invariant feature based on neighboring radiance ratio
@@ -62,5 +62,5 @@
   number_link: 1
   link1:
     url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8305111
-    display: pdf
+    display: [pdf]
 
