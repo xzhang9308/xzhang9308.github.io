@@ -26,10 +26,10 @@
   number_link: 2
   link1:
     url: https://www.aaai.org/ojs/index.php/AAAI/article/view/3928
-    display: [PDF]
+    display: PDF
   link2:
     url: https://xzhang9308.github.io/poster/numerosity_aaai19.pdf
-    display: [Poster]
+    display: Poster
 
 
 - title: Nonlinear Prediction of Multidimensional Signals via Deep Regression with Applications to Image Coding
@@ -40,7 +40,7 @@
   number_link: 1
   link1:
     url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8683863
-    display: [PDF]
+    display: PDF
 
 
 - title: Near-Lossless L∞-Constrained Image Decompression via Deep Neural Network
@@ -51,7 +51,7 @@
   number_link: 1
   link1:
     url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8712819
-    display: [PDF]
+    display: PDF
 
 
 - title: Illumination invariant feature based on neighboring radiance ratio
@@ -62,5 +62,5 @@
   number_link: 1
   link1:
     url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8305111
-    display: [pdf]
+    display: PDF
 
