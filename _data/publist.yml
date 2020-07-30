@@ -1,3 +1,16 @@
+- title: Deep Multi-modality Soft-decoding of Very Low Bit-rate Face Videos
+  image: mmsd_mm20.png
+  description: A novel CNN method exploits the correlations among three modalities, video, audio and emotion state of the speaker, to remove the video compression artifacts caused by spatial down sampling and quantization. 
+  authors: Yanhui Guo, Xi Zhang, and Xiaolin Wu
+  venue: ACM International Conference on Multimedia, ACMMM'20 (Poster)
+  number_link: 2
+  link1:
+    url: 
+    display: PDF
+  link2:
+    url: 
+    display: Poster
+
 - title: DAVD-Net&#58; Deep Audio-aided Video Decompression of Talking Heads
   image: davd_cvpr20.png
   description: A novel DCNN architecture for restoration of heavily compressed talking head videos with audio side information.
