@@ -33,6 +33,16 @@
     url:
     display: Code
 
+- title: Ultra High Fidelity Image Compression with L∞-constrained Encoding and Deep Decoding
+  image: calic_TIP.png
+  description: We make a major progress in l∞-constrained image coding after two decades, by developing a novel CNN-based soft l∞-constrained decoding method. 
+  authors: Xi Zhang and Xiaolin Wu
+  venue: Submitted to IEEE Transactions on Image Processing (TIP)
+  number_link: 1
+  link1:
+    url: https://arxiv.org/pdf/2002.03482.pdf
+    display: PDF
+
 
 - title: Cognitive Deficit of Deep Learning in Numerosity
   image: numerosity_aaai19.png
