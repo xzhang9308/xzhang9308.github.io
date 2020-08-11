@@ -5,7 +5,7 @@
   venue: ACM International Conference on Multimedia, ACMMM'20 (Poster)
   number_link: 2
   link1:
-    url: https://arxiv.org/pdf/2008.01652.pdf
+    url: https://xzhang9308.github.io/paper/mmsd_mm20.pdf
     display: PDF
   link2:
     url: 
@@ -18,7 +18,7 @@
   venue: IEEE Conference on Computer Vision and Pattern Recognition, CVPR'20 (Oral)
   number_link: 3
   link1:
-    url: https://openaccess.thecvf.com/content_CVPR_2020/papers/Zhang_DAVD-Net_Deep_Audio-Aided_Video_Decompression_of_Talking_Heads_CVPR_2020_paper.pdf
+    url: https://xzhang9308.github.io/paper/davd_cvpr20.pdf
     display: PDF
   link2:
     url: https://youtu.be/zgD_LlqDL40
@@ -34,9 +34,18 @@
   venue: Submitted to IEEE Transactions on Image Processing (TIP)
   number_link: 1
   link1:
-    url: https://arxiv.org/pdf/2002.03482.pdf
+    url: https://xzhang9308.github.io/paper/calic_tip.pdf
     display: PDF
 
+- title: Challenge of Spatial Cognition for Deep Learning
+  image: spatial_tcds.png
+  description: It would be tantalizing to test if DCNNs can also learn spatial concepts, such as straightness, convexity, left/right, front/back, relative size, aspect ratio, polygons, etc.
+  authors: Xi Zhang and Xiaolin Wu
+  venue: Submitted to IEEE Transactions on Cognitive and developmental Systems (TCDS)
+  number_link: 1
+  link1:
+    url: https://xzhang9308.github.io/paper/spatial_tcds.pdf
+    display: PDF
 
 - title: Cognitive Deficit of Deep Learning in Numerosity
   image: numerosity_aaai19.png
@@ -45,7 +54,7 @@
   venue: AAAI Conference on Artificial Intelligence, AAAI'19 (Spotlight)
   number_link: 2
   link1:
-    url: https://www.aaai.org/ojs/index.php/AAAI/article/view/3928
+    url: https://xzhang9308.github.io/paper/numerosity_aaai19.pdf
     display: PDF
   link2:
     url: https://xzhang9308.github.io/poster/numerosity_aaai19.pdf
@@ -59,7 +68,7 @@
   venue:  Acoustics, Speech and Signal Processing, ICASSP'19 (oral)
   number_link: 1
   link1:
-    url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8683863
+    url: https://xzhang9308.github.io/paper/predictor_icassp19.pdf
     display: PDF
 
 
@@ -70,7 +79,7 @@
   venue: Data Compression Conference, DCC'19 (Oral)
   number_link: 1
   link1:
-    url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8712819
+    url: https://xzhang9308.github.io/paper/calic_dcc19.pdf
     display: PDF
 
 
@@ -81,6 +90,6 @@
   venue: Visual Communications and Image Processing, VCIP'17 (Oral)
   number_link: 1
   link1:
-    url: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8305111
+    url: https://xzhang9308.github.io/paper/illumination_vcip17.pdf
     display: PDF
 
