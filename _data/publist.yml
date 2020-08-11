@@ -3,13 +3,16 @@
   description: A novel CNN method to remove the video compression artifacts by exploiting the correlations among three modalities, video, audio and emotion state 
   authors: Yanhui Guo, Xi Zhang, and Xiaolin Wu
   venue: ACM International Conference on Multimedia, ACMMM'20 (Poster)
-  number_link: 2
+  number_link: 3
   link1:
-    url: 
+    url: https://arxiv.org/pdf/2008.01652.pdf
     display: PDF
   link2:
     url: 
     display: Poster
+  link3:
+    url:
+    display: Code
 
 - title: DAVD-Net&#58; Deep Audio-aided Video Decompression of Talking Heads
   image: davd_cvpr20.png
