@@ -41,7 +41,7 @@
   image: spatial_tcds.png
   description: It would be tantalizing to test if DCNNs can also learn spatial concepts, such as straightness, convexity, left/right, front/back, relative size, aspect ratio, polygons, etc.
   authors: Xi Zhang and Xiaolin Wu
-  venue: Submitted to IEEE Transactions on Cognitive and developmental Systems (TCDS)
+  venue: Submitted to IEEE Transactions on Cognitive and Developmental Systems (TCDS)
   number_link: 1
   link1:
     url: https://xzhang9308.github.io/paper/spatial_tcds.pdf
