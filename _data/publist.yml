@@ -15,7 +15,7 @@
   image: davd_cvpr20.png
   # description: A novel DCNN architecture for restoration of heavily compressed talking head videos with audio side information.
   authors: Xi Zhang, Xiaolin Wu, Xinliang Zhai, Xianye Ben and Chengjie Tu
-  venue: IEEE Conference on Computer Vision and Pattern Recognition, CVPR'20 (Oral)
+  venue: IEEE/CVF Conference on Computer Vision and Pattern Recognition, CVPR'20 (Oral)
   number_link: 3
   link1:
     url: https://xzhang9308.github.io/paper/davd_cvpr20.pdf
