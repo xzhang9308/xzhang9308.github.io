@@ -13,7 +13,7 @@
 
 - title: DAVD-Net&#58; Deep Audio-aided Video Decompression of Talking Heads
   image: davd_cvpr20.png
-  description: A novel DCNN architecture for restoration of heavily compressed talking head videos with audio side information.
+  # description: A novel DCNN architecture for restoration of heavily compressed talking head videos with audio side information.
   authors: Xi Zhang, Xiaolin Wu, Xinliang Zhai, Xianye Ben and Chengjie Tu
   venue: IEEE Conference on Computer Vision and Pattern Recognition, CVPR'20 (Oral)
   number_link: 3
@@ -29,7 +29,7 @@
 
 - title: Ultra High Fidelity Image Compression with L∞-constrained Encoding and Deep Decoding
   image: calic_TIP.png
-  description: We make a major progress in l∞-constrained image coding after two decades, by developing a novel CNN-based soft l∞-constrained decoding method. 
+  # description: We make a major progress in l∞-constrained image coding after two decades, by developing a novel CNN-based soft l∞-constrained decoding method. 
   authors: Xi Zhang and Xiaolin Wu
   venue: Submitted to IEEE Transactions on Image Processing (TIP)
   number_link: 1
@@ -39,7 +39,7 @@
 
 - title: Cognitive Deficit of Deep Learning in Numerosity
   image: numerosity_aaai19.png
-  description: A recurrent neural network capable of subitizing by encoding a mechanism of mathematical morphology into the convolutional kernels.
+  # description: A recurrent neural network capable of subitizing by encoding a mechanism of mathematical morphology into the convolutional kernels.
   authors: Xiaolin Wu, Xi Zhang and Xiao Shu
   venue: AAAI Conference on Artificial Intelligence, AAAI'19 (Spotlight)
   number_link: 2
@@ -52,7 +52,7 @@
 
 - title: Challenge of Spatial Cognition for Deep Learning
   image: spatial_tcds.png
-  description: It would be tantalizing to test if DCNNs can also learn spatial concepts, such as straightness, convexity, left/right, front/back, relative size, aspect ratio, polygons.
+  # description: It would be tantalizing to test if DCNNs can also learn spatial concepts, such as straightness, convexity, left/right, front/back, relative size, aspect ratio, polygons.
   authors: Xi Zhang and Xiaolin Wu
   venue: ArXiv Preprint
   number_link: 1
@@ -62,7 +62,7 @@
 
 - title: Nonlinear Prediction of Multidimensional Signals via Deep Regression with Applications to Image Coding
   image: predictor_icassp19.png
-  description: A two-stage deep regression DCNN framework for nonlinear prediction of two-dimensional image signals with applications to image coding.
+  # description: A two-stage deep regression DCNN framework for nonlinear prediction of two-dimensional image signals with applications to image coding.
   authors: Xi Zhang and Xiaolin Wu
   venue:  Acoustics, Speech and Signal Processing, ICASSP'19 (oral)
   number_link: 1
@@ -72,7 +72,7 @@
 
 - title: Near-Lossless L∞-Constrained Image Decompression via Deep Neural Network
   image: calic_dcc19.png
-  description: Incorporate an l∞ fidelity criterion in the design of neural network so that no small, distinctive structures of the original image can be dropped or distorted.
+  # description: Incorporate an l∞ fidelity criterion in the design of neural network so that no small, distinctive structures of the original image can be dropped or distorted.
   authors: Xi Zhang and Xiaolin Wu
   venue: Data Compression Conference, DCC'19 (Oral)
   number_link: 1
@@ -82,7 +82,7 @@
 
 - title: Illumination invariant feature based on neighboring radiance ratio
   image: illumination_vcip17.png
-  description: A novel illumination invariant feature called Neighboring Radiance Ratio (NRR) which is insensitive to both intensity and direction of light.
+  # description: A novel illumination invariant feature called Neighboring Radiance Ratio (NRR) which is insensitive to both intensity and direction of light.
   authors: Xi Zhang and Xiaolin Wu
   venue: Visual Communications and Image Processing, VCIP'17 (Oral)
   number_link: 1
