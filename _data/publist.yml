@@ -1,7 +1,6 @@
 - title: Deep Multi-modality Soft-decoding of Very Low Bit-rate Face Videos
   image: mmsd_mm20.png
   # description: A novel CNN method to remove the video compression artifacts by exploiting the correlations among three modalities, video, audio and emotion state 
-  description: 
   authors: Yanhui Guo, Xi Zhang, and Xiaolin Wu
   venue: ACM International Conference on Multimedia, ACMMM'20 (Poster)
   number_link: 2
