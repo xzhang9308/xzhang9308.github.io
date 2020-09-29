@@ -8,7 +8,7 @@
     url: https://xzhang9308.github.io/paper/mmsd_mm20.pdf
     display: PDF
   link2:
-    url: https://scholar.googleusercontent.com/scholar.bib?q=info:1PhTnemlStIJ:scholar.google.com/&output=citation&scisdr=CgXmJkNBEM6hwYWhwRE:AAGBfm0AAAAAX3Kk2RGiQOa9sZ8Re56NLt0oOqOc73Bi&scisig=AAGBfm0AAAAAX3Kk2a1cLHdmF5ArIQ1n16MDJwY85Ht2&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    url: 
     display: BibTex
 
 - title: DAVD-Net&#58; Deep Audio-aided Video Decompression of Talking Heads
@@ -16,7 +16,7 @@
   # description: A novel DCNN architecture for restoration of heavily compressed talking head videos with audio side information.
   authors: Xi Zhang, Xiaolin Wu, Xinliang Zhai, Xianye Ben and Chengjie Tu
   venue: Computer Vision and Pattern Recognition, CVPR'20 (Oral)
-  number_link: 3
+  number_link: 4
   link1:
     url: https://xzhang9308.github.io/paper/davd_cvpr20.pdf
     display: PDF
@@ -26,16 +26,22 @@
   link3:
     url: https://xzhang9308.github.io/poster/davd_cvpr20.pdf
     display: Poster
+  link4:
+    url: https://scholar.googleusercontent.com/scholar.bib?q=info:1PhTnemlStIJ:scholar.google.com/&output=citation&scisdr=CgXmJkNBEM6hwYWhwRE:AAGBfm0AAAAAX3Kk2RGiQOa9sZ8Re56NLt0oOqOc73Bi&scisig=AAGBfm0AAAAAX3Kk2a1cLHdmF5ArIQ1n16MDJwY85Ht2&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    display: BibTex
 
 - title: Ultra High Fidelity Image Compression with L∞-constrained Encoding and Deep Decoding
   image: calic_TIP.png
   # description: We make a major progress in l∞-constrained image coding after two decades, by developing a novel CNN-based soft l∞-constrained decoding method. 
   authors: Xi Zhang and Xiaolin Wu
   venue: Submitted to IEEE Transactions on Image Processing (TIP)
-  number_link: 1
+  number_link: 2
   link1:
     url: https://xzhang9308.github.io/paper/calic_tip.pdf
     display: PDF
+  link2:
+    url:
+    display: BibTex
 
 - title: Cognitive Deficit of Deep Learning in Numerosity
   image: numerosity_aaai19.png
@@ -49,6 +55,9 @@
   link2:
     url: https://xzhang9308.github.io/poster/numerosity_aaai19.pdf
     display: Poster
+  link3:
+    url: https://scholar.googleusercontent.com/scholar.bib?q=info:c9eiqbQZo7UJ:scholar.google.com/&output=citation&scisdr=CgXmJkNBEM6hwYWioJ4:AAGBfm0AAAAAX3KnuJ4ZXMuRnZXf9_X5EPBfx0TjJJ15&scisig=AAGBfm0AAAAAX3KnuHda2mFMPG6jIk9_34-izQcm1uF5&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    display: BibTex
 
 - title: Challenge of Spatial Cognition for Deep Learning
   image: spatial_tcds.png
@@ -59,6 +68,9 @@
   link1:
     url: https://xzhang9308.github.io/paper/spatial_arxiv.pdf
     display: PDF
+  link2:
+    url: https://scholar.googleusercontent.com/scholar.bib?q=info:xPSd-JvyIhUJ:scholar.google.com/&output=citation&scisdr=CgXmJkNBEM6hwYWivk0:AAGBfm0AAAAAX3Knpk3RpU1PVlwb4Vkxnd6ej_nb0a5_&scisig=AAGBfm0AAAAAX3KnpnjvPtnN2H3qLy6lMx6WAn0oANWl&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    display: BibTex
 
 - title: Nonlinear Prediction of Multidimensional Signals via Deep Regression with Applications to Image Coding
   image: predictor_icassp19.png
@@ -69,6 +81,9 @@
   link1:
     url: https://xzhang9308.github.io/paper/predictor_icassp19.pdf
     display: PDF
+  link2:
+    url: https://scholar.googleusercontent.com/scholar.bib?q=info:k3YHooFrrZQJ:scholar.google.com/&output=citation&scisdr=CgXmJkNBEM6hwYWimzs:AAGBfm0AAAAAX3Kngzvc2AJC8PM2_xqiaQTyGih-pxm0&scisig=AAGBfm0AAAAAX3Kng8EHJrz6HHuGUEoTSDIxw1snL87T&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    display: BibTex
 
 - title: Near-Lossless L∞-Constrained Image Decompression via Deep Neural Network
   image: calic_dcc19.png
@@ -79,6 +94,9 @@
   link1:
     url: https://xzhang9308.github.io/paper/calic_dcc19.pdf
     display: PDF
+  link2:
+    url: https://scholar.googleusercontent.com/scholar.bib?q=info:kC1KHdHvS5YJ:scholar.google.com/&output=citation&scisdr=CgXmJkNBEM6hwYWiddM:AAGBfm0AAAAAX3KnbdPzkc9xN2HDjUBIihOYLbeW6pak&scisig=AAGBfm0AAAAAX3KnbZjUmF0b1XvmMBc9q8NOpAA65DAP&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    display: BibTex
 
 - title: Illumination invariant feature based on neighboring radiance ratio
   image: illumination_vcip17.png
@@ -89,4 +107,7 @@
   link1:
     url: https://xzhang9308.github.io/paper/illumination_vcip17.pdf
     display: PDF
+  link2:
+    url: https://scholar.googleusercontent.com/scholar.bib?q=info:K1AI0BgQvUcJ:scholar.google.com/&output=citation&scisdr=CgXmJkNBEM6hwYWiNEk:AAGBfm0AAAAAX3KnLElbph_x05nDuTTlXWNRycPYct01&scisig=AAGBfm0AAAAAX3KnLK2aABItDHvJhrfpLOOy1-18ZTjk&scisf=4&ct=citation&cd=-1&hl=zh-CN
+    display: BibTex
 
