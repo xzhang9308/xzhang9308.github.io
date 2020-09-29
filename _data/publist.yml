@@ -48,7 +48,7 @@
   # description: A recurrent neural network capable of subitizing by encoding a mechanism of mathematical morphology into the convolutional kernels.
   authors: Xiaolin Wu, Xi Zhang and Xiao Shu
   venue: AAAI Conference on Artificial Intelligence, AAAI'19 (Spotlight)
-  number_link: 2
+  number_link: 3
   link1:
     url: https://xzhang9308.github.io/paper/numerosity_aaai19.pdf
     display: PDF
@@ -64,7 +64,7 @@
   # description: It would be tantalizing to test if DCNNs can also learn spatial concepts, such as straightness, convexity, left/right, front/back, relative size, aspect ratio, polygons.
   authors: Xi Zhang and Xiaolin Wu
   venue: ArXiv Preprint
-  number_link: 1
+  number_link: 2
   link1:
     url: https://xzhang9308.github.io/paper/spatial_arxiv.pdf
     display: PDF
@@ -77,7 +77,7 @@
   # description: A two-stage deep regression DCNN framework for nonlinear prediction of two-dimensional image signals with applications to image coding.
   authors: Xi Zhang and Xiaolin Wu
   venue:  Acoustics, Speech and Signal Processing, ICASSP'19 (oral)
-  number_link: 1
+  number_link: 2
   link1:
     url: https://xzhang9308.github.io/paper/predictor_icassp19.pdf
     display: PDF
@@ -90,7 +90,7 @@
   # description: Incorporate an l∞ fidelity criterion in the design of neural network so that no small, distinctive structures of the original image can be dropped or distorted.
   authors: Xi Zhang and Xiaolin Wu
   venue: Data Compression Conference, DCC'19 (Oral)
-  number_link: 1
+  number_link: 2
   link1:
     url: https://xzhang9308.github.io/paper/calic_dcc19.pdf
     display: PDF
@@ -103,7 +103,7 @@
   # description: A novel illumination invariant feature called Neighboring Radiance Ratio (NRR) which is insensitive to both intensity and direction of light.
   authors: Xi Zhang and Xiaolin Wu
   venue: Visual Communications and Image Processing, VCIP'17 (Oral)
-  number_link: 1
+  number_link: 2
   link1:
     url: https://xzhang9308.github.io/paper/illumination_vcip17.pdf
     display: PDF
