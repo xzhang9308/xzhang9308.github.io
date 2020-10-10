@@ -58,7 +58,7 @@ My research interests include image processing, computer vision and deep learnin
  <div class="well">
  <pubtit>{{ publi.title }}</pubtit>
 
- &nbsp;&nbsp; <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" width="230px" height="100px" style="float: left" />
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" width="230px" height="100px" style="float: left" />
 
  <p>{{ publi.description }}</p>
 
