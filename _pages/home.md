@@ -37,10 +37,10 @@ My research interests include image processing, computer vision and deep learnin
   </ul>
 
   <!-- <br clear="all" /> -->
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:xzhang9308@gmail.com">xzhang9308@gmail.com</a> <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shanghai Jiao Tong University <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 800 Dongchuan RD. <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minhang, Shanghai, China. <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="mailto:xzhang9308@gmail.com">xzhang9308@gmail.com</a> <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shanghai Jiao Tong University <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 800 Dongchuan RD. <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minhang, Shanghai, China. <br>
 
 
 </div>
@@ -64,7 +64,7 @@ My research interests include image processing, computer vision and deep learnin
 
  <p><em>{{ publi.authors }}</em></p>
 
- <p>{{ publi.venue }}</p>
+ <b>{{ publi.venue }}</b>
 
  {% if publi.number_link == 1 %}
  <p><a href="{{ publi.link1.url }}">{{ publi.link1.display }}</a></p>
