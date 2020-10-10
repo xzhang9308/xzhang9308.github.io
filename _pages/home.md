@@ -62,7 +62,7 @@ My research interests include image processing, computer vision and deep learnin
 
  <!-- <p>{{ publi.description }}</p> -->
 
- <p></p> 
+ <p> <br /> </p> 
 
  <p><em>{{ publi.authors }}</em></p>
 
