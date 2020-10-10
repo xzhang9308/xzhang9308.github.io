@@ -2,7 +2,7 @@
 title: "Xi Zhang - Home"
 layout: gridlay
 excerpt: "Xi Zhang"
-sitemap: false
+sitemap: true
 permalink: /
 ---
 
