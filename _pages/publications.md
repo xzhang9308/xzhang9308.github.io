@@ -15,7 +15,7 @@ permalink: /publications/
  <div class="well">
  <pubtit>{{ publi.title }}</pubtit>
 
- <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="200px" height="100px" style="float: left" />
+ <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}"  width="230px" height="100px"  style="float: left" />
 
  <p>{{ publi.description }}</p>
 
