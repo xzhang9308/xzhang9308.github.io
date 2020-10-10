@@ -116,3 +116,5 @@ My research interests include image processing, computer vision and deep learnin
 #### <a href="{{ site.url }}{{ site.baseurl }}/publications">see all publications</a>
 
 </div>
+
+<a href="https://clustrmaps.com/site/1bdno"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=UXi-7QCbKF9U-SufK06K6XusnA2APnOCSQEbRJP32I0&cl=ffffff" /></a>
