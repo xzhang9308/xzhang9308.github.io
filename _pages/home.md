@@ -15,7 +15,7 @@ permalink: /
 I am a Ph.D. candidate at Shanghai Jiao Tong University, supervised by [Prof. Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ). <br>
 I received my B.Sc. degree in Mathematics and Physics Basic Science from University of Electronic Science and Technology of China (UESTC) in 2015. I am currently pursuing the Ph.D. degree with the Department of Electronic Engineering at Shanghai Jiao Tong University, China. I was also a visiting Ph.D. student with the Department of Electrical and Computer Engineering at McMaster University, Canada.  
 
-My research interests include image processing, computer vision and deep learning, especially in areas of image/video compression, restoration, cognitive computing and visual reasoning.
+My research interests include image processing, computer vision and deep learning, especially in areas of image/video compression, restoration and cognitive computing.
 
 <!-- **_I am looking for motivated students for collaborations and internships. If interested, please drop me an email with your CV._** -->
 
