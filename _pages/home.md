@@ -37,12 +37,12 @@ My research interests include image processing, computer vision and deep learnin
   </ul>
 
   <!-- <br clear="all" /> -->
-   <a href="mailto:xzhang9308@gmail.com">xzhang9308@gmail.com</a> <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shanghai Jiao Tong University <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 800 Dongchuan RD. <br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Minhang, Shanghai, China. <br>
+  Email: <a href="mailto:xzhang9308@gmail.com">xzhang9308@gmail.com</a> <br>
+  Department of Electronic Engineering
+  Shanghai Jiao Tong University <br>
+  800 Dongchuan RD, Shanghai, China, 20040 <br>
 
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=baafaf&w=a&t=n&d=UXi-7QCbKF9U-SufK06K6XusnA2APnOCSQEbRJP32I0&co=dfe9f0&cmo=7e7dc9&cmn=8dd999'></script> <br>
+  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=c4c4c4&w=386&t=n&d=UXi-7QCbKF9U-SufK06K6XusnA2APnOCSQEbRJP32I0&co=ffffff'></script>
 
 </div>
 
