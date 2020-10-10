@@ -22,7 +22,7 @@ My research interests include image processing, computer vision and deep learnin
 <!-- **_If you are interested in research collaboration, please drop me an email with your CV._** -->
 
 ### News
-{% for article in site.data.news limit:5 %}
+{% for article in site.data.news limit:7 %}
 {{ article.date }} :
 <em>{{ article.headline }}</em>
 {% endfor %}
