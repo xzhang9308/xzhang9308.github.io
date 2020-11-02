@@ -1,0 +1,7 @@
+@inproceedings{guo2020deep,
+  title={Deep Multi-modality Soft-decoding of Very Low Bit-rate Face Videos},
+  author={Guo, Yanhui and Zhang, Xi and Wu, Xiaolin},
+  booktitle={Proceedings of the 28th ACM International Conference on Multimedia},
+  pages={3947--3955},
+  year={2020}
+}
