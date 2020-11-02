@@ -44,7 +44,7 @@
     display: BibTex
 
 - title: Ultra High Fidelity Deep Image Decompression with L∞-constrained Compression
-  image: calic_TIP.png
+  image: calic_tip.png
   # description: We make a major progress in l∞-constrained image coding after two decades, by developing a novel CNN-based soft l∞-constrained decoding method. 
   authors: Xi Zhang and Xiaolin Wu
   venue: IEEE Transactions on Image Processing (TIP), Minor Revision
