@@ -5,8 +5,8 @@
   venue: Advances in Neural Information Processing Systems, NeurIPS'20
   number_link: 2
   link1:
-    url: 
-    display: PDF (coming soon)
+    url: https://xzhang9308.github.io/paper/numerosity_nips20.pdf
+    display: PDF
   link2:
     url: 
     display: BibTex
@@ -21,7 +21,7 @@
     url: https://xzhang9308.github.io/paper/mmsd_mm20.pdf
     display: PDF
   link2:
-    url: 
+    url: https://xzhang9308.github.io/bibtex/mmsd_mm20.txt
     display: BibTex
 
 - title: DAVD-Net&#58; Deep Audio-aided Video Decompression of Talking Heads
