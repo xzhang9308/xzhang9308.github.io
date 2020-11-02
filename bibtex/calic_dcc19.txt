@@ -1,0 +1,8 @@
+@inproceedings{zhang2019near,
+  title={Near-Lossless ℓ∞-Constrained Image Decompression via Deep Neural Network},
+  author={Zhang, Xi and Wu, Xiaolin},
+  booktitle={2019 Data Compression Conference (DCC)},
+  pages={33--42},
+  year={2019},
+  organization={IEEE}
+}

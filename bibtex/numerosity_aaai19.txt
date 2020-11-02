@@ -1,0 +1,8 @@
+@inproceedings{wu2019cognitive,
+  title={Cognitive deficit of deep learning in numerosity},
+  author={Wu, Xiaolin and Zhang, Xi and Shu, Xiao},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={33},
+  pages={1303--1310},
+  year={2019}
+}

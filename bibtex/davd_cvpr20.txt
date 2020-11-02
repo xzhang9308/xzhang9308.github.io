@@ -1,0 +1,7 @@
+@inproceedings{zhang2020davd,
+  title={DAVD-Net: Deep Audio-Aided Video Decompression of Talking Heads},
+  author={Zhang, Xi and Wu, Xiaolin and Zhai, Xinliang and Ben, Xianye and Tu, Chengjie},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={12335--12344},
+  year={2020}
+}

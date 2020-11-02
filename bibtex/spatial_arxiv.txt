@@ -1,0 +1,6 @@
+@article{zhang2019challenge,
+  title={Challenge of spatial cognition for deep learning},
+  author={Zhang, Xi and Wu, Xiaolin and Du, Jun},
+  journal={arXiv preprint arXiv:1908.04396},
+  year={2019}
+}
