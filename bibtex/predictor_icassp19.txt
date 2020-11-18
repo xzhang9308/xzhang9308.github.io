@@ -1,8 +1,0 @@
-@inproceedings{zhang2019nonlinear,
-  title={Nonlinear Prediction of Multidimensional Signals via Deep Regression with Applications to Image Coding},
-  author={Zhang, Xi and Wu, Xiaolin},
-  booktitle={ICASSP 2019-2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  pages={1602--1606},
-  year={2019},
-  organization={IEEE}
-}
