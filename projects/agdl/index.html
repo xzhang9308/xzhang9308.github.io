@@ -146,79 +146,27 @@
 					<td align=center width=150px>
 						<center>
 							<span style="font-size:18px">
-							<a href="https://xzhang9308.github.io/"></a>Xi Zhang</span>
+							<a href="https://xzhang9308.github.io/">Xi Zhang</a></span>
 						</center>
 					</td>
 					<td align=center width=150px>
 						<center>
-							<span style="font-size:18px"><a href="https://hangz-nju-cuhk.github.io/">Hang Zhou</a></span>
-						</center>
-					</td>
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:18px">Kaisiyuan Wang</span>
-						</center>
-					</td>
-					<td align=center width=150px>
-						<center>
-							<span style="font-size:18px"><a href="http://wywu.github.io/">Wayne Wu</a></span>
+							<span style="font-size:18px">
+							<a href="https://www.ece.mcmaster.ca/~xwu/">Xiaolin Wu</a></span>
 						</center>
 					</td>
 				</tr>
 			</table>
 			<table align=center width=600px>
 				<tr>
-					<td align=center width=200px>
+					<td align=center width=150px>
 						<center>
-							<span style="font-size:18px"><a href="http://personal.ie.cuhk.edu.hk/~ccloy/">Chen Change Loy</a></span>
+							<span style="font-size:16px">Shanghai Jiao Tong University</span>
 						</center>
 					</td>
-					<td align=center width=200px>
+					<td align=center width=150px>
 						<center>
-							<span style="font-size:18px"><a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html">Xun Cao</a></span>
-						</center>
-					</td>
-					<td align=center width=200px>
-						<center>
-							<span style="font-size:18px"><a href="http://xufeng.site/">Feng Xu</a></span>
-						</center>
-					</td>
-				</tr>
-			</table>
-			<table align=center width=700px>
-				<tr>
-					<td align=center width=170px>
-						<center>
-							<span style="font-size:16px">Nanjing University</span>
-						</center>
-					</td>
-					<td align=center width=300px>
-						<center>
-							<span style="font-size:16px">The Chinese University of Hong Kong</span>
-						</center>
-					</td>
-					<td align=center width=200px>
-						<center>
-							<span style="font-size:16px">The University of Sydney</span>
-						</center>
-					</td>
-				</tr>
-			</table>
-			<table align=center width=700px>
-				<tr>
-					<td align=center width=170px>
-						<center>
-							<span style="font-size:16px">SenseTime Research</span>
-						</center>
-					</td>
-					<td align=center width=300px>
-						<center>
-							<span style="font-size:16px">Nanyang Technological University</span>
-						</center>
-					</td>
-					<td align=center width=200px>
-						<center>
-							<span style="font-size:16px">Tsinghua University</span>
+							<span style="font-size:16px">McMaster University</span>
 						</center>
 					</td>
 				</tr>
@@ -233,34 +181,42 @@
 					</td>
 				</tr>
 			</table>
-			<table align=center width=250px>
+			<table align=center width=200px>
 				<tr>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:18px"><a href='./resources/evp.pdf'>[Paper]</a></span>
+							<span style="font-size:18px">
+							<a href='../../paper/agdl_cvpr21.pdf'>[Paper]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
-							<span style="font-size:18px"><a href='https://github.com/jixinya/EVP/'>[GitHub]</a></span><br>
+							<span style="font-size:18px">
+							<a href='https://arxiv.org/abs/2103.15368'>[arXiv]</a></span>
+						</center>
+					</td>
+					<td align=center width=120px>
+						<center>
+							<span style="font-size:18px">
+							<a href='https://github.com/xzhang9308/AGDL/'>[GitHub]</a></span><br>
 						</center>
 					</td>
 				</tr>
 			</table>
 		</table>
 	</center>
-
+	&nbsp;
 	<center>
 		<table align=center width=850px>
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:750px" src="./resources/Fig1.png"/>
+						<img class="round" style="width:1000px" src="./resources/demo1.png"/>
 					</center>
 				</td>
 			</tr>
 		</table>
-		<table align=center width=850px>
+		<!-- <table align=center width=850px>
 			<tr>
 				<td>
 					<span style="font-size:15px">Given an audio clip and a target video, our Emotional Video Portraits (EVP)
@@ -268,46 +224,40 @@
 					the latent space.</span>.
 				</td>
 			</tr>
-		</table>
+		</table> -->
 	</center>
-
+	<br>
 	<hr>
 
 	<table align=center width=900px>
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				In this work, we present Emotional Video Portraits (EVP), a system for synthesizing high-quality video portraits with vivid emotional dynamics driven by audios. Specifically, we
-				propose the Cross-Reconstructed Emotion Disentanglement
-				technique to decompose speech into two decoupled spaces,
-				i.e., a duration-independent emotion space and a duration dependent content space. With the disentangled features,
-				dynamic 2D emotional facial landmarks can be deduced.
-				Then we propose the Target-Adaptive Face Synthesis technique to generate the final high-quality video portraits, by
-                bridging the gap between the deduced landmarks and the
-				natural head poses of target videos. Extensive experiments
-				demonstrate the effectiveness of our method both qualitatively and quantitatively.
+				In this work, we propose a deep learning system for attention-guided
+				dual-layer image compression (AGDL). In the AGDL compression system, an image is encoded into two layers, a base layer and an attention-guided refinement layer. Unlike the existing ROI image compression methods that spend an extra bit budget equally on all pixels in ROI, AGDL employs a CNN module to predict those pixels on and near a saliency sketch within ROI that are critical to perceptual quality. Only the critical pixels are further sampled by compressive sensing (CS) to form a very compact refinement layer. Another novel CNN method is developed to jointly decode the two compression layers for a much refined reconstruction, while also strictly satisfying the transmitted CS constraints on perceptually critical pixels. Extensive experiments demonstrate that the proposed AGDL system advances the state of the art in perception-aware image compression.
+
 			</td>
 		</tr>
 	</table>
 	<br>
-
 	<hr>
-	<center><h1>Video</h1></center>
+
+
+	<!-- <center><h1>Video</h1></center>
 	
 	<p align="center">
 		<iframe width="660" height="395" src="./resources/00822-video.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-		<!-- Video player 1422x800 
+		Video player 1422x800 
 		<video width="660" height="395" controls autoplay>
 		  <source src="./resources/00822-video.mp4" type="video/mp4">							  
 		Your browser does not support the video tag.
-		</video>-->
+		</video>
 	</p>
+	<br>
+	<hr> -->
 
-
-	<hr>
-
+	
 	<center><h1>Code</h1></center>
-
 	<table align=center width=420px>
 		<center>
 			<tr>
@@ -320,7 +270,7 @@
 		<tr>
 			<td align=center width=400px>
 				<center>
-					<td><img class="round" style="width:800px" src="./resources/pipeline.png"/></td>
+					<td><img class="round" style="width:900px" src="./resources/pipeline.png"/></td>
 				</center>
 			</td>
 		</tr>
@@ -329,7 +279,7 @@
 		<center>
 			<tr>
 				<center>
-					Overview of our Emotional Video Portrait algorithm.
+					Overview of the proposed AGDL image compression system.
 				</center>
 			</tr>
 		</center>
@@ -337,19 +287,23 @@
 	<table align=center width=800px>
 		<br>
 		<tr><center>
-			<span style="font-size:20px">&nbsp;<a href='https://github.com/jixinya/EVP/'>[GitHub]</a>
+			<span style="font-size:20px">
+			&nbsp;
+			<a href='https://github.com/xzhang9308/AGDL/'>[GitHub]</a>
 			</center>
 		</span>
 	</table>
 	<br>
 	<hr>
+
+
 	<table align=center width=650px>
 		<center><h1>Paper</h1></center>
 		<tr>
-			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/evp_1.png"/></a></td>
-			<td><span style="font-size:14pt"><b>Audio-Driven Emotional Video Portraits.</b><br>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/page1.png"/></a></td>
+			<td><span style="font-size:14pt"><b>Attention-guided Image Compression by Deep 			Reconstruction of Compressive Sensed Saliency Skeleton.</b><br>
 				In CVPR, 2021.<br>
-				(hosted on <a href="https://arxiv.org/abs/2104.07452">ArXiv</a>)<br>
+				(<a href="https://arxiv.org/abs/2103.15368">arXiv</a>)<br>
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:4pt"><a href=""><br></a>
 				</span>
@@ -357,31 +311,35 @@
 		</tr>
 	</table>
 	<br>
-
-	<table align=center width=600px>
-		<tr>
-			<td><span style="font-size:15pt"><center>
-				<a href="./resources/bibtex.txt">[Bibtex]</a>
-			</center></td>
-		</tr>
-	</table>
-
 	<hr>
-	<br>
+
 
 	<table align=center width=900px>
+		<center><h1>Citation</h1></center>
 		<tr>
-			<td width=400px>
+			<td>
+				@inproceedings{zhang2021agdl,<br>
+					&emsp;&emsp;
+					title={Attention-guided Image Compression by Deep Reconstruction of Compressive Sensed Saliency Skeleton},<br>
+					&emsp;&emsp;
+					author={Zhang, Xi and Wu, Xiaolin}, <br>
+					&emsp;&emsp;
+					booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}, <br>
+					&emsp;&emsp;
+					year={2021} <br>
+				}</p>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	
+	<br>
+	<table align=center width=900px>
+		<tr>
+			<td>
 				<left>
 					<center><h1>Acknowledgements</h1></center>
-					This work is supported partly by the
-					NSFC (No.62025108), the National Key R&D Program
-					of China 2018YFA0704000, partly by the Beijing Natural
-					Science Foundation (JQ19015), the NSFC (No.61822111,
-					61727808, 61627804), the NSFJS (BK20192003), partly
-					by Leading Technology of Jiangsu Basic Research Plan under Grant BK2019200, and partly by A*STAR through the
-					Industry Alignment Fund - Industry Collaboration Projects
-					Grant..
+					This project is supported by Natural Sciences and Engineering Research Council of Canada (NSERC) and funded by Huawei Canada via the Ascend Group (in Toronto) of the Computing Product Line. The algorithms were also verified in the MindSpore (https://github.com/mindspore-ai/mindspore).
 				</left>
 			</td>
 		</tr>
