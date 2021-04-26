@@ -118,7 +118,7 @@
 
 <html>
 <head>
-	<title>Attention-guided Image Compression by Deep Reconstruction of Compressive Sensed Saliency Skeleton</title>
+	<title>Ultra High Fidelity Deep Image Decompression with L∞-constrained Compression</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
 	<meta property="og:title" content="Audio-Driven Emotional Video Portraits." />
 	<meta property="og:description" content="Webpage of EVP algorithm." />
@@ -138,7 +138,7 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">Attention-guided Image Compression by Deep Reconstruction of Compressive Sensed Saliency Skeleton</span>
+		<span style="font-size:36px">Ultra High Fidelity Deep Image Decompression with L∞-constrained Compression</span>
 		<table align=center width=600px>
 			<br> </br>
 			<table align=center width=600px>
@@ -174,11 +174,12 @@
 			&nbsp;
 			<table align=center width=200px>
 				<tr>
-					<td align=center width=100px>
+					<!-- <td align=center width=200px> -->
 						<center>
-							<span style="font-size:20px">CVPR 2021</span>
+							<span style="font-size:20px">
+							IEEE Transactions on Image Processing (TIP), 2021</span>
 						</center>
-					</td>
+					<!-- </td> -->
 				</tr>
 			</table>
 			<table align=center width=200px>
@@ -186,19 +187,19 @@
 					<td align=center width=120px>
 						<center>
 							<span style="font-size:18px">
-							<a href='../../paper/agdl_cvpr21.pdf'>[Paper]</a></span>
+							<a href='../../paper/infinity_tip20.pdf'>[Paper]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
 							<span style="font-size:18px">
-							<a href='https://arxiv.org/abs/2103.15368'>[arXiv]</a></span>
+							<a href='https://arxiv.org/abs/2002.03482'>[arXiv]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
 							<span style="font-size:18px">
-							<a href='https://github.com/xzhang9308/AGDL/'>[GitHub]</a></span><br>
+							<a href=''>[GitHub]</a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -212,6 +213,8 @@
 				<td width=260px>
 					<center>
 						<img class="round" style="width:900px" src="./resources/demo1.png"/>
+						&nbsp;
+						<img class="round" style="width:900px" src="./resources/demo2.png"/>
 					</center>
 				</td>
 			</tr>
@@ -233,9 +236,8 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				In this work, we propose a deep learning system for attention-guided
-				dual-layer image compression (AGDL). In the AGDL compression system, an image is encoded into two layers, a base layer and an attention-guided refinement layer. Unlike the existing ROI image compression methods that spend an extra bit budget equally on all pixels in ROI, AGDL employs a CNN module to predict those pixels on and near a saliency sketch within ROI that are critical to perceptual quality. Only the critical pixels are further sampled by compressive sensing (CS) to form a very compact refinement layer. Another novel CNN method is developed to jointly decode the two compression layers for a much refined reconstruction, while also strictly satisfying the transmitted CS constraints on perceptually critical pixels. Extensive experiments demonstrate that the proposed AGDL system advances the state of the art in perception-aware image compression.
-
+				We propose a novel asymmetric image compression system of light L∞-constrained predictive encoding and heavy-duty CNN-based soft decoding.  The system achieves superior rate-distortion performances over the best of existing image compression methods, including BPG, WebP, FLIF and recent CNN codecs, in both L2 and L∞ error metrics, for bit rates near or above the threshold of perceptually transparent reconstruction.  These remarkable coding gains are made by deep learning for compression artifact removal. A restoration CNN is designed to map a lossy compressed image to its original.  Its unique strength is to enforce a tight error bound on a per pixel basis.
+				As such, no small distinctive structures of the original image can be dropped  or distorted, even if they are statistical outliers that are otherwise sacrificed by mainstream CNN restoration methods.
 			</td>
 		</tr>
 	</table>
@@ -261,9 +263,12 @@
 		<center><h1>Paper</h1></center>
 		<tr>
 			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/page1.png"/></a></td>
-			<td><span style="font-size:14pt"><b>Attention-guided Image Compression by Deep 			Reconstruction of Compressive Sensed Saliency Skeleton.</b><br>
-				In CVPR, 2021.<br>
-				(<a href="https://arxiv.org/abs/2103.15368">arXiv</a>)<br>
+			<td><span style="font-size:14pt"><b>Ultra High Fidelity Deep Image Decompression with L∞-constrained Compression.</b><br>
+				In TIP, 2021.
+				<br>
+				(<a href="https://arxiv.org/abs/2002.03482">arXiv</a>)
+				(<a href="https://ieeexplore.ieee.org/document/9277919">Official</a>)
+				<br>
 				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
 				<span style="font-size:4pt"><a href=""><br></a>
 				</span>
@@ -273,7 +278,7 @@
 	<br>
 	<br>
 	<hr>
-	
+
 	<center><h1>Code</h1></center>
 	<table align=center width=420px>
 		<center>
@@ -296,7 +301,7 @@
 		<center>
 			<tr>
 				<center>
-					Overview of the proposed AGDL image compression system.
+					Overview of the proposed the L∞-ED2 image compression system.
 				</center>
 			</tr>
 		</center>
@@ -306,7 +311,7 @@
 		<tr><center>
 			<span style="font-size:20px">
 			&nbsp;
-			<a href='https://github.com/xzhang9308/AGDL/'>[GitHub]</a>
+			<a href=''>[GitHub]</a>
 			</center>
 		</span>
 	</table>
@@ -314,23 +319,20 @@
 	<hr>
 
 
-
-
-
 	<table align=center width=900px>
 		<center><h1>Citation</h1></center>
 		<tr>
 			<td>
-				@inproceedings{zhang2021agdl,<br>
+				@article{zhang2020ultra,<br>
 					&emsp;&emsp;
-					title={Attention-guided Image Compression by Deep Reconstruction of Compressive Sensed Saliency Skeleton},<br>
-					&emsp;&emsp;
-					author={Zhang, Xi and Wu, Xiaolin}, <br>
-					&emsp;&emsp;
-					booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}, <br>
-					&emsp;&emsp;
-					year={2021} <br>
-				}</p>
+					title={Ultra High Fidelity Deep Image Decompression With l∞-Constrained Compression}, <br>
+					&emsp;&emsp;author={Zhang, Xi and Wu, Xiaolin}, <br>
+					&emsp;&emsp;journal={IEEE Transactions on Image Processing}, <br>
+					&emsp;&emsp;volume={30}, <br>
+					&emsp;&emsp;pages={963--975}, <br>
+					&emsp;&emsp;year={2020}, <br>
+					&emsp;&emsp;publisher={IEEE} <br>
+				  }</p>
 			</td>
 		</tr>
 	</table>
@@ -342,7 +344,9 @@
 			<td>
 				<left>
 					<center><h1>Acknowledgements</h1></center>
-					This project is supported by Natural Sciences and Engineering Research Council of Canada (NSERC) and funded by Huawei Canada via the Ascend Group (in Toronto) of the Computing Product Line. The algorithms were also verified in the MindSpore (https://github.com/mindspore-ai/mindspore).
+					This work was supported in part by the National Natural Science Foundation
+					of China (NSFC) and Natural Sciences and Engineering Research Council of
+					Canada (NSERC).
 				</left>
 			</td>
 		</tr>

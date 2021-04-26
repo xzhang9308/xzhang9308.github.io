@@ -118,7 +118,7 @@
 
 <html>
 <head>
-	<title>Attention-guided Image Compression by Deep Reconstruction of Compressive Sensed Saliency Skeleton</title>
+	<title>On Numerosity of Deep Neural Networks</title>
 	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
 	<meta property="og:title" content="Audio-Driven Emotional Video Portraits." />
 	<meta property="og:description" content="Webpage of EVP algorithm." />
@@ -138,7 +138,7 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">Attention-guided Image Compression by Deep Reconstruction of Compressive Sensed Saliency Skeleton</span>
+		<span style="font-size:36px">On Numerosity of Deep Neural Networks</span>
 		<table align=center width=600px>
 			<br> </br>
 			<table align=center width=600px>
@@ -176,7 +176,7 @@
 				<tr>
 					<td align=center width=100px>
 						<center>
-							<span style="font-size:20px">CVPR 2021</span>
+							<span style="font-size:20px">NeurIPS 2020</span>
 						</center>
 					</td>
 				</tr>
@@ -186,19 +186,19 @@
 					<td align=center width=120px>
 						<center>
 							<span style="font-size:18px">
-							<a href='../../paper/agdl_cvpr21.pdf'>[Paper]</a></span>
+							<a href='../../paper/numerosity_nips20.pdf'>[Paper]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
 							<span style="font-size:18px">
-							<a href='https://arxiv.org/abs/2103.15368'>[arXiv]</a></span>
+							<a href='https://arxiv.org/abs/2011.08674'>[arXiv]</a></span>
 						</center>
 					</td>
 					<td align=center width=120px>
 						<center>
 							<span style="font-size:18px">
-							<a href='https://github.com/xzhang9308/AGDL/'>[GitHub]</a></span><br>
+							<a href=''>[GitHub]</a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -211,7 +211,7 @@
 			<tr>
 				<td width=260px>
 					<center>
-						<img class="round" style="width:900px" src="./resources/demo1.png"/>
+						<img class="round" style="width:800px" src="./resources/demo1.png"/>
 					</center>
 				</td>
 			</tr>
@@ -233,8 +233,21 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				In this work, we propose a deep learning system for attention-guided
-				dual-layer image compression (AGDL). In the AGDL compression system, an image is encoded into two layers, a base layer and an attention-guided refinement layer. Unlike the existing ROI image compression methods that spend an extra bit budget equally on all pixels in ROI, AGDL employs a CNN module to predict those pixels on and near a saliency sketch within ROI that are critical to perceptual quality. Only the critical pixels are further sampled by compressive sensing (CS) to form a very compact refinement layer. Another novel CNN method is developed to jointly decode the two compression layers for a much refined reconstruction, while also strictly satisfying the transmitted CS constraints on perceptually critical pixels. Extensive experiments demonstrate that the proposed AGDL system advances the state of the art in perception-aware image compression.
+				Recently, a provocative claim was published that number sense spontaneously
+				emerges in a deep neural network trained merely for visual object recognition.
+				This has, if true, far reaching significance to the fields of machine learning and
+				cognitive science alike. In this paper, we prove the above claim to be unfortunately
+				incorrect. The statistical analysis to support the claim is flawed in that the sample
+				set used to identify number-aware neurons is too small, compared to the huge
+				number of neurons in the object recognition network. By this flawed analysis one
+				could mistakenly identify number-sensing neurons in any randomly initialized
+				deep neural networks that are not trained at all. With the above critique we ask
+				the question what if a deep convolutional neural network is carefully trained for
+				numerosity? Our findings are mixed. Even after being trained with numberdepicting images, the deep learning approach still has difficulties to acquire the
+				abstract concept of numbers, a cognitive task that preschoolers perform with ease.
+				But on the other hand, we do find some encouraging evidences suggesting that
+				deep neural networks are more robust to distribution shift for small numbers than
+				for large numbers.
 
 			</td>
 		</tr>
@@ -261,10 +274,10 @@
 		<center><h1>Paper</h1></center>
 		<tr>
 			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/page1.png"/></a></td>
-			<td><span style="font-size:14pt"><b>Attention-guided Image Compression by Deep 			Reconstruction of Compressive Sensed Saliency Skeleton.</b><br>
-				In CVPR, 2021.<br>
-				(<a href="https://arxiv.org/abs/2103.15368">arXiv</a>)<br>
-				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+			<td><span style="font-size:14pt"><b>On Numerosity of Deep Neural Networks.</b><br>
+				In NeurIPS, 2020.<br>
+				(<a href="https://arxiv.org/abs/2011.08674">arXiv</a>)
+				(<a href="https://proceedings.neurips.cc/paper/2020/hash/13e36f06c66134ad65f532e90d898545-Abstract.html">Official</a>)<br>
 				<span style="font-size:4pt"><a href=""><br></a>
 				</span>
 			</td>
@@ -274,7 +287,7 @@
 	<br>
 	<hr>
 	
-	<center><h1>Code</h1></center>
+	<!-- <center><h1>Code</h1></center>
 	<table align=center width=420px>
 		<center>
 			<tr>
@@ -311,26 +324,22 @@
 		</span>
 	</table>
 	<br>
-	<hr>
-
-
-
+	<hr> -->
 
 
 	<table align=center width=900px>
 		<center><h1>Citation</h1></center>
 		<tr>
 			<td>
-				@inproceedings{zhang2021agdl,<br>
-					&emsp;&emsp;
-					title={Attention-guided Image Compression by Deep Reconstruction of Compressive Sensed Saliency Skeleton},<br>
-					&emsp;&emsp;
-					author={Zhang, Xi and Wu, Xiaolin}, <br>
-					&emsp;&emsp;
-					booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition}, <br>
-					&emsp;&emsp;
-					year={2021} <br>
-				}</p>
+				@inproceedings{zhang2020_numerosity,<br>
+					&emsp;&emsp;author = {Zhang, Xi and Wu, Xiaolin},<br>
+					&emsp;&emsp;booktitle = {Advances in Neural Information Processing Systems},<br>
+					&emsp;&emsp;pages = {1820--1829},<br>
+					&emsp;&emsp;publisher = {Curran Associates, Inc.},<br>
+					&emsp;&emsp;title = {On Numerosity of Deep Neural Networks},<br>
+					&emsp;&emsp;volume = {33},<br>
+					&emsp;&emsp;year = {2020}<br>
+					}</p>				   
 			</td>
 		</tr>
 	</table>
@@ -342,7 +351,8 @@
 			<td>
 				<left>
 					<center><h1>Acknowledgements</h1></center>
-					This project is supported by Natural Sciences and Engineering Research Council of Canada (NSERC) and funded by Huawei Canada via the Ascend Group (in Toronto) of the Computing Product Line. The algorithms were also verified in the MindSpore (https://github.com/mindspore-ai/mindspore).
+					The authors are grateful for the fruitful discussion with Xiao Shu and Fangzhou Luo. This research was partly supported by Natural Sciences and Engineering Research Council of Canada (NSERC)
+					and SJTU Overseas Study Grant.
 				</left>
 			</td>
 		</tr>
