@@ -28,5 +28,5 @@ I earned my PhD from SJTU in June 2022 and my bachelor’s degree in Mathematics
 
 My current research interests focus on green and energy-efficient AI technologies that prioritize sustainable ecosystems and lifestyles. 
 Previously, I concentrated on learning-based data compression techniques, particularly for visual data such as images, videos, point clouds, and light fields. 
-Additionally, I am interested in core DL challenges, including domain generalization and visual reasoning. 
+Additionally, I am also interested in core deep learning challenges, including domain generalization and visual reasoning. 
 I have published more than 10 papers at the top AI Journals and conferences such as T-PAMI, T-IP, NeurIPS, CVPR, ECCV, AAAI, etc.
