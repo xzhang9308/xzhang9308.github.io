@@ -1,15 +1,12 @@
 github_users:
   - xzhang9308
-  - torvalds
-  - alshedivat
 
 repo_description_lines_max: 2
 
 github_repos:
   - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - xzhang9308/xzhang9308.github.io
+  - xzhang9308/OLVQ
+  - xzhang9308/AGDL
+  - xzhang9308/CompressAI
+  - xzhang9308/Open-Sora
