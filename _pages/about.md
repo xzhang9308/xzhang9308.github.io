@@ -1,8 +1,8 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: Research Scientist, ANGEL Lab, Nanyang Technological University (NTU), Singapore.
+subtitle: <a href='https://www.ntu.edu.sg/news/detail/new-alibaba-ntu-corporate-lab-to-advance-green-digital-technologies'>Research Scientist, ANGEL Lab, Nanyang Technological University (NTU), Singapore</a>. 
 
 profile:
   align: right
