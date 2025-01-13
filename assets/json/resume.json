@@ -13,49 +13,67 @@
       "city": "San Francisco",
       "countryCode": "US",
       "region": "California"
-    },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
+    }
   },
   "work": [
     {
       "name": "Nanyang Technological University",
       "position": "Research Scientist",
+      "location": "Singapore",
       "url": "https://example.com",
       "startDate": "2024-09-02",
       "endDate": "Present",
       "summary": "",
       "highlights": []
-    }
-  ],
-  "volunteer": [
+    },
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
+      "name": "McMaster University",
+      "position": "Postdoctoral Fellow",
+      "location": "Ontario, Canada",
       "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "startDate": "2022-07-01",
+      "endDate": "2024-08-31",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "Shanghai Jiao Tong University",
+      "position": "Assistant Researcher",
+      "location": "Shanghai, China",
+      "url": "https://example.com",
+      "startDate": "2022-07-01",
+      "endDate": "2024-08-31",
+      "summary": "",
+      "highlights": []
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
+      "institution": "Shanghai Jiao Tong University",
+      "location": "Shanghai, China",
+      "url": "https://en.sjtu.edu.cn/",
+      "area": "Electronic Science and Technology",
       "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "startDate": "2015-09-01",
+      "endDate": "2022-06-30"
+    },
+    {
+      "institution": "McMaster University",
+      "location": "Ontario, Canada",
+      "url": "https://www.mcmaster.ca/",
+      "area": "Electrical & Computer Engineering",
+      "studyType": "Visiting PhD",
+      "startDate": "2019-10-01",
+      "endDate": "2020-09-30"
+    },
+    {
+      "institution": "University of Electronic Science and Technology of China",
+      "location": "Chengdu, China",
+      "url": "https://en.uestc.edu.cn/",
+      "area": "Mathematics and Physics Basic Science",
+      "studyType": "BSc",
+      "startDate": "2011-09-01",
+      "endDate": "2015-06-30"
     }
   ],
   "awards": [
