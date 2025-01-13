@@ -37,13 +37,13 @@
   - firstname: ["Xiaolin"]
     url: https://scholar.google.com/citations?user=ZuQnEIgAAAAJ&hl=en
 
-# "xu":
-#   - firstname: ["Hao"]
-#     url: https://scholar.google.ca/citations?user=4uhsUhEAAAAJ&hl=en
+"xu":
+  - firstname: ["Hao"]
+    url: https://scholar.google.ca/citations?user=4uhsUhEAAAAJ&hl=en
 
-# "mukati":
-#   - firstname: ["M. Umair", "M Umair"]
-#     url: https://umairmukati.github.io/
+"mukati":
+  - firstname: ["M. Umair", "M Umair"]
+    url: https://umairmukati.github.io/
 
 # "forchhammer":
 #   - firstname: ["S{\o}ren", "S{\o}renn Otto"]
