@@ -45,6 +45,6 @@
   - firstname: ["M. Umair", "M Umair"]
     url: https://umairmukati.github.io/
 
-# "forchhammer":
-#   - firstname: ["S{\o}ren", "S{\o}renn Otto"]
-#     url: https://orbit.dtu.dk/en/persons/s%C3%B8ren-otto-forchhammer
+"forchhammer":
+  - firstname: ["S{\\o}ren", "S{\\o}ren Otto"]
+    url: https://orbit.dtu.dk/en/persons/s%C3%B8ren-otto-forchhammer
