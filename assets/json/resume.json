@@ -20,7 +20,7 @@
       "name": "Nanyang Technological University",
       "position": "Research Scientist",
       "location": "Singapore",
-      "url": "https://example.com",
+      "url": "",
       "startDate": "2024-09-02",
       "endDate": "Present",
       "summary": "",
@@ -30,7 +30,7 @@
       "name": "McMaster University",
       "position": "Postdoctoral Fellow",
       "location": "Ontario, Canada",
-      "url": "https://example.com",
+      "url": "",
       "startDate": "2022-07-01",
       "endDate": "2024-08-31",
       "summary": "",
@@ -40,7 +40,7 @@
       "name": "Shanghai Jiao Tong University",
       "position": "Assistant Researcher",
       "location": "Shanghai, China",
-      "url": "https://example.com",
+      "url": "",
       "startDate": "2022-06-22",
       "endDate": "2024-08-31",
       "summary": "",
@@ -80,37 +80,43 @@
     {
       "title": "SJTU Outstanding Overseas Study Scholar",
       "date": "2020-10-15",
-      "awarder": "Shanghai Jiao Tong University"
+      "awarder": "Shanghai Jiao Tong University",
+      "url": ""
     },
     {
       "title": "National Scholarship (Undergraduate) (Top 1%)",
       "date": "2014-09-15",
-      "awarder": "Chinese Ministry of Education"
+      "awarder": "Chinese Ministry of Education",
+      "url": ""
     },
     {
       "title": "National Scholarship (Undergraduate) (Top 1%)",
       "date": "2013-09-15",
       "awarder": "Chinese Ministry of Education",
+      "url": "",
       "summary": "The National Scholarship (国家奖学金) for undergraduate students in China is one of the most prestigious scholarships for undergraduates in China, recognizing outstanding academic achievements, comprehensive performance, and overall excellence."
     }
   ],
   "grants": [
     {
-      "name": "Young Scientists Fund of the National Natural Science Foundation of China",
+      "position": "Young Scientists Fund of the National Natural Science Foundation of China",
+      "url": "",
       "startDate": "2024-01-01",
       "endDate": "2026-12-31",
       "summary": "",
       "highlights": []
     },
     {
-      "name": "Special Fund from China Postdoctoral Science Foundation",
+      "position": "Special Fund from China Postdoctoral Science Foundation",
+      "url": "",
       "startDate": "2024-07-01",
       "endDate": "2025-06-30",
       "summary": "",
       "highlights": []
     },
     {
-      "name": "Shanghai Super Postdoctoral Encouragement Fund",
+      "position": "Shanghai Super Postdoctoral Encouragement Fund",
+      "url": "",
       "startDate": "2022-07-01",
       "endDate": "2024-06-30",
       "summary": "",

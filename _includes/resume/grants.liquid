@@ -1,5 +1,5 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
-  {% assign grants = data[1] | sort: 'startDate' | reverse %}
+  {% assign grants = data[1] | sort: 'endDate' | reverse %}
   {% for content in grants %}
     <li class="list-group-item">
       <div class="row">
@@ -33,7 +33,8 @@
           </table>
         </div>
         <div class="col-xs-10 cl-sm-10 col-md-10 mt-2 mt-md-0">
-          <h6 class="title font-weight-bold ml-1 ml-md-4">
+          {% comment %} <h6 class="title font-weight-bold ml-1 ml-md-4"> {% endcomment %}
+          <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">
             <a href="{{ content.url }}">{{ content.position }}</a>
           </h6>
           <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ content.name }}</h6>
