@@ -8,10 +8,10 @@ profile:
   align: right
   image: xzhang_pic.jpg
   image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>ABN-03b-07/08</p>
-    <p>Academic Block North</p>
-    <p>61 Nanyang Dr, Singapore</p>
+  # more_info: >
+  #   <p>ABN-03b-07/08</p>
+  #   <p>Academic Block North</p>
+  #   <p>61 Nanyang Dr, Singapore</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
