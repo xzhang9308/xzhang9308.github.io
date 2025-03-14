@@ -97,32 +97,6 @@
       "summary": "The National Scholarship (国家奖学金) for undergraduate students in China is one of the most prestigious scholarships for undergraduates in China, recognizing outstanding academic achievements, comprehensive performance, and overall excellence."
     }
   ],
-  "grants": [
-    {
-      "position": "Young Scientists Fund of the National Natural Science Foundation of China",
-      "url": "",
-      "startDate": "2024-01-01",
-      "endDate": "2026-12-31",
-      "summary": "",
-      "highlights": []
-    },
-    {
-      "position": "Special Fund from China Postdoctoral Science Foundation",
-      "url": "",
-      "startDate": "2024-07-01",
-      "endDate": "2025-06-30",
-      "summary": "",
-      "highlights": []
-    },
-    {
-      "position": "Shanghai Super Postdoctoral Encouragement Fund",
-      "url": "",
-      "startDate": "2022-07-01",
-      "endDate": "2024-06-30",
-      "summary": "",
-      "highlights": []
-    }
-  ],
   "languages": [
     {
       "language": "Chinese",
