@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on point cloud compression is accepted by ECCV 2024. 
+🎉  One paper on point cloud compression is accepted by ECCV 2024. 

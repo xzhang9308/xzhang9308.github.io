@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on light field image compression is accepted by JVCI.
+🎉  One paper on light field image compression is accepted by JVCI.

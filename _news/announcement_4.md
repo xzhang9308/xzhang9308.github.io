@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on high fidelity image compression is accepted by TIP. 
+🎉  One paper on high fidelity image compression is accepted by TIP. 

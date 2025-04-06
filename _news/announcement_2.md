@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on multi-modality video restoration is accepted by ACMMM 2020. 
+🎉  One paper on multi-modality video restoration is accepted by ACMMM 2020. 

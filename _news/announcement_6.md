@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on multi-modality face video restoration is accepted by TPAMI. 
+🎉  One paper on multi-modality face video restoration is accepted by TPAMI. 

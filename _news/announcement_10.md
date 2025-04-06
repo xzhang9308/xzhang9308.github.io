@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on optimal lattice vector quantizer is accepted by NeurIPS 2024.
+🎉  One paper on optimal lattice vector quantizer is accepted by NeurIPS 2024.

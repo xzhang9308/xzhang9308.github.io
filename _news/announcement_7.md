@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on LVQ for image compression is accepted by CVPR 2023. 
+🎉  One paper on LVQ for image compression is accepted by CVPR 2023. 

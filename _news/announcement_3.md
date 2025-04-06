@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on numerosity is accepted by NeurIPS 2020. 
+🎉  One paper on numerosity is accepted by NeurIPS 2020. 

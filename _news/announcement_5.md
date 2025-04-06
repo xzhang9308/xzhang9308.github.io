@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎉 One paper on ROI image compression is accepted by CVPR 2021. 
+🎉  One paper on ROI image compression is accepted by CVPR 2021. 
