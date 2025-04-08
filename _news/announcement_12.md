@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🔥  Our CVPR 2025 paper has been selected as a highlight (Top 2%).
+🔥  Our CVPR 2025 paper has been selected as a highlight (Top 3%).
