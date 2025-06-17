@@ -6,8 +6,8 @@ subtitle: <a href='https://www.ntu.edu.sg/news/detail/new-alibaba-ntu-corporate-
 
 profile:
   align: right
-  image: xzhang2.jpeg
-  image_circular: true # crops the image to make it circular
+  image: xzhang3.jpeg
+  image_circular: false # crops the image to make it circular
   # more_info: >
   #   <p>ABN-03b-07/08</p>
   #   <p>Academic Block North</p>
