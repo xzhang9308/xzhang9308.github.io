@@ -14,21 +14,24 @@
   year={2025},
   selected={false},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2505.22908},
+  preview={shtc.png},
+  abstract={3D Gaussian Splatting (3DGS) has gained popularity for its fast and high-quality rendering, but it has a very large memory footprint incurring high transmission and storage overhead. Recently, some neural compression methods, such as Scaffold-GS, were proposed for 3DGS but they did not adopt the approach of end-to-end optimized analysis-synthesis transforms which has been proven highly effective in neural signal compression. Without an appropriate analysis transform, signal correlations cannot be removed by sparse representation. Without such transforms the only way to remove signal redundancies is through entropy coding driven by a complex and expensive context modeling, which results in slower speed and suboptimal rate-distortion (R-D) performance. To overcome this weakness, we propose Sparsity-guided Hierarchical Transform Coding (SHTC), the first end-to-end optimized transform coding framework for 3DGS compression. SHTC jointly optimizes the 3DGS, transforms and a lightweight context model. This joint optimization enables the transform to produce representations that approach the best R-D performance possible. The SHTC framework consists of a base layer using KLT for data decorrelation, and a sparsity-coded enhancement layer that compresses the KLT residuals to refine the representation. The enhancement encoder learns a linear transform to project high-dimensional inputs into a low-dimensional space, while the decoder unfolds the Iterative Shrinkage-Thresholding Algorithm (ISTA) to reconstruct the residuals. All components are designed to be interpretable, allowing the incorporation of signal priors and fewer parameters than black-box transforms. This novel design significantly improves R-D performance with minimal additional parameters and computational overhead.}
 }
 
 @inproceedings{xu2025multirate,
   abbr={CVPR 2025 - Highlight},
   title={Multirate Neural Image Compression with Adaptive Lattice Vector Quantization},
   author={Xu, Hao and Wu, Xiaolin and Zhang, Xi},
-  booktitle={IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={7633--7642},
   year={2025},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={},
+  preview={mlvq.png},
+  html={https://openaccess.thecvf.com/content/CVPR2025/html/Xu_Multirate_Neural_Image_Compression_with_Adaptive_Lattice_Vector_Quantization_CVPR_2025_paper.html},
+  abstract={Recent research has explored integrating lattice vector quantization (LVQ) into learned image compression models. Due to its more efficient Voronoi covering of vector space than scalar quantization (SQ), LVQ achieves better rate-distortion (R-D) performance than SQ, while still retaining the low complexity advantage of SQ. However, existing LVQ-based methods have two shortcomings: 1) lack of a multirate coding mode, hence incapable to operate at different rates; 2) the use of a fixed lattice basis, hence nonadaptive to changing source distributions. To overcome these shortcomings, we propose a novel adaptive LVQ method, which is the first among LVQ-based methods to achieve both rate and domain adaptations. By scaling the lattice basis vector, our method can adjust the density of lattice points to achieve various bit rate targets, achieving superior R-D performance to current SQ-based variable rate models. Additionally, by using a learned invertible linear transformation between two different input domains, we can reshape the predefined lattice cell to better represent the target domain, further improving the R-D performance. To our knowledge, this paper represents the first attempt to propose a unified solution for rate adaptation and domain adaptation through quantizer design.}
 }
 
 
@@ -40,21 +43,26 @@
   year={2024},
   selected={false},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2401.13616},
+  preview={fllic.png},
+  abstract={Recently, DNN models for lossless image coding have surpassed their traditional counterparts in compression performance, reducing the previous lossless bit rate by about ten percent for natural color images. But even with these advances, mathematically lossless image compression (MLLIC) ratios for natural images still fall short of the bandwidth and cost-effectiveness requirements of most practical imaging and vision systems at present and beyond. To overcome the performance barrier of MLLIC, we question the very necessity of MLLIC. Considering that all digital imaging sensors suffer from acquisition noises, why should we insist on mathematically lossless coding, i.e., wasting bits to preserve noises? Instead, we propose a new paradigm of joint denoising and compression called functionally lossless image compression (FLLIC), which performs lossless compression of optimally denoised images (the optimality may be task-specific). Although not literally lossless with respect to the noisy input, FLLIC aims to achieve the best possible reconstruction of the latent noise-free original image. Extensive experiments show that FLLIC achieves state-of-the-art performance in joint denoising and compression of noisy images and does so at a lower computational cost.},
 }
 
 @inproceedings{zhang2024learning,
   abbr={NeurIPS 2024},
   title={Learning Optimal Lattice Vector Quantizers for End-to-end Neural Image Compression},
   author={Zhang, Xi and Wu, Xiaolin},
-  booktitle={Advances in Neural Information Processing Systems},
+  booktitle = {Advances in Neural Information Processing Systems},
+  pages = {106497--106518},
   volume={37},
   year={2024},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2411.16119},
+  preview={olvq.png},
+  html={https://openreview.net/forum?id=dLr4H7Uj4H&referrer=%5Bthe%20profile%20of%20Xiaolin%20Wu%5D(%2Fprofile%3Fid%3D~Xiaolin_Wu2)},
+  code={https://github.com/xzhang9308/OLVQ},
+  abstract={It is customary to deploy uniform scalar quantization in the end-to-end optimized Neural image compression methods, instead of more powerful vector quantization, due to the high complexity of the latter. Lattice vector quantization (LVQ), on the other hand, presents a compelling alternative, which can exploit inter-feature dependencies more effectively while keeping computational efficiency almost the same as scalar quantization. However, traditional LVQ structures are designed/optimized for uniform source distributions, hence nonadaptive and suboptimal for real source distributions of latent code space for Neural image compression tasks. In this paper, we propose a novel learning method to overcome this weakness by designing the rate-distortion optimal lattice vector quantization (OLVQ) codebooks with respect to the sample statistics of the latent features to be compressed. By being able to better fit the LVQ structures to any given latent sample distribution, the proposed OLVQ method improves the rate-distortion performances of the existing quantization schemes in neural image compression significantly, while retaining the amenability of uniform scalar quantization.},
 }
 
 @inproceedings{xu2024fast,
@@ -67,8 +75,11 @@
   organization={Springer},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2408.02966},
+  preview={crcir.png},
+  html={https://link.springer.com/chapter/10.1007/978-3-031-73113-6_16},
+  code={https://github.com/hxu160/CRCIR_for_PCGC},
+  abstract={Compressing a set of unordered points is far more challenging than compressing images/videos of regular sample grids, because of the difficulties in characterizing neighboring relations in an irregular layout of points. Many researchers resort to voxelization to introduce regularity, but this approach suffers from quantization loss. In this research, we use the KNN method to determine the neighborhoods of raw surface points. This gives us a means to determine the spatial context in which the latent features of 3D points are compressed by arithmetic coding. As such, the conditional probability model is adaptive to local geometry, leading to significant rate reduction. Additionally, we propose a dual-layer architecture where a non-learning base layer reconstructs the main structures of the point cloud at low complexity, while a learned refinement layer focuses on preserving fine details. This design leads to reductions in model complexity and coding latency by two orders of magnitude compared to SOTA methods. Moreover, we incorporate an implicit neural representation (INR) into the refinement layer, allowing the decoder to sample points on the underlying surface at arbitrary densities. This work is the first to effectively exploit content-aware local contexts for compressing irregular raw point clouds, achieving high rate-distortion performance, low complexity, and the ability to function as an arbitrary-scale upsampling network simultaneously.},
 }
 
 @article{mukati2024low,
@@ -82,8 +93,11 @@
   publisher={Elsevier},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2201.09834},
+  preview={infty4d.png},
+  html={https://www.sciencedirect.com/science/article/pii/S1047320324000270},
+  code={https://github.com/umairmukati/deep-linf-epic},
+  abstract={To enrich the functionalities of traditional cameras, light field cameras record both the intensity and direction of light rays, so that images can be rendered with user-defined camera parameters via computations. The added capability and flexibility are gained at the cost of gathering typically more than 100 perspectives of the same scene, resulting in large data volume. To cope with this issue, several light field compression schemes have been introduced. However, their ways of exploiting correlations of multidimensional light field data are complex and are hence not suited for cost-effective light field cameras. On the other hand, existing simpler compression schemes do not offer good compression performance. In this work, we propose a novel 𝓁∞-constrained light-field image compression system that has a very low-complexity DPCM encoder and a CNN-based deep decoder enhancement. Targeting high-fidelity soft-decoding (restoration), the CNN decoding capitalizes on the 𝓁∞-constraint, i.e. the maximum absolute error bound, and light field properties to remove the compression artifacts. Two different architectures for CNN decoder enhancement are proposed, one is based on 2D CNNs and optimized for fast inference, and another is based on 3D CNNs to maximize 𝓁2 restoration quality. The proposed networks achieve superior performance both in inference speed and restoration quality in comparison to state-of-the-art light field network architectures. In conjunction with 𝓁∞-EPIC, the proposed architecture, while satisfying a well-defined 𝓁∞ constraint, outperforms existing state-of-the-art 𝓁2-based light field compression methods.},
 }
 
 @article{zhang2023dual,
@@ -94,8 +108,9 @@
   year={2023},
   selected={false},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2302.06096},
+  preview={addl.png},
+  abstract={Ultra high resolution (UHR) images are almost always downsampled to fit small displays of mobile end devices and upsampled to its original resolution when exhibited on very high-resolution displays. This observation motivates us on jointly optimizing operation pairs of downsampling and upsampling that are spatially adaptive to image contents for maximal rate-distortion performance. In this paper, we propose an adaptive downsampled dual-layer (ADDL) image compression system. In the ADDL compression system, an image is reduced in resolution by learned content-adaptive downsampling kernels and compressed to form a coded base layer. For decompression the base layer is decoded and upconverted to the original resolution using a deep upsampling neural network, aided by the prior knowledge of the learned adaptive downsampling kernels. We restrict the downsampling kernels to the form of Gabor filters in order to reduce the complexity of filter optimization and also reduce the amount of side information needed by the decoder for adaptive upsampling. Extensive experiments demonstrate that the proposed ADDL compression approach of jointly optimized, spatially adaptive downsampling and upconversion outperforms the state of the art image compression methods.}
 }
 
 @inproceedings{zhang2023lvqac,
@@ -107,8 +122,10 @@
   year={2023},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2304.12319},
+  preview={lvqac.png},
+  html={https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_LVQAC_Lattice_Vector_Quantization_Coupled_With_Spatially_Adaptive_Companding_for_CVPR_2023_paper.html},
+  abstract={Recently, numerous end-to-end optimized image compression neural networks have been developed and proved themselves as leaders in rate-distortion performance. The main strength of these learnt compression methods is in powerful nonlinear analysis and synthesis transforms that can be facilitated by deep neural networks. However, out of operational expediency, most of these end-to-end methods adopt uniform scalar quantizers rather than vector quantizers, which are information-theoretically optimal. In this paper, we present a novel Lattice Vector Quantization scheme coupled with a spatially Adaptive Companding (LVQAC) mapping. LVQ can better exploit the inter-feature dependencies than scalar uniform quantization while being computationally almost as simple as the latter. Moreover, to improve the adaptability of LVQ to source statistics, we couple a spatially adaptive companding (AC) mapping with LVQ. The resulting LVQAC design can be easily embedded into any end-to-end optimized image compression system. Extensive experiments demonstrate that for any end-to-end CNN image compression models, replacing uniform quantizer by LVQAC achieves better rate-distortion performance without significantly increasing the model complexity.},
 }
 
 @article{zhang2022multi,
@@ -123,8 +140,10 @@
   publisher={IEEE},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2107.05548},
+  preview={mdvd.png},
+  html={https://ieeexplore.ieee.org/document/9730053},
+  abstract={Arguably the most common and salient object in daily video communications is the talking head, as encountered in social media, virtual classrooms, teleconferences, news broadcasting, talk shows, etc. When communication bandwidth is limited by network congestions or cost effectiveness, compression artifacts in talking head videos are inevitable. The resulting video quality degradation is highly visible and objectionable due to high acuity of human visual system to faces. To solve this problem, we develop a multi-modality deep convolutional neural network method for restoring face videos that are aggressively compressed. The main innovation is a new DCNN architecture that incorporates known priors of multiple modalities: the video-synchronized speech signal and semantic elements of the compression code stream, including motion vectors, code partition map and quantization parameters. These priors strongly correlate with the latent video and hence they are able to enhance the capability of deep learning to remove compression artifacts. Ample empirical evidences are presented to validate the superior performance of the proposed DCNN method on face videos over the existing state-of-the-art methods.},
 }
 
 @inproceedings{zhang2021attention,
@@ -136,8 +155,10 @@
   year={2021},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2103.15368},
+  preview={agdl.png},
+  html={https://openaccess.thecvf.com/content/CVPR2021/html/Zhang_Attention-Guided_Image_Compression_by_Deep_Reconstruction_of_Compressive_Sensed_Saliency_CVPR_2021_paper.html},
+  abstract={We propose a deep learning system for attention-guided dual-layer image compression (AGDL). In the AGDL compression system, an image is encoded into two layers, a base layer and an attention-guided refinement layer. Unlike the existing ROI image compression methods that spend an extra bit budget equally on all pixels in ROI, AGDL employs a CNN module to predict those pixels on and near a saliency sketch within ROI that are critical to perceptual quality. Only the critical pixels are further sampled by compressive sensing (CS) to form a very compact refinement layer. Another novel CNN method is developed to jointly decode the two compression layers for a much refined reconstruction, while strictly satisfying the transmitted CS constraints on perceptually critical pixels. Extensive experiments demonstrate that the proposed AGDL system advances the state of the art in perception-aware image compression.}
 }
 
 @article{zhang2020ultra,
@@ -151,8 +172,10 @@
   publisher={IEEE},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2002.03482},
+  preview={inftyed2.png},
+  html={https://ieeexplore.ieee.org/document/9277919},
+  abstract={In many professional fields, such as medicine, remote sensing and sciences, users often demand image compression methods to be mathematically lossless. But lossless image coding has a rather low compression ratio (around 2:1 for natural images). The only known technique to achieve significant compression while meeting the stringent fidelity requirements is the methodology of ℓ∞-constrained coding that was developed and standardized in nineties. We make a major progress in ℓ∞-constrained image coding after two decades, by developing a novel CNN-based soft ℓ∞-constrained decoding method. The new method repairs compression defects by using a restoration CNN called the ℓ∞-SDNet to map a conventionally decoded image to the latent image. A unique strength of the ℓ∞-SDNet is its ability to enforce a tight error bound on a per pixel basis. As such, no small distinctive structures of the original image can be dropped or distorted, even if they are statistical outliers that are otherwise sacrificed by mainstream CNN restoration methods. More importantly, this research ushers in a new image compression system of ℓ∞-constrained encoding and deep soft decoding (ℓ∞-ED2). The ℓ∞-ED2 approach beats the best of existing lossy image compression methods (e.g., BPG, WebP, etc.) not only in ℓ∞ but also in ℓ2 error metric and perceptual quality, for bit rates near the threshold of perceptually transparent reconstruction. Operationally, the new compression system is practical, with a low-complexity real-time encoder and a cascade decoder consisting of a fast initial decoder and an optional CNN soft decoder.}
 }
 
 @inproceedings{zhang2020numerosity,
@@ -165,8 +188,10 @@
   year={2020},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={2011.08674},
+  preview={numerosity.png},
+  html={https://papers.nips.cc/paper_files/paper/2020/hash/13e36f06c66134ad65f532e90d898545-Abstract.html},
+  abstract={Recently, a provocative claim was published that number sense spontaneously emerges in a deep neural network trained merely for visual object recognition. This has, if true, far reaching significance to the fields of machine learning and cognitive science alike. In this paper, we prove the above claim to be unfortunately incorrect. The statistical analysis to support the claim is flawed in that the sample set used to identify number-aware neurons is too small, compared to the huge number of neurons in the object recognition network. By this flawed analysis one could mistakenly identify number-sensing neurons in any randomly initialized deep neural networks that are not trained at all. With the above critique we ask the question what if a deep convolutional neural network is carefully trained for numerosity? Our findings are mixed. Even after being trained with number-depicting images, the deep learning approach still has difficulties to acquire the abstract concept of numbers, a cognitive task that preschoolers perform with ease. But on the other hand, we do find some encouraging evidences suggesting that deep neural networks are more robust to distribution shift for small numbers than for large numbers.}
 }
 
 @inproceedings{zhang2020davd,
@@ -178,8 +203,10 @@
   year={2020},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={},
+  preview={davd.png},
+  html={https://openaccess.thecvf.com/content_CVPR_2020/html/Zhang_DAVD-Net_Deep_Audio-Aided_Video_Decompression_of_Talking_Heads_CVPR_2020_paper.html},
+  abstract={Close-up talking heads are among the most common and salient object in video contents, such as face-to-face conversations in social media, teleconferences, news broadcasting, talk shows, etc. Due to the high sensitivity of human visual system to faces, compression distortions in talking heads videos are highly visible and annoying. To address this problem, we present a novel deep convolutional neural network (DCNN) method for very low bit rate video reconstruction of talking heads. The key innovation is a new DCNN architecture that can exploit the audio-video correlations to repair compression defects in the face region. We further improve reconstruction quality by embedding into our DCNN the encoder information of the video compression standards and introducing a constraining projection module in the network. Extensive experiments demonstrate that the proposed DCNN method outperforms the existing state-of-the-art methods on videos of talking heads.}
 }
 
 @inproceedings{guo2020deep,
@@ -191,9 +218,10 @@
   year={2020},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  
-  html={}
+  arxiv={2008.01652},
+  preview={mmsd.png},
+  html={https://dl.acm.org/doi/10.1145/3394171.3413709},
+  abstract={We propose a novel deep multi-modality neural network for restoring very low bit rate videos of talking heads. Such video contents are very common in social media, teleconferencing, distance education, tele-medicine, etc., and often need to be transmitted with limited bandwidth. The proposed CNN method exploits the correlations among three modalities, video, audio and emotion state of the speaker, to remove the video compression artifacts caused by spatial down sampling and quantization. The deep learning approach turns out to be ideally suited for the video restoration task, as the complex non-linear cross-modality correlations are very difficult to model analytically and explicitly. The new method is a video post processor that can significantly boost the perceptual quality of aggressively compressed talking head videos, while being fully compatible with all existing video compression standards.}
 }
 
 @inproceedings{wu2019cognitive,
@@ -207,8 +235,10 @@
   year={2019},
   selected={true},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={1802.05160},
+  preview={deficit.png},
+  html={https://ojs.aaai.org/index.php/AAAI/article/view/3928},
+  abstract={Subitizing, or the sense of small natural numbers, is an innate cognitive function of humans and primates; it responds to visual stimuli prior to the development of any symbolic skills, language or arithmetic. Given successes of deep learning (DL) in tasks of visual intelligence and given the primitivity of number sense, a tantalizing question is whether DL can comprehend numbers and perform subitizing. But somewhat disappointingly, extensive experiments of the type of cognitive psychology demonstrate that the examples-driven black box DL cannot see through superficial variations in visual representations and distill the abstract notion of natural number, a task that children perform with high accuracy and confidence. The failure is apparently due to the learning method not the CNN computational machinery itself. A recurrent neural network capable of subitizing does exist, which we construct by encoding a mechanism of mathematical morphology into the CNN convolutional kernels. Also, we investigate, using subitizing as a test bed, the ways to aid the black box DL by cognitive priors derived from human insight. Our findings are mixed and interesting, pointing to both cognitive deficit of pure DL, and some measured successes of boosting DL by predetermined cognitive implements. This case study of DL in cognitive computing is meaningful for visual numerosity represents a minimum level of human intelligence.}
 }
 
 @inproceedings{zhang2019nonlinear,
@@ -221,8 +251,10 @@
   organization={IEEE},
   selected={false},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={1810.12568},
+  preview={predictor.png},
+  html={https://ieeexplore.ieee.org/document/8683863},
+  abstract={Deep convolutional neural networks (DCNN) have enjoyed great successes in many signal processing applications because they can learn complex, non-linear causal relationships from input to output. In this light, DCNNs are well suited for the task of sequential prediction of multidimensional signals, such as images, and have the potential of improving the performance of traditional linear predictors. In this research we investigate how far DCNNs can push the envelop in terms of prediction precision. We propose, in a case study, a two-stage deep regression DCNN framework for nonlinear prediction of two-dimensional image signals. In the first-stage regression, the proposed deep prediction network (PredNet) takes the causal context as input and emits a prediction of the present pixel. Three PredNets are trained with the regression objectives of minimizing l1, l2 and l∞ norms of prediction residuals, respectively. The second-stage regression combines the outputs of the three PredNets to generate an even more precise and robust prediction. The proposed deep regression model is applied to lossless predictive image coding, and it outperforms the state-of-the-art linear predictors by appreciable margin.}
 }
 
 @inproceedings{zhang2019near,
@@ -235,8 +267,10 @@
   organization={IEEE},
   selected={false},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={1801.07987},
+  preview={calic.png},
+  html={https://ieeexplore.ieee.org/document/8712819},
+  abstract={Recently a number of CNN-based techniques were proposed to remove image compression artifacts. As in other restoration applications, these techniques all learn a mapping from decompressed patches to the original counterparts under the ubiquitous L2 metric. However, this approach is incapable of restoring distinctive image details which may be statistical outliers but have high semantic importance (e.g., tiny lesions in medical images). To overcome this weakness, we propose to incorporate an ℓ∞ fidelity criterion in the design of neural network so that no small, distinctive structures of the original image can be dropped or distorted. Experimental results demonstrate that the proposed method outperforms the state-of-the-art methods in ℓ∞ error metric and perceptual quality, while being competitive in L2 error metric as well. It can restore subtle image details that are otherwise destroyed or missed by other algorithms. Our research suggests a new machine learning paradigm of ultra high fidelity image compression that is ideally suited for applications in medicine, space, and sciences.}
 }
 
 @inproceedings{zhang2017illumination,
@@ -249,6 +283,8 @@
   organization={IEEE},
   selected={false},
   bibtex_show={true},
-  abstract={},
-  html={}
+  arxiv={},
+  preview={illumination.png},
+  html={https://ieeexplore.ieee.org/document/8305111},
+  abstract={In many object recognition applications, especially in face recognition, varying illuminations can adversely affect the robustness of the object recognition system. In this paper, we propose a novel illumination invariant feature called Neighboring Radiance Ratio (NRR) which is insensitive to both intensity and direction of light. NRR is derived and analyzed based on a physical image formation model. The computation of NRR does not need any prior information or any training data and NRR is far less sensitive to the border of shadows than most existing methods. The analysis of the illumination invariance of NRR is also presented. The proposed NRR feature is tested on Extended Yale B and CMU-PIE databases and compared with several previous methods. The experimental results corroborate our analysis and demonstrate that NRR is highly robust image feature against illumination changes.}
 }
