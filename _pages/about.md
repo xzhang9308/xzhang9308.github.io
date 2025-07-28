@@ -22,11 +22,9 @@ I am currently a Research Scientist in the Alibaba-NTU Global e-Sustainability C
 working with Prof [Weisi Lin](https://personal.ntu.edu.sg/wslin/Home.html). 
 Before that, I was a postdoctoral fellow at McMaster University (Mac), Canada from July 2022 to August 2024, 
 supervised by Prof [Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ).
-I was also an assistant researcher at Department of Electronic Engineering, Shanghai Jiao Tong University (SJTU), 
-supervised by Prof [Hongkai Xiong](https://min.sjtu.edu.cn/En/FacultyShow/4?Vid=14).
 I earned my PhD from SJTU in June 2022 and my bachelor’s degree in Mathematics and Physics Basic Science from UESTC in 2015.
 
-My current research interests focus on green and energy-efficient AI technologies that prioritize sustainable ecosystems and lifestyles. 
+My current research focuses on Green AI, including efficient model design, sustainable system architectures, and resource-aware compression techniques.
 Previously, I concentrated on learning-based data compression techniques, particularly for visual data such as images, videos, point clouds, and light fields. 
 Additionally, I am also interested in core deep learning challenges, including domain generalization and visual reasoning. 
 I have published more than 10 papers at the top AI Journals and conferences such as T-PAMI, T-IP, NeurIPS, CVPR, ECCV, AAAI, etc.
