@@ -24,6 +24,9 @@ Before that, I was a postdoctoral fellow at McMaster University (Mac), Canada fr
 supervised by Prof [Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ).
 I earned my PhD from SJTU in June 2022 and my bachelor’s degree in Mathematics and Physics Basic Science from UESTC in 2015.
 
-My current research focuses on Green AI, including efficient model design, sustainable system architectures, and resource-aware compression techniques.
-My prior work centered on learning-based data compression techniques, particularly for visual modalities such as images, videos, point clouds, and light fields. In addition, I am also interested in fundamental challenges in deep learning, including domain generalization and visual reasoning.
-I have published over 10 first-author papers in top AI journals and conferences, including T-PAMI, T-IP, NeurIPS, CVPR, ECCV, and AAAI.
+My current research focuses on Green AI, particularly on efficient model design, sustainable system architectures, and resource-aware compression techniques. In this line, I work on lightweight architectures, quantization, and compression methods to reduce energy, memory, and computational costs of large-scale models while maintaining strong performance.
+Previously, my research centered on learning-based data compression for visual modalities such as images, videos, point clouds, and light fields. I am also interested in broader challenges in deep learning, including domain generalization and visual reasoning.
+
+<!-- My current research focuses on Green AI, including efficient model design, sustainable system architectures, and resource-aware compression techniques.
+My prior work centered on learning-based data compression techniques, particularly for visual modalities such as images, videos, point clouds, and light fields. In addition, I am also interested in fundamental challenges in deep learning, including domain generalization and visual reasoning. -->
+<!-- I have published over 10 first-author papers in top AI journals and conferences, including T-PAMI, T-IP, NeurIPS, CVPR, ECCV, and AAAI. -->
