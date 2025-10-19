@@ -10,6 +10,8 @@
   --global-text-color: #{$black-color};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$purple-color};
+  --global-theme-color-rgb: #{color.red($purple-color)}, #{color.green($purple-color)}, #{color.blue($purple-color)};
+  --publication-highlight-alpha: 0.12;
   --global-hover-color: #{$purple-color};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
@@ -81,6 +83,8 @@ html[data-theme="dark"] {
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$cyan-color};
+  --global-theme-color-rgb: #{color.red($cyan-color)}, #{color.green($cyan-color)}, #{color.blue($cyan-color)};
+  --publication-highlight-alpha: 0.35;
   --global-hover-color: #{$cyan-color};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-light};

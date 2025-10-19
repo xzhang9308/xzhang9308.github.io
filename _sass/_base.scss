@@ -193,6 +193,10 @@ ul.task-list input[type="checkbox"] {
 // Profile
 
 .profile {
+  img {
+    width: 100%;
+    max-width: var(--profile-img-max, 240px);
+  }
   width: 100%;
 
   .more-info {
@@ -714,7 +718,7 @@ footer.sticky-bottom {
   }
 
   h2.bibliography {
-    color: var(--global-divider-color);
+    color: var(--global-text-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
@@ -727,7 +731,9 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      padding: 0.1rem 0;
+      margin-bottom: 0.1rem;
+      // border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 
       .preview {
       }
@@ -757,6 +763,7 @@ footer.sticky-bottom {
 
       .title {
         font-weight: bolder;
+        margin-bottom: 0.1rem;
       }
 
       .author {
@@ -770,8 +777,14 @@ footer.sticky-bottom {
         }
 
         > em {
-          border-bottom: 1px solid;
           font-style: normal;
+          color: var(--global-theme-color);
+          background-color: rgba(var(--global-theme-color-rgb, 78, 42, 132), var(--publication-highlight-alpha, 0.12));
+          border-bottom: none;
+          border-radius: 0.25rem;
+          padding: 0 0.35rem;
+          display: inline-flex;
+          align-items: center;
         }
 
         > span.more-authors {

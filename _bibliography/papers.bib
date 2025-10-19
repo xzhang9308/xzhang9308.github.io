@@ -3,80 +3,6 @@
 
 @string{aps = {American Physical Society,}}
 
-
-
-article{zhang2025oaplut,
-  abbr={arXiv},
-  title={Anisotropic Pooling for LUT-realizable CNN Image Restoration},
-  author={Zhang, Xi and Wu, Xiaolin},
-  journal={arXiv preprint arXiv},
-  year={2025},
-  selected={false},
-  bibtex_show={true},
-  arxiv={},
-  preview={oaplut.png},
-  abstract={},
-}
-
-
-article{zhang2024rfelut,
-  abbr={arXiv},
-  title={Receptive Field Expanded Look-up Tables for Vision Inference: A Leap from Low-level to High-level Tasks},
-  author={Zhang, Xi and Wu, Xiaolin},
-  journal={arXiv preprint arXiv},
-  year={2025},
-  selected={false},
-  bibtex_show={true},
-  arxiv={},
-  preview={rfelut.png},
-  abstract={},
-}
-
-@article{lin2025class,
-  abbr={arXiv},
-  title={Class-Invariant Test-Time Augmentation for Domain Generalization},
-  author={Lin, Zhicheng and Wu, Xiaolin and Zhang, Xi},
-  journal={arXiv preprint arXiv:2509.14420},
-  year={2025},
-  selected={false},
-  bibtex_show={true},
-  arxiv={2509.14420},
-  preview={citta.png},
-  code={https://github.com/lzc0907/CI-TTA},
-  abstract={Deep models often suffer significant performance degradation under distribution shifts. Domain generalization (DG) seeks to mitigate this challenge by enabling models to generalize to unseen domains. Most prior approaches rely on multi-domain training or computationally intensive test-time adaptation. In contrast, we propose a complementary strategy: lightweight test-time augmentation. Specifically, we develop a novel Class-Invariant Test-Time Augmentation (CI-TTA) technique. The idea is to generate multiple variants of each input image through elastic and grid deformations that nevertheless belong to the same class as the original input. Their predictions are aggregated through a confidence-guided filtering scheme that remove unreliable outputs, ensuring the final decision relies on consistent and trustworthy cues. Extensive Experiments on PACS and Office-Home datasets demonstrate consistent gains across different DG algorithms and backbones, highlighting the effectiveness and generality of our approach.}
-  }
-
-
-
-@article{xu2025salvq,
-  abbr={arXiv},
-  title={Improving 3DGS Compression by Scene-Adaptive Lattice Vector Quantization},
-  author={Xu, Hao and Wu, Xiaolin and Zhang, Xi},
-  journal={arXiv preprint arXiv:2509.13482},
-  year={2025},
-  selected={false},
-  bibtex_show={true},
-  arxiv={2509.13482},
-  preview={salvq.png},
-  code={https://github.com/hxu160/SALVQ},
-  abstract={3D Gaussian Splatting (3DGS) is rapidly gaining popularity for its photorealistic rendering quality and real-time performance, but it generates massive amounts of data. Hence compressing 3DGS data is necessary for the cost effectiveness of 3DGS models. Recently, several anchor-based neural compression methods have been proposed, achieving good 3DGS compression performance. However, they all rely on uniform scalar quantization (USQ) due to its simplicity. A tantalizing question is whether more sophisticated quantizers can improve the current 3DGS compression methods with very little extra overhead and minimal change to the system. The answer is yes by replacing USQ with lattice vector quantization (LVQ). To better capture scene-specific characteristics, we optimize the lattice basis for each scene, improving LVQ's adaptability and R-D efficiency. This scene-adaptive LVQ (SALVQ) strikes a balance between the R-D efficiency of vector quantization and the low complexity of USQ. SALVQ can be seamlessly integrated into existing 3DGS compression architectures, enhancing their R-D performance with minimal modifications and computational overhead. Moreover, by scaling the lattice basis vectors, SALVQ can dynamically adjust lattice density, enabling a single model to accommodate multiple bit rate targets. This flexibility eliminates the need to train separate models for different compression levels, significantly reducing training time and memory consumption.},
-}
-
-
-@article{xu20253dgs,
-  abbr={arXiv},
-  title={3DGS Compression with Sparsity-guided Hierarchical Transform Coding},
-  author={Xu, Hao and Wu, Xiaolin and Zhang, Xi},
-  journal={arXiv preprint arXiv:2505.22908},
-  year={2025},
-  selected={false},
-  bibtex_show={true},
-  arxiv={2505.22908},
-  preview={shtc.png},
-  abstract={3D Gaussian Splatting (3DGS) has gained popularity for its fast and high-quality rendering, but it has a very large memory footprint incurring high transmission and storage overhead. Recently, some neural compression methods, such as Scaffold-GS, were proposed for 3DGS but they did not adopt the approach of end-to-end optimized analysis-synthesis transforms which has been proven highly effective in neural signal compression. Without an appropriate analysis transform, signal correlations cannot be removed by sparse representation. Without such transforms the only way to remove signal redundancies is through entropy coding driven by a complex and expensive context modeling, which results in slower speed and suboptimal rate-distortion (R-D) performance. To overcome this weakness, we propose Sparsity-guided Hierarchical Transform Coding (SHTC), the first end-to-end optimized transform coding framework for 3DGS compression. SHTC jointly optimizes the 3DGS, transforms and a lightweight context model. This joint optimization enables the transform to produce representations that approach the best R-D performance possible. The SHTC framework consists of a base layer using KLT for data decorrelation, and a sparsity-coded enhancement layer that compresses the KLT residuals to refine the representation. The enhancement encoder learns a linear transform to project high-dimensional inputs into a low-dimensional space, while the decoder unfolds the Iterative Shrinkage-Thresholding Algorithm (ISTA) to reconstruct the residuals. All components are designed to be interpretable, allowing the incorporation of signal priors and fewer parameters than black-box transforms. This novel design significantly improves R-D performance with minimal additional parameters and computational overhead.}
-}
-
-
 @inproceedings{zhang2025learning,
   abbr={NeurIPS 2025},
   title={Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression},
@@ -91,9 +17,9 @@ article{zhang2024rfelut,
   preview={glvq.png},
   html={},
   abstract={Large Language Models (LLMs) have demonstrated remarkable capabilities but typically require extensive computational resources and memory for inference. Post-training quantization (PTQ) can effectively reduce these demands by storing weights in lower bit-width formats. However, standard uniform quantization often leads to notable performance degradation, particularly in low-bit scenarios. In this work, we introduce a Grouped Lattice Vector Quantization (GLVQ) framework that assigns each group of weights a customized lattice codebook, defined by a learnable generation matrix. To address the non-differentiability of the quantization process, we adopt Babai rounding to approximate nearest-lattice-point search during training, which enables stable optimization of the generation matrices. Once trained, decoding reduces to a simple matrix-vector multiplication, yielding an efficient and practical quantization pipeline. Experiments on multiple benchmarks show that our approach achieves a better trade-off between model size and accuracy compared to existing post-training quantization baselines, highlighting its effectiveness in deploying large models under stringent resource constraints.}
-  }
+}
 
-  @inproceedings{zhang2025badiff,
+@inproceedings{zhang2025badiff,
   abbr={NeurIPS 2025},
   title={BADiff: Bandwidth Adaptive Diffusion Model},
   author={Zhang, Xi and Zhu, Hanwei and Zhong, Yan and Wang, Jiamang and Lin, Weisi},
@@ -107,7 +33,7 @@ article{zhang2024rfelut,
   preview={badiff.png},
   html={},
   abstract={ In this work, we propose a novel framework to enable diffusion models to adapt their generation quality based on real-time network bandwidth constraints. Traditional diffusion models produce high-fidelity images by performing a fixed number of denoising steps, regardless of downstream transmission limitations. However, in practical cloud-to-device scenarios, limited bandwidth often necessitates heavy compression, leading to loss of fine textures and wasted computation. To address this, we introduce a joint end-to-end training strategy where the diffusion model is conditioned on a target quality level derived from the available bandwidth. During training, the model learns to adaptively modulate the denoising process, enabling early-stop sampling that maintains perceptual quality appropriate to the target transmission condition. Our method requires minimal architectural changes and leverages a lightweight quality embedding to guide the denoising trajectory. Experimental results demonstrate that our approach significantly improves the visual fidelity of bandwidth-adapted generations compared to naive early-stopping, offering a promising solution for efficient image delivery in bandwidth-constrained environments.}
-  }
+}
 
 @inproceedings{xu2025multirate,
   abbr={CVPR 2025 - Highlight},
@@ -122,20 +48,6 @@ article{zhang2024rfelut,
   preview={mlvq.png},
   html={https://openaccess.thecvf.com/content/CVPR2025/html/Xu_Multirate_Neural_Image_Compression_with_Adaptive_Lattice_Vector_Quantization_CVPR_2025_paper.html},
   abstract={Recent research has explored integrating lattice vector quantization (LVQ) into learned image compression models. Due to its more efficient Voronoi covering of vector space than scalar quantization (SQ), LVQ achieves better rate-distortion (R-D) performance than SQ, while still retaining the low complexity advantage of SQ. However, existing LVQ-based methods have two shortcomings: 1) lack of a multirate coding mode, hence incapable to operate at different rates; 2) the use of a fixed lattice basis, hence nonadaptive to changing source distributions. To overcome these shortcomings, we propose a novel adaptive LVQ method, which is the first among LVQ-based methods to achieve both rate and domain adaptations. By scaling the lattice basis vector, our method can adjust the density of lattice points to achieve various bit rate targets, achieving superior R-D performance to current SQ-based variable rate models. Additionally, by using a learned invertible linear transformation between two different input domains, we can reshape the predefined lattice cell to better represent the target domain, further improving the R-D performance. To our knowledge, this paper represents the first attempt to propose a unified solution for rate adaptation and domain adaptation through quantizer design.}
-}
-
-
-@article{zhang2024fllic,
-  abbr={arXiv},
-  title={FLLIC: Functionally Lossless Image Compression},
-  author={Zhang, Xi and Wu, Xiaolin},
-  journal={arXiv preprint arXiv:2401.13616},
-  year={2024},
-  selected={false},
-  bibtex_show={true},
-  arxiv={2401.13616},
-  preview={fllic.png},
-  abstract={Recently, DNN models for lossless image coding have surpassed their traditional counterparts in compression performance, reducing the previous lossless bit rate by about ten percent for natural color images. But even with these advances, mathematically lossless image compression (MLLIC) ratios for natural images still fall short of the bandwidth and cost-effectiveness requirements of most practical imaging and vision systems at present and beyond. To overcome the performance barrier of MLLIC, we question the very necessity of MLLIC. Considering that all digital imaging sensors suffer from acquisition noises, why should we insist on mathematically lossless coding, i.e., wasting bits to preserve noises? Instead, we propose a new paradigm of joint denoising and compression called functionally lossless image compression (FLLIC), which performs lossless compression of optimally denoised images (the optimality may be task-specific). Although not literally lossless with respect to the noisy input, FLLIC aims to achieve the best possible reconstruction of the latent noise-free original image. Extensive experiments show that FLLIC achieves state-of-the-art performance in joint denoising and compression of noisy images and does so at a lower computational cost.},
 }
 
 @inproceedings{zhang2024learning,
@@ -188,19 +100,6 @@ article{zhang2024rfelut,
   html={https://www.sciencedirect.com/science/article/pii/S1047320324000270},
   code={https://github.com/umairmukati/deep-linf-epic},
   abstract={To enrich the functionalities of traditional cameras, light field cameras record both the intensity and direction of light rays, so that images can be rendered with user-defined camera parameters via computations. The added capability and flexibility are gained at the cost of gathering typically more than 100 perspectives of the same scene, resulting in large data volume. To cope with this issue, several light field compression schemes have been introduced. However, their ways of exploiting correlations of multidimensional light field data are complex and are hence not suited for cost-effective light field cameras. On the other hand, existing simpler compression schemes do not offer good compression performance. In this work, we propose a novel 𝓁∞-constrained light-field image compression system that has a very low-complexity DPCM encoder and a CNN-based deep decoder enhancement. Targeting high-fidelity soft-decoding (restoration), the CNN decoding capitalizes on the 𝓁∞-constraint, i.e. the maximum absolute error bound, and light field properties to remove the compression artifacts. Two different architectures for CNN decoder enhancement are proposed, one is based on 2D CNNs and optimized for fast inference, and another is based on 3D CNNs to maximize 𝓁2 restoration quality. The proposed networks achieve superior performance both in inference speed and restoration quality in comparison to state-of-the-art light field network architectures. In conjunction with 𝓁∞-EPIC, the proposed architecture, while satisfying a well-defined 𝓁∞ constraint, outperforms existing state-of-the-art 𝓁2-based light field compression methods.},
-}
-
-@article{zhang2023dual,
-  abbr={arXiv},
-  title={Dual-layer image compression via adaptive downsampling and spatially varying upconversion},
-  author={Zhang, Xi and Wu, Xiaolin},
-  journal={arXiv preprint arXiv:2302.06096},
-  year={2023},
-  selected={false},
-  bibtex_show={true},
-  arxiv={2302.06096},
-  preview={addl.png},
-  abstract={Ultra high resolution (UHR) images are almost always downsampled to fit small displays of mobile end devices and upsampled to its original resolution when exhibited on very high-resolution displays. This observation motivates us on jointly optimizing operation pairs of downsampling and upsampling that are spatially adaptive to image contents for maximal rate-distortion performance. In this paper, we propose an adaptive downsampled dual-layer (ADDL) image compression system. In the ADDL compression system, an image is reduced in resolution by learned content-adaptive downsampling kernels and compressed to form a coded base layer. For decompression the base layer is decoded and upconverted to the original resolution using a deep upsampling neural network, aided by the prior knowledge of the learned adaptive downsampling kernels. We restrict the downsampling kernels to the form of Gabor filters in order to reduce the complexity of filter optimization and also reduce the amount of side information needed by the decoder for adaptive upsampling. Extensive experiments demonstrate that the proposed ADDL compression approach of jointly optimized, spatially adaptive downsampling and upconversion outperforms the state of the art image compression methods.}
 }
 
 @inproceedings{zhang2023lvqac,

@@ -28,6 +28,13 @@
         {% endfor %}
       </table>
     </div>
+    {% if news_limit < news_size %}
+      <div class="news-actions text-right mt-2">
+        <a class="btn btn-sm btn-outline-primary" href="{{ '/news/' | relative_url }}">
+          Show all news
+        </a>
+      </div>
+    {% endif %}
   {% else %}
     <p>No news so far...</p>
   {% endif %}

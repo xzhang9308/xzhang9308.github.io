@@ -1,0 +1,52 @@
+.news {
+  table {
+
+    tbody {
+      tr {
+        th,
+        td {
+          padding: 0.25rem 0 0.25rem 0;
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+
+  .news-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.1rem 0.45rem;
+    margin-left: 0.35rem;
+    margin-right: 0.15rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .news-badge-conference {
+    color: var(--global-theme-color);
+    background-color: rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.15);
+    border: 1px solid rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.25);
+  }
+
+  .news-badge-journal {
+    color: #0b7285;
+    background-color: rgba(11, 114, 133, 0.15);
+    border: 1px solid rgba(11, 114, 133, 0.25);
+  }
+
+  .news-badge-highlight {
+    color: #b46900;
+    background-color: rgba(180, 105, 0, 0.18);
+    border: 1px solid rgba(180, 105, 0, 0.25);
+  }
+
+  .news-badge-honor {
+    color: #ab2346;
+    background-color: rgba(171, 35, 70, 0.18);
+    border: 1px solid rgba(171, 35, 70, 0.25);
+  }
+
+}

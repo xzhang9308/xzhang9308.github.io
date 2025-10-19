@@ -1,32 +1,51 @@
-# "wu":
-#   - firstname: ["Xiaolin"]
-#     url: https://scholar.google.com/citations?user=ZuQnEIgAAAAJ&hl=en
+"wu":
+  - firstname: ["Xiaolin"]
+    url: https://scholar.google.com/citations?user=ZuQnEIgAAAAJ&hl=en
 
-# "xu":
-#   - firstname: ["Hao"]
-#     url: https://scholar.google.ca/citations?user=4uhsUhEAAAAJ&hl=en
+"xu":
+  - firstname: ["Hao"]
+    url: https://scholar.google.ca/citations?user=4uhsUhEAAAAJ&hl=en
 
-# "mukati":
-#   - firstname: ["M. Umair", "M Umair"]
-#     url: https://umairmukati.github.io/
+"mukati":
+  - firstname: ["M. Umair", "M Umair"]
+    url: https://umairmukati.github.io/
 
-# "forchhammer":
-#   - firstname: ["Søren", "Søren Otto"]
-#     url: https://orbit.dtu.dk/en/persons/s%C3%B8ren-otto-forchhammer
+"forchhammer":
+  - firstname: ["Søren", "Søren Otto"]
+    url: https://orbit.dtu.dk/en/persons/s%C3%B8ren-otto-forchhammer
 
-# "guo":
-#   - firstname: ["Yanhui"]
-#     url: https://scholar.google.com/citations?user=XwxwxfQAAAAJ&hl=en
+"guo":
+  - firstname: ["Yanhui"]
+    url: https://scholar.google.com/citations?user=XwxwxfQAAAAJ&hl=en
 
-# "shu":
-#   - firstname: ["Xiao"]
-#     url: https://scholar.google.com/citations?user=5qcvYsoAAAAJ&hl=en
+"shu":
+  - firstname: ["Xiao"]
+    url: https://scholar.google.com/citations?user=5qcvYsoAAAAJ&hl=en
 
-# "ben":
-#   - firstname: ["Xianye"]
-#     url: https://ieeexplore.ieee.org/author/37680015700
+"ben":
+  - firstname: ["Xianye"]
+    url: https://ieeexplore.ieee.org/author/37680015700
 
-# "tu":
-#   - firstname: ["Chengjie"]
-#     url: https://ieeexplore.ieee.org/author/37334594400
+"tu":
+  - firstname: ["Chengjie"]
+    url: https://ieeexplore.ieee.org/author/37334594400
 
+"zhai":
+  - firstname: ["Xinliang"]
+    url: https://scholar.google.com/citations?user=Gh2E1tQAAAAJ&hl=zh-CN
+
+"zhu":
+  - firstname: ["Hanwei"]
+    url: https://openreview.net/profile?id=~Hanwei_Zhu1
+
+"zhong":
+  - firstname: ["Yan"]
+    url: https://openreview.net/profile?id=~Yan_Zhong2
+
+"wang":
+  - firstname: ["Jiamang"]
+    url: https://openreview.net/profile?id=~Jiamang_Wang1
+
+"lin":
+  - firstname: ["Weisi"]
+    url: https://scholar.google.com/citations?user=D_S41X4AAAAJ&hl=en
