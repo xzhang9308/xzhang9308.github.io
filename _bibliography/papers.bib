@@ -13,9 +13,10 @@
   year={2025},
   selected={true},
   bibtex_show={true},
-  arxiv={},
+  arxiv={2510.20984},
   preview={glvq.png},
-  html={},
+  html={https://openreview.net/forum?id=Ynwl0V1YH0},
+  code={https://github.com/xzhang9308/GLVQ},
   abstract={Large Language Models (LLMs) have demonstrated remarkable capabilities but typically require extensive computational resources and memory for inference. Post-training quantization (PTQ) can effectively reduce these demands by storing weights in lower bit-width formats. However, standard uniform quantization often leads to notable performance degradation, particularly in low-bit scenarios. In this work, we introduce a Grouped Lattice Vector Quantization (GLVQ) framework that assigns each group of weights a customized lattice codebook, defined by a learnable generation matrix. To address the non-differentiability of the quantization process, we adopt Babai rounding to approximate nearest-lattice-point search during training, which enables stable optimization of the generation matrices. Once trained, decoding reduces to a simple matrix-vector multiplication, yielding an efficient and practical quantization pipeline. Experiments on multiple benchmarks show that our approach achieves a better trade-off between model size and accuracy compared to existing post-training quantization baselines, highlighting its effectiveness in deploying large models under stringent resource constraints.}
 }
 
@@ -29,9 +30,10 @@
   year={2025},
   selected={true},
   bibtex_show={true},
-  arxiv={},
+  arxiv={2510.21366},
   preview={badiff.png},
-  html={},
+  html={https://openreview.net/forum?id=jSc7HD7mPj},
+  code={https://github.com/xzhang9308/BADiff},
   abstract={ In this work, we propose a novel framework to enable diffusion models to adapt their generation quality based on real-time network bandwidth constraints. Traditional diffusion models produce high-fidelity images by performing a fixed number of denoising steps, regardless of downstream transmission limitations. However, in practical cloud-to-device scenarios, limited bandwidth often necessitates heavy compression, leading to loss of fine textures and wasted computation. To address this, we introduce a joint end-to-end training strategy where the diffusion model is conditioned on a target quality level derived from the available bandwidth. During training, the model learns to adaptively modulate the denoising process, enabling early-stop sampling that maintains perceptual quality appropriate to the target transmission condition. Our method requires minimal architectural changes and leverages a lightweight quality embedding to guide the denoising trajectory. Experimental results demonstrate that our approach significantly improves the visual fidelity of bandwidth-adapted generations compared to naive early-stopping, offering a promising solution for efficient image delivery in bandwidth-constrained environments.}
 }
 
@@ -62,7 +64,7 @@
   bibtex_show={true},
   arxiv={2411.16119},
   preview={olvq.png},
-  html={https://openreview.net/forum?id=dLr4H7Uj4H&referrer=%5Bthe%20profile%20of%20Xiaolin%20Wu%5D(%2Fprofile%3Fid%3D~Xiaolin_Wu2)},
+  html={https://openreview.net/forum?id=dLr4H7Uj4H},
   code={https://github.com/xzhang9308/OLVQ},
   abstract={It is customary to deploy uniform scalar quantization in the end-to-end optimized Neural image compression methods, instead of more powerful vector quantization, due to the high complexity of the latter. Lattice vector quantization (LVQ), on the other hand, presents a compelling alternative, which can exploit inter-feature dependencies more effectively while keeping computational efficiency almost the same as scalar quantization. However, traditional LVQ structures are designed/optimized for uniform source distributions, hence nonadaptive and suboptimal for real source distributions of latent code space for Neural image compression tasks. In this paper, we propose a novel learning method to overcome this weakness by designing the rate-distortion optimal lattice vector quantization (OLVQ) codebooks with respect to the sample statistics of the latent features to be compressed. By being able to better fit the LVQ structures to any given latent sample distribution, the proposed OLVQ method improves the rate-distortion performances of the existing quantization schemes in neural image compression significantly, while retaining the amenability of uniform scalar quantization.},
 }
