@@ -3,6 +3,22 @@
 
 @string{aps = {American Physical Society,}}
 
+@inproceedings{Nema2026diversity,
+  abbr={WACV 2026},
+  title={Diversity Preserving Coresets for Image Quality Assessment},
+  author={Nema, Arpita and Zhu, Hanwei and Zhang, Xi and Lin, Weisi},
+  booktitle={Winter Conference on Applications of Computer Vision},
+  pages = {},
+  volume={},
+  year={2026},
+  selected={true},
+  bibtex_show={true},
+  arxiv={},
+  preview={coreset_iqa.png},
+  html={},
+  abstract={Coresets are compact, representative subsets of large datasets. While coreset selection methods have been extensively investigated in image classification, their direct application to Image Quality Assessment (IQA) is hindered by the incoherent and structurally distinct nature of content and quality representations in IQA tasks. To address this gap, we propose Q-Diverse coreset, a framework tailored for IQA. Our method begins by extracting dual-view embeddings that are both content-aware and quality-aware, capturing semantic and perceptual nuances. Rather than directly combining these heterogeneous features, we construct separate pairwise distance matrices and fuse them in the distance space. This fusion transforms into a graph-based structure from which spectral embeddings are derived. Finally, a geometric diversity-based sampling strategy is applied in the spectral space to select a coreset that maximizes representativeness. Notably, Q-Diverse operates in a label-free manner, making it especially valuable in IQA, where collecting subjective quality annotations is computationally expensive and time-consuming. Experimental results on seven IQA benchmarks demonstrate that Q-Diverse enables the effective training of deep learning-based IQA architectures, even with limited data, impressively retaining performance. It achieves SRCC and PLCC values within 0.045 and 0.042 of those obtained from full-data training, using only 10% of the dataset on average. Our results establish Q-Diverse as a coreset selection method that enables efficient dataset curation as well as training and fine-tuning deep learning–based IQA models.}
+}
+
 @inproceedings{zhang2025learning,
   abbr={NeurIPS 2025},
   title={Learning Grouped Lattice Vector Quantizers for Low-Bit LLM Compression},
