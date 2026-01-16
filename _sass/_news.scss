@@ -1,5 +1,8 @@
 .news {
+  color: var(--global-text-color);
+
   table {
+    color: inherit;
 
     tbody {
       tr {
@@ -7,6 +10,7 @@
         td {
           padding: 0.25rem 0 0.25rem 0;
           line-height: 1.5;
+          color: inherit;
         }
       }
     }
@@ -49,4 +53,11 @@
     border: 1px solid rgba(171, 35, 70, 0.25);
   }
 
+  .news-title {
+    color: var(--global-theme-color);
+
+    &:hover {
+      color: var(--global-hover-color);
+    }
+  }
 }
