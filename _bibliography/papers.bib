@@ -3,6 +3,23 @@
 
 @string{aps = {American Physical Society,}}
 
+@inproceedings{lin2025class,
+  abbr={ICASSP 2026},
+  title={Class-Invariant Test-Time Augmentation for Domain Generalization},
+  author={Lin, Zhicheng and Wu, Xiaolin and Zhang, Xi},
+  booktitle={IEEE International Conference on Acoustics, Speech, and Signal Processing},
+  pages = {},
+  volume={},
+  year={2026},
+  selected={true},
+  bibtex_show={true},
+  arxiv={2509.14420},
+  preview={citta.png},
+  html={},
+  code={https://github.com/lzc0907/CI-TTA},
+  abstract={Deep models often suffer significant performance degradation under distribution shifts. Domain generalization (DG) seeks to mitigate this challenge by enabling models to generalize to unseen domains. Most prior approaches rely on multi-domain training or computationally intensive test-time adaptation. In contrast, we propose a complementary strategy: lightweight test-time augmentation. Specifically, we develop a novel Class-Invariant Test-Time Augmentation (CI-TTA) technique. The idea is to generate multiple variants of each input image through elastic and grid deformations that nevertheless belong to the same class as the original input. Their predictions are aggregated through a confidence-guided filtering scheme that remove unreliable outputs, ensuring the final decision relies on consistent and trustworthy cues. Extensive Experiments on PACS and Office-Home datasets demonstrate consistent gains across different DG algorithms and backbones, highlighting the effectiveness and generality of our approach.}
+}
+
 @inproceedings{Nema2026diversity,
   abbr={WACV 2026},
   title={Diversity Preserving Coresets for Image Quality Assessment},
@@ -52,6 +69,8 @@
   code={https://github.com/xzhang9308/BADiff},
   abstract={ In this work, we propose a novel framework to enable diffusion models to adapt their generation quality based on real-time network bandwidth constraints. Traditional diffusion models produce high-fidelity images by performing a fixed number of denoising steps, regardless of downstream transmission limitations. However, in practical cloud-to-device scenarios, limited bandwidth often necessitates heavy compression, leading to loss of fine textures and wasted computation. To address this, we introduce a joint end-to-end training strategy where the diffusion model is conditioned on a target quality level derived from the available bandwidth. During training, the model learns to adaptively modulate the denoising process, enabling early-stop sampling that maintains perceptual quality appropriate to the target transmission condition. Our method requires minimal architectural changes and leverages a lightweight quality embedding to guide the denoising trajectory. Experimental results demonstrate that our approach significantly improves the visual fidelity of bandwidth-adapted generations compared to naive early-stopping, offering a promising solution for efficient image delivery in bandwidth-constrained environments.}
 }
+
+
 
 @inproceedings{xu2025multirate,
   abbr={CVPR 2025 - Highlight},

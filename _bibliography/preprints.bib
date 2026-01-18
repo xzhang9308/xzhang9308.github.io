@@ -29,20 +29,6 @@
   abstract={Recently, several look-up table (LUT) methods were developed to greatly expedite the inference of CNNs in a classical strategy of trading space for speed. However, these LUT methods suffer from a common drawback of limited receptive field of the convolution kernels due to the combinatorial explosion of table size. This research aims to expand the CNN receptive field with a fixed table size, thereby enhancing the performance of LUT-driven fast CNN inference while maintaining the same space complexity. To achieve this goal, various techniques are proposed. The main contribution is a novel approach of learning an optimal lattice vector quantizer that adaptively allocates the quantization resolution across data dimensions based on their significance to the inference task. In addition, the lattice vector quantizer offers an inherently more accurate approximation of CNN kernels than scalar quantizer as used in current practice. Furthermore, we introduce other receptive field expansion strategies, including irregular dilated convolutions and a U-shaped cascaded LUT structure, designed to capture multi-level contextual information without inflating table size. Together, these innovations allow our approach to effectively balance speed, accuracy, and memory efficiency, demonstrating significant improvements over existing LUT methods.},
 }
 
-@article{lin2025class,
-  abbr={arXiv},
-  title={Class-Invariant Test-Time Augmentation for Domain Generalization},
-  author={Lin, Zhicheng and Wu, Xiaolin and Zhang, Xi},
-  journal={arXiv preprint arXiv:2509.14420},
-  year={2025},
-  selected={false},
-  bibtex_show={true},
-  arxiv={2509.14420},
-  preview={citta.png},
-  code={https://github.com/lzc0907/CI-TTA},
-  abstract={Deep models often suffer significant performance degradation under distribution shifts. Domain generalization (DG) seeks to mitigate this challenge by enabling models to generalize to unseen domains. Most prior approaches rely on multi-domain training or computationally intensive test-time adaptation. In contrast, we propose a complementary strategy: lightweight test-time augmentation. Specifically, we develop a novel Class-Invariant Test-Time Augmentation (CI-TTA) technique. The idea is to generate multiple variants of each input image through elastic and grid deformations that nevertheless belong to the same class as the original input. Their predictions are aggregated through a confidence-guided filtering scheme that remove unreliable outputs, ensuring the final decision relies on consistent and trustworthy cues. Extensive Experiments on PACS and Office-Home datasets demonstrate consistent gains across different DG algorithms and backbones, highlighting the effectiveness and generality of our approach.}
-}
-
 @article{xu2025salvq,
   abbr={arXiv},
   title={Improving 3DGS Compression by Scene-Adaptive Lattice Vector Quantization},
