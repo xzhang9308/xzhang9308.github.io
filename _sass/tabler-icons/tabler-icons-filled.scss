@@ -1,5 +1,5 @@
-@use "sass:string";
 @charset "UTF-8";
+@use "sass:string";
 /*!
  * Tabler Icons 3.20.0 by tabler - https://tabler.io
  * License - https://github.com/tabler/tabler-icons/blob/master/LICENSE
@@ -34,19 +34,7 @@ $ti-prefix: 'ti' !default;
 }
 
 @function unicode($str) {
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-  @return string.unquote("\"")+string.unquote(str-insert($str, "\\", 1))+string.unquote("\"")
-=======
-  @return string.unquote("\"") + string.unquote(str-insert($str, "\\", 1)) + string.unquote("\"");
->>>>>>> theirs
-=======
-  @return string.unquote("\"")+string.unquote(str-insert($str, "\\", 1))+string.unquote("\"")
->>>>>>> theirs
-=======
-  @return string.unquote("\"") + string.unquote(str-insert($str, "\\", 1)) + string.unquote("\"");
->>>>>>> theirs
+  @return string.unquote("\"") + string.unquote(string.insert($str, "\\", 1)) + string.unquote("\"");
 }
 
 
@@ -1656,4 +1644,3 @@ $ti-icon-zoom-scan: unicode('fdbf');
 // Aliases
 .#{$ti-prefix}-discount-check:before { content: $ti-icon-rosette-discount-check; }
 .#{$ti-prefix}-message-circle-2:before { content: $ti-icon-message-circle; }
-

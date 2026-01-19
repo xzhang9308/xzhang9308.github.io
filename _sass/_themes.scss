@@ -3,6 +3,7 @@
  ******************************************************************************/
 
 @use "sass:color";
+@use "variables" as *;
 
 :root {
   --global-bg-color: #{$white-color};
@@ -10,7 +11,7 @@
   --global-text-color: #{$black-color};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$purple-color};
-  --global-theme-color-rgb: #{color.red($purple-color)}, #{color.green($purple-color)}, #{color.blue($purple-color)};
+  --global-theme-color-rgb: #{color.channel($purple-color, "red", $space: rgb)}, #{color.channel($purple-color, "green", $space: rgb)}, #{color.channel($purple-color, "blue", $space: rgb)};
   --publication-highlight-alpha: 0.12;
   --global-hover-color: #{$purple-color};
   --global-hover-text-color: #{$white-color};
@@ -83,7 +84,7 @@ html[data-theme="dark"] {
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
   --global-theme-color: #{$cyan-color};
-  --global-theme-color-rgb: #{color.red($cyan-color)}, #{color.green($cyan-color)}, #{color.blue($cyan-color)};
+  --global-theme-color-rgb: #{color.channel($cyan-color, "red", $space: rgb)}, #{color.channel($cyan-color, "green", $space: rgb)}, #{color.channel($cyan-color, "blue", $space: rgb)};
   --publication-highlight-alpha: 0.35;
   --global-hover-color: #{$cyan-color};
   --global-hover-text-color: #{$white-color};
