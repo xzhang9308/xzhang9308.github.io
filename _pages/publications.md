@@ -14,6 +14,10 @@ nav_order: 2
 
 <div class="publications">
 
-{% bibliography %}
+{% bibliography --query @*[year>=2024]* %}
+
+<h2 class="bibliography">2023 &amp; Before</h2>
+
+{% bibliography --group_by none --query @*[year<=2023]* %}
 
 </div>
