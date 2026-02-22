@@ -3,6 +3,24 @@
 
 @string{aps = {American Physical Society,}}
 
+
+@inproceedings{zhang2026modalityaware,
+  abbr={CVPR 2026 Findings},
+  title={Modality-Aware Bit Allocation for Mixed-Precision Quantization of Vision-Language Models},
+  author={Zhang, Xi and Zhu, Hanwei and Wang, Jiamang and Wu, Xiaolin and Lin, Weisi},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={},
+  volume={},
+  year={2026},
+  selected={true},
+  bibtex_show={true},
+  arxiv={},
+  preview={maba.png},
+  html={},
+  code={},
+  abstract={}
+}
+
 @inproceedings{lin2025class,
   abbr={ICASSP 2026},
   title={Class-Invariant Test-Time Augmentation for Domain Generalization},
@@ -35,6 +53,8 @@
   html={},
   abstract={Coresets are compact, representative subsets of large datasets. While coreset selection methods have been extensively investigated in image classification, their direct application to Image Quality Assessment (IQA) is hindered by the incoherent and structurally distinct nature of content and quality representations in IQA tasks. To address this gap, we propose Q-Diverse coreset, a framework tailored for IQA. Our method begins by extracting dual-view embeddings that are both content-aware and quality-aware, capturing semantic and perceptual nuances. Rather than directly combining these heterogeneous features, we construct separate pairwise distance matrices and fuse them in the distance space. This fusion transforms into a graph-based structure from which spectral embeddings are derived. Finally, a geometric diversity-based sampling strategy is applied in the spectral space to select a coreset that maximizes representativeness. Notably, Q-Diverse operates in a label-free manner, making it especially valuable in IQA, where collecting subjective quality annotations is computationally expensive and time-consuming. Experimental results on seven IQA benchmarks demonstrate that Q-Diverse enables the effective training of deep learning-based IQA architectures, even with limited data, impressively retaining performance. It achieves SRCC and PLCC values within 0.045 and 0.042 of those obtained from full-data training, using only 10% of the dataset on average. Our results establish Q-Diverse as a coreset selection method that enables efficient dataset curation as well as training and fine-tuning deep learning–based IQA models.}
 }
+
+
 
 @inproceedings{zhang2025learning,
   abbr={NeurIPS 2025},
@@ -69,8 +89,6 @@
   code={https://github.com/xzhang9308/BADiff},
   abstract={ In this work, we propose a novel framework to enable diffusion models to adapt their generation quality based on real-time network bandwidth constraints. Traditional diffusion models produce high-fidelity images by performing a fixed number of denoising steps, regardless of downstream transmission limitations. However, in practical cloud-to-device scenarios, limited bandwidth often necessitates heavy compression, leading to loss of fine textures and wasted computation. To address this, we introduce a joint end-to-end training strategy where the diffusion model is conditioned on a target quality level derived from the available bandwidth. During training, the model learns to adaptively modulate the denoising process, enabling early-stop sampling that maintains perceptual quality appropriate to the target transmission condition. Our method requires minimal architectural changes and leverages a lightweight quality embedding to guide the denoising trajectory. Experimental results demonstrate that our approach significantly improves the visual fidelity of bandwidth-adapted generations compared to naive early-stopping, offering a promising solution for efficient image delivery in bandwidth-constrained environments.}
 }
-
-
 
 @inproceedings{xu2025multirate,
   abbr={CVPR 2025 - Highlight},
