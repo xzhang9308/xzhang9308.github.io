@@ -17,7 +17,8 @@ on:
       - "!.github/workflows/deploy-image.yml"
       - "!.github/workflows/docker-slim.yml"
       - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
+      - "!.github/workflows/prettier-html.yml"
+      - "!.github/workflows/schedule-posts.yml"
       - "!lighthouse_results/**"
   pull_request:
     branches:
@@ -35,7 +36,8 @@ on:
       - "!.github/workflows/deploy-image.yml"
       - "!.github/workflows/docker-slim.yml"
       - "!.github/workflows/lighthouse-badger.yml"
-      - "!.github/workflows/prettier.yml"
+      - "!.github/workflows/prettier-html.yml"
+      - "!.github/workflows/schedule-posts.yml"
       - "!lighthouse_results/**"
 
 jobs:

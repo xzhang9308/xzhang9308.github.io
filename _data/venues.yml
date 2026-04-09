@@ -1,9 +1,47 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"CVPR":
+  url: https://cvpr.thecvf.com/
+  color: "#d62728"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"NeurIPS":
+  url: https://neurips.cc/
+  color: "#2ca02c"
 
-"Vision":
-  color: "#009f36"
+"ECCV":
+  url: https://eccv.ecva.net/
+  color: "#1f77b4"
+
+"ICCV":
+  url: https://iccv.thecvf.com/
+  color: "#9467bd"
+
+"AAAI":
+  url: https://aaai.org/
+  color: "#ff7f0e"
+
+"ICASSP":
+  url: https://ieeexplore.ieee.org/xpl/conhome/1000002/all-proceedings
+  color: "#8c564b"
+
+"WACV":
+  url: https://wacv.thecvf.com/
+  color: "#e377c2"
+
+"ACM MM":
+  url: https://www.acmmm.org/
+  color: "#17becf"
+
+"T-PAMI":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=34
+  color: "#d62728"
+
+"T-IP":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=83
+  color: "#1f77b4"
+
+"T-CSVT":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=76
+  color: "#2ca02c"
+
+"T-MM":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046
+  color: "#ff7f0e"

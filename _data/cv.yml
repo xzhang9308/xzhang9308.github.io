@@ -2,96 +2,66 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Xi Zhang (张熙)
+    - name: Position
+      value: Research Scientist
+    - name: Affiliation
+      value: Nanyang Technological University, Singapore
     - name: Languages
-      value: English, German
+      value: Chinese (Native), English (Fluent)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+    - title: PhD in Electronic Science and Technology
+      institution: Shanghai Jiao Tong University, Shanghai, China
+      year: 2015 - 2022
+    - title: Visiting PhD in Electrical & Computer Engineering
+      institution: McMaster University, Ontario, Canada
+      year: 2019 - 2020
+    - title: BSc in Mathematics and Physics Basic Science
+      institution: University of Electronic Science and Technology of China, Chengdu, China
+      year: 2011 - 2015
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Research Scientist
+      institution: Alibaba-NTU ANGEL Lab, Nanyang Technological University, Singapore
+      year: 2024 - now
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Working with Prof. Weisi Lin on Green AI research.
+    - title: Postdoctoral Fellow
+      institution: McMaster University, Ontario, Canada
+      year: 2022 - 2024
       description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+        - Supervised by Prof. Xiaolin Wu.
 
 - title: Honors and Awards
   type: time_table
   contents:
-    - year: 1921
+    - year: 2020
       items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
+        - SJTU Outstanding Overseas Study Scholar
+    - year: 2014
       items:
-        - Max Planck Medal
+        - National Scholarship (Undergraduate), Chinese Ministry of Education (Top 1%)
+    - year: 2013
+      items:
+        - National Scholarship (Undergraduate), Chinese Ministry of Education (Top 1%)
 
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
+    - title: Green AI
       items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
+        - Efficient model design and sustainable system architectures
+        - Lightweight architectures, quantization, and model compression
+    - title: Visual Computing
       items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+        - Learning-based visual compression (images, videos)
+        - Low-level vision and image processing
+    - title: Deep Learning
+      items:
+        - Domain generalization
+        - Visual reasoning

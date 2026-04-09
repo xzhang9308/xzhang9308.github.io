@@ -19,51 +19,55 @@ layout: default
       {% assign profile_scale = page.profile.scale | default: 0.24 %}
       {% assign profile_max_width = page.profile.max_width | default: 240 %}
       {% assign profile_vw = profile_scale | times: 100 %}
-      <div
-        class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}"
-        style="--profile-img-max: {{ profile_max_width }}px"
-      >
-        {% if page.profile.image %}
-          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
-          {% if page.profile.image_circular %}
-            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
-          {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
-          {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: profile_scale }}px, (min-width: 576px)
+      <div class="about-content-wrapper">
+        <div class="about-text">
+          {{ content }}
+        </div>
+        <div
+          class="profile about-profile"
+          style="--profile-img-max: {{ profile_max_width }}px"
+        >
+          {% if page.profile.image %}
+            {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+            {% if page.profile.image_circular %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+            {% else %}
+              {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+            {% endif %}
+            {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: profile_scale }}px, (min-width: 576px)
       {{ profile_vw | round: 1 }}vw, 80vw"{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
-            cache_bust=true
-          %}
-        {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
+            {%
+              include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+              cache_bust=true
+            %}
+          {% endif %}
+          {% if page.profile.more_info %}
+            <div class="more-info">{{ page.profile.more_info }}</div>
+          {% endif %}
+        </div>
       </div>
+    {% else %}
+      <div>{{ content }}</div>
     {% endif %}
 
-    <div class="clearfix">{{ content }}</div>
-
     <!-- Line Separator with Spacing -->
-    <hr style="margin: 20px 0;">
+    <hr style="margin: 28px 0;">
 
     <!-- News -->
     {% if page.news and site.announcements and site.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit; background-image: none;">News</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
 
     <!-- Line Separator with Spacing -->
-    <hr style="margin: 20px 0;">
+    <hr style="margin: 28px 0;">
 
     <!-- Latest posts -->
     {% comment %} {% if site.latest_posts and site.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit; background-image: none;">latest posts</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %} {% endcomment %}
@@ -71,7 +75,7 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit; background-image: none;">Selected Publications</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}
