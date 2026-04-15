@@ -18,6 +18,6 @@
 @use "font-awesome/brands" as *;
 @use "font-awesome/solid" as *;
 @use "font-awesome/regular" as *;
-@use "tabler-icons/tabler-icons" as *;
-@use "tabler-icons/tabler-icons-filled" as *;
-@use "tabler-icons/tabler-icons-outline" as *;
+@use "tabler-icons/tabler-icons" as * with ($ti-font-path: "../fonts");
+@use "tabler-icons/tabler-icons-filled" as * with ($ti-font-path: "../fonts");
+@use "tabler-icons/tabler-icons-outline" as * with ($ti-font-path: "../fonts");
