@@ -1,6 +1,25 @@
 ---
 ---
 
+@article{xu2026salvq,
+  abbr={TIP 2026},
+  title={Improving 3D Gaussian Splatting Compression by Scene-Adaptive Lattice Vector Quantization},
+  author={Xu, Hao and Wu, Xiaolin and Zhang, Xi},
+  journal={IEEE Transactions on Image Processing},
+  volume={},
+  pages={},
+  year={2026},
+  publisher={IEEE},
+  selected={true},
+  bibtex_show={true},
+  arxiv={2509.13482},
+  preview={salvq.png},
+  code={https://github.com/hxu160/SALVQ},
+  html={},
+  abstract={3D Gaussian Splatting (3DGS) is rapidly gaining popularity for its photorealistic rendering quality and real-time performance, but it generates massive amounts of data. Hence compressing 3DGS data is necessary for the cost effectiveness of 3DGS models. Recently, several anchor-based neural compression methods have been proposed, achieving good 3DGS compression performance. However, they all rely on uniform scalar quantization (USQ) due to its simplicity. A tantalizing question is whether more sophisticated quantizers can improve the current 3DGS compression methods with very little extra overhead and minimal change to the system. The answer is yes by replacing USQ with lattice vector quantization (LVQ). To better capture scene-specific characteristics, we optimize the lattice basis for each scene, improving LVQ's adaptability and R-D efficiency. This scene-adaptive LVQ (SALVQ) strikes a balance between the R-D efficiency of vector quantization and the low complexity of USQ. SALVQ can be seamlessly integrated into existing 3DGS compression architectures, enhancing their R-D performance with minimal modifications and computational overhead. Moreover, by scaling the lattice basis vectors, SALVQ can dynamically adjust lattice density, enabling a single model to accommodate multiple bit rate targets. This flexibility eliminates the need to train separate models for different compression levels, significantly reducing training time and memory consumption.},
+}
+
+
 @inproceedings{zhang2026modalityaware,
   abbr={CVPR Findings 2026},
   title={Modality-Aware Bit Allocation for Mixed-Precision Quantization of Vision-Language Models},
@@ -30,7 +49,7 @@
   bibtex_show={true},
   arxiv={2509.14420},
   preview={citta.png},
-  html={},
+  html={https://ieeexplore.ieee.org/abstract/document/11462106},
   code={https://github.com/lzc0907/CI-TTA},
   abstract={Deep models often suffer significant performance degradation under distribution shifts. Domain generalization (DG) seeks to mitigate this challenge by enabling models to generalize to unseen domains. Most prior approaches rely on multi-domain training or computationally intensive test-time adaptation. In contrast, we propose a complementary strategy: lightweight test-time augmentation. Specifically, we develop a novel Class-Invariant Test-Time Augmentation (CI-TTA) technique. The idea is to generate multiple variants of each input image through elastic and grid deformations that nevertheless belong to the same class as the original input. Their predictions are aggregated through a confidence-guided filtering scheme that remove unreliable outputs, ensuring the final decision relies on consistent and trustworthy cues. Extensive Experiments on PACS and Office-Home datasets demonstrate consistent gains across different DG algorithms and backbones, highlighting the effectiveness and generality of our approach.}
 }
@@ -47,7 +66,7 @@
   bibtex_show={true},
   arxiv={},
   preview={coreset_iqa.png},
-  html={},
+  html={https://openaccess.thecvf.com/content/WACV2026/papers/Nema_Diversity_Preserving_Coresets_for_Image_Quality_Assessment_WACV_2026_paper.pdf},
   abstract={Coresets are compact, representative subsets of large datasets. While coreset selection methods have been extensively investigated in image classification, their direct application to Image Quality Assessment (IQA) is hindered by the incoherent and structurally distinct nature of content and quality representations in IQA tasks. To address this gap, we propose Q-Diverse coreset, a framework tailored for IQA. Our method begins by extracting dual-view embeddings that are both content-aware and quality-aware, capturing semantic and perceptual nuances. Rather than directly combining these heterogeneous features, we construct separate pairwise distance matrices and fuse them in the distance space. This fusion transforms into a graph-based structure from which spectral embeddings are derived. Finally, a geometric diversity-based sampling strategy is applied in the spectral space to select a coreset that maximizes representativeness. Notably, Q-Diverse operates in a label-free manner, making it especially valuable in IQA, where collecting subjective quality annotations is computationally expensive and time-consuming. Experimental results on seven IQA benchmarks demonstrate that Q-Diverse enables the effective training of deep learning-based IQA architectures, even with limited data, impressively retaining performance. It achieves SRCC and PLCC values within 0.045 and 0.042 of those obtained from full-data training, using only 10% of the dataset on average. Our results establish Q-Diverse as a coreset selection method that enables efficient dataset curation as well as training and fine-tuning deep learning–based IQA models.}
 }
 

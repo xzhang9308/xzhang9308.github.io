@@ -27,20 +27,6 @@
   abstract={Recently, several look-up table (LUT) methods were developed to greatly expedite the inference of CNNs in a classical strategy of trading space for speed. However, these LUT methods suffer from a common drawback of limited receptive field of the convolution kernels due to the combinatorial explosion of table size. This research aims to expand the CNN receptive field with a fixed table size, thereby enhancing the performance of LUT-driven fast CNN inference while maintaining the same space complexity. To achieve this goal, various techniques are proposed. The main contribution is a novel approach of learning an optimal lattice vector quantizer that adaptively allocates the quantization resolution across data dimensions based on their significance to the inference task. In addition, the lattice vector quantizer offers an inherently more accurate approximation of CNN kernels than scalar quantizer as used in current practice. Furthermore, we introduce other receptive field expansion strategies, including irregular dilated convolutions and a U-shaped cascaded LUT structure, designed to capture multi-level contextual information without inflating table size. Together, these innovations allow our approach to effectively balance speed, accuracy, and memory efficiency, demonstrating significant improvements over existing LUT methods.},
 }
 
-@article{xu2025salvq,
-  abbr={arXiv},
-  title={Improving 3DGS Compression by Scene-Adaptive Lattice Vector Quantization},
-  author={Xu, Hao and Wu, Xiaolin and Zhang, Xi},
-  journal={arXiv preprint arXiv:2509.13482},
-  year={2025},
-  selected={false},
-  bibtex_show={true},
-  arxiv={2509.13482},
-  preview={salvq.png},
-  code={https://github.com/hxu160/SALVQ},
-  abstract={3D Gaussian Splatting (3DGS) is rapidly gaining popularity for its photorealistic rendering quality and real-time performance, but it generates massive amounts of data. Hence compressing 3DGS data is necessary for the cost effectiveness of 3DGS models. Recently, several anchor-based neural compression methods have been proposed, achieving good 3DGS compression performance. However, they all rely on uniform scalar quantization (USQ) due to its simplicity. A tantalizing question is whether more sophisticated quantizers can improve the current 3DGS compression methods with very little extra overhead and minimal change to the system. The answer is yes by replacing USQ with lattice vector quantization (LVQ). To better capture scene-specific characteristics, we optimize the lattice basis for each scene, improving LVQ's adaptability and R-D efficiency. This scene-adaptive LVQ (SALVQ) strikes a balance between the R-D efficiency of vector quantization and the low complexity of USQ. SALVQ can be seamlessly integrated into existing 3DGS compression architectures, enhancing their R-D performance with minimal modifications and computational overhead. Moreover, by scaling the lattice basis vectors, SALVQ can dynamically adjust lattice density, enabling a single model to accommodate multiple bit rate targets. This flexibility eliminates the need to train separate models for different compression levels, significantly reducing training time and memory consumption.},
-}
-
 @article{xu20253dgs,
   abbr={arXiv},
   title={3DGS Compression with Sparsity-guided Hierarchical Transform Coding},

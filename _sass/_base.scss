@@ -507,10 +507,31 @@ html[data-theme="dark"] .navbar {
   border: 0;
   background-color: inherit;
   color: var(--global-text-color);
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     color: var(--global-hover-color);
   }
+
+  i {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+}
+
+// Inline SVG icons used by the theme toggle. Sized identically regardless of
+// which icon is currently visible so the button always has a stable hit-area
+// and never goes blank while an icon font is loading.
+#light-toggle .light-toggle-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: none;
+  color: currentColor;
+  vertical-align: middle;
 }
 
 // Social (bottom)
@@ -895,6 +916,35 @@ footer.sticky-bottom {
           }
         }
 
+        // Type-aware badge palette, kept in sync with .news .news-badge-* in
+        // _sass/_news.scss so journal vs. conference look identical across
+        // news and publications.
+        // !important is required because mdbootstrap's `.badge` ships a
+        // `color: #fff !important` declaration plus a thick box-shadow that
+        // would otherwise force white text and a heavy drop-shadow.
+        abbr.abbr-conference,
+        abbr.abbr-journal {
+          box-shadow: none !important;
+          font-weight: 600;
+
+          a,
+          div {
+            color: inherit !important;
+          }
+        }
+
+        abbr.abbr-conference {
+          color: var(--global-theme-color) !important;
+          background-color: rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.15) !important;
+          border: 1px solid rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.25);
+        }
+
+        abbr.abbr-journal {
+          color: #0b7285 !important;
+          background-color: rgba(11, 114, 133, 0.15) !important;
+          border: 1px solid rgba(11, 114, 133, 0.25);
+        }
+
         .award {
           color: var(--global-theme-color) !important;
           border: 1px solid var(--global-theme-color);
@@ -907,24 +957,29 @@ footer.sticky-bottom {
       }
 
       .author {
+        color: var(--global-text-color);
+
         a {
-          border-bottom: 1px dashed var(--global-theme-color);
+          color: inherit;
+          border-bottom: none;
+          background-image: none;
 
           &:hover {
-            border-bottom-style: solid;
-            text-decoration: none;
+            color: inherit;
+            text-decoration: underline;
+            background-size: 0;
           }
         }
 
         > em {
-          font-style: normal;
-          color: var(--global-theme-color);
-          background-color: rgba(var(--global-theme-color-rgb, 78, 42, 132), var(--publication-highlight-alpha, 0.12));
+          font-style: italic;
+          font-weight: 700;
+          color: inherit;
+          background-color: transparent;
           border-bottom: none;
-          border-radius: 0.25rem;
-          padding: 0 0.35rem;
-          display: inline-flex;
-          align-items: center;
+          border-radius: 0;
+          padding: 0;
+          display: inline;
         }
 
         > span.more-authors {

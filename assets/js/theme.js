@@ -1,5 +1,8 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
+const forceLightMode =
+  typeof window !== "undefined" && window.__AL_FOLIO_FORCE_LIGHT_MODE__ === true;
+
 // Toggle through light, dark, and system theme settings.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
@@ -208,6 +211,9 @@ let transTheme = () => {
 // Determine the expected state of the theme toggle, which can be "dark", "light", or
 // "system". Default is "system".
 let determineThemeSetting = () => {
+  if (forceLightMode) {
+    return "light";
+  }
   let themeSetting = localStorage.getItem("theme");
   if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
     themeSetting = "system";
@@ -218,6 +224,9 @@ let determineThemeSetting = () => {
 // Determine the computed theme, which can be "dark" or "light". If the theme setting is
 // "system", the computed theme is determined based on the user's system preference.
 let determineComputedTheme = () => {
+  if (forceLightMode) {
+    return "light";
+  }
   let themeSetting = determineThemeSetting();
   if (themeSetting == "system") {
     const userPref = window.matchMedia;
@@ -236,17 +245,27 @@ let initTheme = () => {
 
   setThemeSetting(themeSetting);
 
-  // Add event listener to the theme toggle button.
-  document.addEventListener("DOMContentLoaded", function () {
+  const bindThemeToggle = () => {
     const mode_toggle = document.getElementById("light-toggle");
-
-    mode_toggle.addEventListener("click", function () {
+    if (!mode_toggle || mode_toggle.dataset.themeToggleBound === "1") {
+      return;
+    }
+    mode_toggle.dataset.themeToggleBound = "1";
+    mode_toggle.addEventListener("click", () => {
       toggleThemeSetting();
     });
-  });
+  };
 
-  // Add event listener to the system theme preference change.
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
-    applyTheme();
-  });
+  // DOM may already be interactive if script runs late; handle both cases.
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindThemeToggle);
+  } else {
+    bindThemeToggle();
+  }
+
+  if (!forceLightMode) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+      applyTheme();
+    });
+  }
 };

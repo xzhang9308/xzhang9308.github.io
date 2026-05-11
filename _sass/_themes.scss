@@ -45,18 +45,10 @@
   --global-danger-block-text: #600;
   --global-danger-block-title: #c00;
 
+  // Default (no data-theme-setting yet, e.g. first paint before theme.js runs):
+  // show the system icon so the toggle is never blank.
   #light-toggle-system {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
-  }
-
-  #light-toggle-dark {
-    display: none;
-  }
-
-  #light-toggle-light {
-    display: none;
+    display: inline-block;
   }
 
   .only-light {
@@ -83,10 +75,10 @@ html[data-theme="dark"] {
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$cyan-color};
-  --global-theme-color-rgb: #{color.channel($cyan-color, "red", $space: rgb)}, #{color.channel($cyan-color, "green", $space: rgb)}, #{color.channel($cyan-color, "blue", $space: rgb)};
-  --publication-highlight-alpha: 0.35;
-  --global-hover-color: #{$cyan-color};
+  --global-theme-color: #{$purple-color};
+  --global-theme-color-rgb: #{color.channel($purple-color, "red", $space: rgb)}, #{color.channel($purple-color, "green", $space: rgb)}, #{color.channel($purple-color, "blue", $space: rgb)};
+  --publication-highlight-alpha: 0.12;
+  --global-hover-color: #{$purple-color};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-light};
   --global-footer-text-color: #{$grey-color-dark};
@@ -127,18 +119,13 @@ html[data-theme="dark"] {
 }
 
 html[data-theme-setting="dark"] {
-  #light-toggle-system {
+  #light-toggle-system,
+  #light-toggle-light {
     display: none;
   }
 
   #light-toggle-dark {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
-  }
-
-  #light-toggle-light {
-    display: none;
+    display: inline-block;
   }
 
   #back-to-top {
@@ -148,17 +135,24 @@ html[data-theme-setting="dark"] {
 }
 
 html[data-theme-setting="light"] {
-  #light-toggle-system {
-    display: none;
-  }
-
+  #light-toggle-system,
   #light-toggle-dark {
     display: none;
   }
 
   #light-toggle-light {
-    padding-left: 10px;
-    padding-top: 12px;
-    display: block;
+    display: inline-block;
+  }
+}
+
+// Explicit "system" setting (cycles: system → light → dark → system).
+html[data-theme-setting="system"] {
+  #light-toggle-dark,
+  #light-toggle-light {
+    display: none;
+  }
+
+  #light-toggle-system {
+    display: inline-block;
   }
 }

@@ -4,13 +4,21 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-lg-2 col-md-3 col-sm-4 abbr">
       {%- if entry.abbr -%}
+        {%- comment -%}
+          Pick a badge style (kept in sync with news badges in _sass/_news.scss).
+          Only two kinds: journal vs. conference.
+        {%- endcomment -%}
+        {% assign abbr_kind = "abbr-conference" %}
+        {% if entry.type == "article" %}
+          {% assign abbr_kind = "abbr-journal" %}
+        {% endif %}
         {%- if site.data.venues[entry.abbr] -%}
           {% assign venue_style = null %}
           {% if site.data.venues[entry.abbr].color != blank %}
             {% assign venue_style = site.data.venues[entry.abbr].color | prepend: 'style="background-color:' | append: '"' %}
           {%- endif -%}
           <abbr
-            class="badge rounded w-100"
+            class="badge rounded w-100 {{ abbr_kind }}"
             {% if venue_style %}
               {{ venue_style }}
             {% endif -%}
@@ -22,7 +30,7 @@
             {% endif %}
           </abbr>
         {% else %}
-          <abbr class="badge rounded w-100">{{ entry.abbr }}</abbr>
+          <abbr class="badge rounded w-100 {{ abbr_kind }}">{{ entry.abbr }}</abbr>
         {% endif %}
       {% endif %}
       {% if entry.preview %}
