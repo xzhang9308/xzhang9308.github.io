@@ -81,6 +81,9 @@ ninja.data = [{
           section: "News",},{id: "news-one-paper-on-vlm-quantization-is-accepted-by-cvpr-2026-findings",
           title: 'One paper on VLM quantization is accepted by CVPR 2026 Findings.',
           description: "",
+          section: "News",},{id: "news-one-paper-on-3dgs-compression-is-accepted-by-ieee-t-ip",
+          title: 'One paper on 3DGS compression is accepted by IEEE T-IP.',
+          description: "",
           section: "News",},{
       id: 'light-theme',
       title: 'Change theme to light',
