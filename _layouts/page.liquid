@@ -10,7 +10,14 @@ layout: default
 
 <div class="post">
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
+    {% if page.venue_badge_legend %}
+      <div class="heading-with-venue-legend">
+        <h1 class="post-title">{{ page.title }}</h1>
+        {% include selected_publications_legend.liquid %}
+      </div>
+    {% else %}
+      <h1 class="post-title">{{ page.title }}</h1>
+    {% endif %}
     <p class="post-description">{{ page.description }}</p>
   </header>
 

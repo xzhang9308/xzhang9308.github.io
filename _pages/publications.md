@@ -2,6 +2,7 @@
 layout: page
 permalink: /publications/
 title: Publications
+venue_badge_legend: true
 nav: true
 nav_order: 2
 ---

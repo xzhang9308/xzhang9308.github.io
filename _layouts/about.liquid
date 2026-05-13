@@ -74,9 +74,12 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit; background-image: none;">Selected Publications</a>
-      </h2>
+      <div class="heading-with-venue-legend">
+        <h2>
+          <a href="{{ '/publications/' | relative_url }}" style="color: inherit; background-image: none;">Selected Publications</a>
+        </h2>
+        {% include selected_publications_legend.liquid %}
+      </div>
       {% include selected_papers.liquid %}
     {% endif %}
 
