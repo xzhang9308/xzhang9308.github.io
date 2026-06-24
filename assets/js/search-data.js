@@ -84,6 +84,9 @@ ninja.data = [{
           section: "News",},{id: "news-one-paper-on-3dgs-compression-is-accepted-by-ieee-t-ip",
           title: 'One paper on 3DGS compression is accepted by IEEE T-IP.',
           description: "",
+          section: "News",},{id: "news-longvqubench-is-accepted-by-eccv-2026-dataset-is-available-on-hugging-face",
+          title: 'LongVQUBench is accepted by ECCV 2026. Dataset is available on Hugging Face.',
+          description: "",
           section: "News",},{
       id: 'light-theme',
       title: 'Change theme to light',
