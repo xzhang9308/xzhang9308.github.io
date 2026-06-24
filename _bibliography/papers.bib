@@ -1,6 +1,24 @@
 ---
 ---
 
+@inproceedings{nema2026longvqubench,
+  abbr={ECCV 2026},
+  title={LongVQUBench: Benchmarking Long-Term Video Quality Understanding of Vision-Language Models},
+  author={Nema, Arpita and Zhu, Hanwei and Zhang, Xi and Lin, Weisi},
+  booktitle={European Conference on Computer Vision},
+  pages={},
+  volume={},
+  year={2026},
+  selected={true},
+  bibtex_show={true},
+  arxiv={},
+  preview={longvqu.png},
+  html={},
+  code={},
+  dataset={https://huggingface.co/datasets/Aarna004/LongVQUBench},
+  abstract={The evaluation of long-term video quality understanding remains an open challenge for large vision--language models (LVLMs). Existing video quality benchmarks predominantly focus on short clips and isolated distortions, overlooking the temporal continuity, cumulative degradation, and reasoning complexity inherent in long-duration content. To address these limitations, we present LongVQUBench, a comprehensive benchmark for long-term video quality understanding. LongVQUBench contains over $1{,}200$ diverse videos spanning movies, documentaries, surveillance footage, egocentric recordings, and animated content, accompanied by $1{,}500$ multiple-choice and open-ended questions for validation and testing. To assess perceptual reasoning across different temporal scopes, we introduce three progressively complex evaluation levels: (i) local event quality understanding (LQU) for analyzing localized distortions; (ii) cross-event quality reasoning (CQR) for integrating multiple degraded events; and (iii) global quality understanding (GQU) for holistic perceptual evaluation over extended durations. Furthermore, a needle distortion question-answering (NDQA) paradigm is embedded across all three levels, where subtle spatial or temporal artifacts are sparsely inserted to probe fine-grained detection and reasoning capabilities. Extensive experiments on $14$ state-of-the-art LVLMs reveal significant performance degradation with increasing video length and reasoning depth, highlighting their limited capacity for long-range temporal integration and perceptual attribution. We envision LongVQUBench as a foundational step toward the systematic, hierarchical, and explainable evaluation of LVLMs' long-term video quality understanding.}
+}
+
 @article{xu2026salvq,
   abbr={TIP 2026},
   title={Improving 3D Gaussian Splatting Compression by Scene-Adaptive Lattice Vector Quantization},
@@ -185,6 +203,7 @@
   arxiv={2304.12319},
   preview={lvqac.png},
   html={https://openaccess.thecvf.com/content/CVPR2023/html/Zhang_LVQAC_Lattice_Vector_Quantization_Coupled_With_Spatially_Adaptive_Companding_for_CVPR_2023_paper.html},
+  code={https://github.com/xzhang9308/LVQAC},
   abstract={Recently, numerous end-to-end optimized image compression neural networks have been developed and proved themselves as leaders in rate-distortion performance. The main strength of these learnt compression methods is in powerful nonlinear analysis and synthesis transforms that can be facilitated by deep neural networks. However, out of operational expediency, most of these end-to-end methods adopt uniform scalar quantizers rather than vector quantizers, which are information-theoretically optimal. In this paper, we present a novel Lattice Vector Quantization scheme coupled with a spatially Adaptive Companding (LVQAC) mapping. LVQ can better exploit the inter-feature dependencies than scalar uniform quantization while being computationally almost as simple as the latter. Moreover, to improve the adaptability of LVQ to source statistics, we couple a spatially adaptive companding (AC) mapping with LVQ. The resulting LVQAC design can be easily embedded into any end-to-end optimized image compression system. Extensive experiments demonstrate that for any end-to-end CNN image compression models, replacing uniform quantizer by LVQAC achieves better rate-distortion performance without significantly increasing the model complexity.},
 }
 
