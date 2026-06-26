@@ -1,0 +1,1 @@
+!function(){var n=window.homepageAnalyticsEndpoint;if(n&&navigator.sendBeacon){var e=JSON.stringify({page:window.location.pathname+window.location.search,title:document.title,referrer:document.referrer}),o=new Blob([e],{type:"application/json"});navigator.sendBeacon(n,o)}}();
