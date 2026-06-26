@@ -5,6 +5,7 @@ Private visit logging for `xzhang9308.github.io`.
 ## Endpoints
 
 - `POST /collect`: records one visit.
+- `GET /admin?token=...`: shows recent visits in a browser table.
 - `GET /admin.csv?token=...`: downloads recent visits as CSV.
 - `GET /health`: health check.
 

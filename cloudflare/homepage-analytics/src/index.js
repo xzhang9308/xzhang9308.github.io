@@ -29,6 +29,10 @@ export default {
       return exportCsv(request, env);
     }
 
+    if (url.pathname === "/admin" && request.method === "GET") {
+      return exportHtml(request, env);
+    }
+
     if (url.pathname === "/health" && request.method === "GET") {
       return jsonResponse({ ok: true }, request, env);
     }
@@ -84,16 +88,9 @@ async function collectVisit(request, env) {
 
 async function exportCsv(request, env) {
   const url = new URL(request.url);
-  const token = url.searchParams.get("token") || "";
 
-  if (!env.ADMIN_TOKEN || token !== env.ADMIN_TOKEN) {
-    return new Response("Unauthorized\n", {
-      status: 401,
-      headers: {
-        ...corsHeaders(request, env),
-        "content-type": "text/plain; charset=utf-8",
-      },
-    });
+  if (!isAuthorizedAdmin(url, env)) {
+    return unauthorizedResponse(request, env);
   }
 
   const limit = clampNumber(url.searchParams.get("limit"), 1, 50000, 10000);
@@ -120,6 +117,112 @@ async function exportCsv(request, env) {
   });
 }
 
+async function exportHtml(request, env) {
+  const url = new URL(request.url);
+
+  if (!isAuthorizedAdmin(url, env)) {
+    return unauthorizedResponse(request, env);
+  }
+
+  const limit = clampNumber(url.searchParams.get("limit"), 1, 500, 100);
+  const [{ total }, { results }] = await Promise.all([
+    env.DB.prepare("SELECT COUNT(*) AS total FROM visits").first(),
+    env.DB.prepare(
+      `SELECT ${CSV_COLUMNS.join(", ")}
+       FROM visits
+       ORDER BY visited_at DESC
+       LIMIT ?`
+    )
+      .bind(limit)
+      .all(),
+  ]);
+
+  const token = url.searchParams.get("token") || "";
+  const csvUrl = `/admin.csv?token=${encodeURIComponent(token)}&limit=10000`;
+  const rows = (results || [])
+    .map(
+      (row) => `<tr>
+        <td>${escapeHtml(formatTime(row.visited_at))}</td>
+        <td class="wrap">${escapeHtml(row.page)}</td>
+        <td>${escapeHtml(row.source)}</td>
+        <td>${escapeHtml(row.country)}</td>
+        <td>${escapeHtml(row.region)}</td>
+        <td>${escapeHtml(row.city)}</td>
+        <td>${escapeHtml(row.timezone)}</td>
+        <td class="wrap">${escapeHtml(row.referrer)}</td>
+        <td class="wrap">${escapeHtml(row.user_agent)}</td>
+      </tr>`
+    )
+    .join("");
+
+  return new Response(
+    `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage Visits</title>
+  <style>
+    body { color: #172026; font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; }
+    header { align-items: center; border-bottom: 1px solid #d9e1e8; display: flex; gap: 16px; justify-content: space-between; padding: 16px 20px; }
+    h1 { font-size: 18px; margin: 0; }
+    main { padding: 16px 20px 28px; }
+    .meta { color: #52616d; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px; }
+    a { color: #0b5cad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    table { border-collapse: collapse; min-width: 1180px; width: 100%; }
+    th, td { border-bottom: 1px solid #e6edf2; padding: 9px 10px; text-align: left; vertical-align: top; }
+    th { background: #f5f7f9; color: #34424d; font-size: 12px; position: sticky; top: 0; }
+    .table-wrap { border: 1px solid #d9e1e8; overflow: auto; }
+    .wrap { max-width: 280px; overflow-wrap: anywhere; }
+    .empty { color: #52616d; padding: 24px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Homepage Visits</h1>
+      <div class="meta">
+        <span>Total: ${escapeHtml(total)}</span>
+        <span>Showing latest: ${escapeHtml((results || []).length)}</span>
+        <span>Limit: ${escapeHtml(limit)}</span>
+      </div>
+    </div>
+    <a href="${escapeHtml(csvUrl)}">Download CSV</a>
+  </header>
+  <main>
+    ${
+      rows
+        ? `<div class="table-wrap"><table>
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Page</th>
+          <th>Source</th>
+          <th>Country</th>
+          <th>Region</th>
+          <th>City</th>
+          <th>Timezone</th>
+          <th>Referrer</th>
+          <th>User Agent</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table></div>`
+        : `<div class="empty">No visits recorded yet.</div>`
+    }
+  </main>
+</body>
+</html>`,
+    {
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "no-store",
+      },
+    }
+  );
+}
+
 function jsonResponse(data, request, env, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
@@ -127,6 +230,21 @@ function jsonResponse(data, request, env, status = 200) {
       ...corsHeaders(request, env),
       "content-type": "application/json; charset=utf-8",
       "cache-control": "no-store",
+    },
+  });
+}
+
+function isAuthorizedAdmin(url, env) {
+  const token = url.searchParams.get("token") || "";
+  return Boolean(env.ADMIN_TOKEN && token === env.ADMIN_TOKEN);
+}
+
+function unauthorizedResponse(request, env) {
+  return new Response("Unauthorized\n", {
+    status: 401,
+    headers: {
+      ...corsHeaders(request, env),
+      "content-type": "text/plain; charset=utf-8",
     },
   });
 }
@@ -173,6 +291,20 @@ function cleanText(value, maxLength) {
 function csvCell(value) {
   const text = value == null ? "" : String(value);
   return `"${text.replace(/"/g, '""')}"`;
+}
+
+function escapeHtml(value) {
+  return String(value == null ? "" : value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function formatTime(value) {
+  if (!value) return "";
+  return value.replace("T", " ").replace(/\.\d{3}Z$/, " UTC");
 }
 
 function clampNumber(value, min, max, fallback) {
