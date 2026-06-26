@@ -243,6 +243,12 @@
   <script defer src="{{ '/assets/js/open-panel-analytics-setup.js' | relative_url | bust_file_cache }}"></script>
   <script async defer src="https://openpanel.dev/op1.js"></script>
 {% endif %}
+{% if site.enable_homepage_analytics and site.homepage_analytics_endpoint %}
+  <script>
+    window.homepageAnalyticsEndpoint = "{{ site.homepage_analytics_endpoint }}";
+  </script>
+  <script defer src="{{ '/assets/js/homepage-analytics.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
 
 {% if site.enable_progressbar %}
   <!-- Scrolling Progress Bar -->

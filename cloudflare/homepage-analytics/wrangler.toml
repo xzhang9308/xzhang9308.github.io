@@ -1,0 +1,11 @@
+name = "homepage-analytics"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "homepage-analytics"
+database_id = "b1401c1b-8b10-4283-8858-b5834dcc9bdf"
+
+[vars]
+ALLOWED_ORIGIN = "https://xzhang9308.github.io"
