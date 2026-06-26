@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS visits (
   city TEXT,
   timezone TEXT,
   colo TEXT,
+  visitor_label TEXT,
   language TEXT,
   user_agent TEXT
 );

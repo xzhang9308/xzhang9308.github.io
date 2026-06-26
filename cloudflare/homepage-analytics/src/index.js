@@ -1,4 +1,4 @@
-const CSV_COLUMNS = [
+const SELECT_COLUMNS = [
   "visited_at",
   "page",
   "title",
@@ -9,9 +9,12 @@ const CSV_COLUMNS = [
   "city",
   "timezone",
   "colo",
+  "visitor_label",
   "language",
   "user_agent",
 ];
+
+const CSV_COLUMNS = ["visited_at_beijing", ...SELECT_COLUMNS.slice(1)];
 
 export default {
   async fetch(request, env) {
@@ -59,14 +62,15 @@ async function collectVisit(request, env, responseType = "json") {
   const title = cleanText(payload.title, 512);
   const referrer = cleanText(payload.referrer || request.headers.get("referer"), 2048);
   const source = cleanText(sourceFromReferrer(referrer), 256);
+  const visitorLabel = cleanText(payload.visitor_label, 128);
   const language = cleanText(request.headers.get("accept-language"), 512);
   const userAgent = cleanText(request.headers.get("user-agent"), 1024);
 
   await env.DB.prepare(
     `INSERT INTO visits (
       visited_at, page, title, referrer, source, country, region, city,
-      timezone, colo, language, user_agent
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+      timezone, colo, visitor_label, language, user_agent
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
   )
     .bind(
       new Date().toISOString(),
@@ -79,6 +83,7 @@ async function collectVisit(request, env, responseType = "json") {
       cleanText(cf.city, 256),
       cleanText(cf.timezone, 128),
       cleanText(cf.colo, 64),
+      visitorLabel,
       language,
       userAgent
     )
@@ -109,6 +114,7 @@ function payloadFromQuery(url) {
     page: url.searchParams.get("page") || "",
     title: url.searchParams.get("title") || "",
     referrer: url.searchParams.get("referrer") || "",
+    visitor_label: url.searchParams.get("visitor_label") || "",
   };
 }
 
@@ -121,7 +127,7 @@ async function exportCsv(request, env) {
 
   const limit = clampNumber(url.searchParams.get("limit"), 1, 50000, 10000);
   const { results } = await env.DB.prepare(
-    `SELECT ${CSV_COLUMNS.join(", ")}
+    `SELECT ${SELECT_COLUMNS.join(", ")}
      FROM visits
      ORDER BY visited_at DESC
      LIMIT ?`
@@ -131,7 +137,7 @@ async function exportCsv(request, env) {
 
   const rows = [CSV_COLUMNS.join(",")];
   for (const row of results || []) {
-    rows.push(CSV_COLUMNS.map((column) => csvCell(row[column])).join(","));
+    rows.push(csvRow(row));
   }
 
   return new Response(`${rows.join("\n")}\n`, {
@@ -154,7 +160,7 @@ async function exportHtml(request, env) {
   const [{ total }, { results }] = await Promise.all([
     env.DB.prepare("SELECT COUNT(*) AS total FROM visits").first(),
     env.DB.prepare(
-      `SELECT ${CSV_COLUMNS.join(", ")}
+      `SELECT ${SELECT_COLUMNS.join(", ")}
        FROM visits
        ORDER BY visited_at DESC
        LIMIT ?`
@@ -168,7 +174,8 @@ async function exportHtml(request, env) {
   const rows = (results || [])
     .map(
       (row) => `<tr>
-        <td>${escapeHtml(formatTime(row.visited_at))}</td>
+        <td>${escapeHtml(formatBeijingTime(row.visited_at))}</td>
+        <td>${escapeHtml(row.visitor_label)}</td>
         <td class="wrap">${escapeHtml(row.page)}</td>
         <td>${escapeHtml(row.source)}</td>
         <td>${escapeHtml(row.country)}</td>
@@ -222,7 +229,8 @@ async function exportHtml(request, env) {
         ? `<div class="table-wrap"><table>
       <thead>
         <tr>
-          <th>Time</th>
+          <th>Time (Beijing)</th>
+          <th>Visitor</th>
           <th>Page</th>
           <th>Source</th>
           <th>Country</th>
@@ -319,6 +327,13 @@ function csvCell(value) {
   return `"${text.replace(/"/g, '""')}"`;
 }
 
+function csvRow(row) {
+  return CSV_COLUMNS.map((column) => {
+    if (column === "visited_at_beijing") return csvCell(formatBeijingTime(row.visited_at));
+    return csvCell(row[column]);
+  }).join(",");
+}
+
 function escapeHtml(value) {
   return String(value == null ? "" : value)
     .replace(/&/g, "&amp;")
@@ -328,9 +343,18 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-function formatTime(value) {
+function formatBeijingTime(value) {
   if (!value) return "";
-  return value.replace("T", " ").replace(/\.\d{3}Z$/, " UTC");
+  return new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  }).format(new Date(value));
 }
 
 function transparentGif() {
