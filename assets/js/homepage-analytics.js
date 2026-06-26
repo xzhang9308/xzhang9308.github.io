@@ -1,13 +1,14 @@
 (function () {
   var endpoint = window.homepageAnalyticsEndpoint;
-  if (!endpoint || !navigator.sendBeacon) return;
+  if (!endpoint) return;
 
-  var payload = JSON.stringify({
-    page: window.location.pathname + window.location.search,
-    title: document.title,
-    referrer: document.referrer,
-  });
+  var params = new URLSearchParams();
+  params.set("page", window.location.pathname + window.location.search);
+  params.set("title", document.title);
+  params.set("referrer", document.referrer);
+  params.set("t", String(Date.now()));
 
-  var blob = new Blob([payload], { type: "application/json" });
-  navigator.sendBeacon(endpoint, blob);
+  var image = new Image(1, 1);
+  image.referrerPolicy = "strict-origin-when-cross-origin";
+  image.src = endpoint + ".gif?" + params.toString();
 })();

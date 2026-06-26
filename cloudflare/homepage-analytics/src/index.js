@@ -25,6 +25,10 @@ export default {
       return collectVisit(request, env);
     }
 
+    if (url.pathname === "/collect.gif" && request.method === "GET") {
+      return collectVisit(request, env, "pixel");
+    }
+
     if (url.pathname === "/admin.csv" && request.method === "GET") {
       return exportCsv(request, env);
     }
@@ -41,22 +45,19 @@ export default {
   },
 };
 
-async function collectVisit(request, env) {
+async function collectVisit(request, env, responseType = "json") {
   if (!isAllowedOrigin(request, env)) {
     return jsonResponse({ error: "Forbidden origin" }, request, env, 403);
   }
 
-  let payload = {};
-  try {
-    payload = await request.json();
-  } catch {
-    return jsonResponse({ error: "Invalid JSON" }, request, env, 400);
-  }
+  const url = new URL(request.url);
+  const payload = request.method === "GET" ? payloadFromQuery(url) : await payloadFromJson(request);
+  if (!payload) return jsonResponse({ error: "Invalid JSON" }, request, env, 400);
 
   const cf = request.cf || {};
   const page = cleanText(payload.page, 2048) || "/";
   const title = cleanText(payload.title, 512);
-  const referrer = cleanText(payload.referrer, 2048);
+  const referrer = cleanText(payload.referrer || request.headers.get("referer"), 2048);
   const source = cleanText(sourceFromReferrer(referrer), 256);
   const language = cleanText(request.headers.get("accept-language"), 512);
   const userAgent = cleanText(request.headers.get("user-agent"), 1024);
@@ -83,7 +84,32 @@ async function collectVisit(request, env) {
     )
     .run();
 
+  if (responseType === "pixel") {
+    return new Response(transparentGif(), {
+      headers: {
+        "content-type": "image/gif",
+        "cache-control": "no-store",
+      },
+    });
+  }
+
   return jsonResponse({ ok: true }, request, env);
+}
+
+async function payloadFromJson(request) {
+  try {
+    return await request.json();
+  } catch {
+    return null;
+  }
+}
+
+function payloadFromQuery(url) {
+  return {
+    page: url.searchParams.get("page") || "",
+    title: url.searchParams.get("title") || "",
+    referrer: url.searchParams.get("referrer") || "",
+  };
 }
 
 async function exportCsv(request, env) {
@@ -305,6 +331,14 @@ function escapeHtml(value) {
 function formatTime(value) {
   if (!value) return "";
   return value.replace("T", " ").replace(/\.\d{3}Z$/, " UTC");
+}
+
+function transparentGif() {
+  return Uint8Array.from([
+    71, 73, 70, 56, 57, 97, 1, 0, 1, 0, 128, 0, 0, 0, 0, 0, 255, 255, 255,
+    33, 249, 4, 1, 0, 0, 0, 0, 44, 0, 0, 0, 0, 1, 0, 1, 0, 0, 2, 2, 68,
+    1, 0, 59,
+  ]);
 }
 
 function clampNumber(value, min, max, fallback) {
