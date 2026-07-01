@@ -22,6 +22,10 @@
   url: https://ieeexplore.ieee.org/xpl/conhome/1000002/all-proceedings
   color: "#8c564b"
 
+"ICIP 2026 Workshop":
+  url: https://2026.ieeeicip.org/
+  color: "#bcbd22"
+
 "WACV":
   url: https://wacv.thecvf.com/
   color: "#e377c2"

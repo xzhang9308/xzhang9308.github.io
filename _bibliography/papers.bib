@@ -1,6 +1,23 @@
 ---
 ---
 
+@inproceedings{zhu2026prunewithconfidence,
+  abbr={ICIP 2026 Workshop},
+  title={Prune with Confidence: Uncertainty-Calibrated Token Selection for Vision--Language Models},
+  author={Zhu, Hanwei and Fu, Junhan and Zhang, Xi and Wang, Jiamang and Fang, Yuming and Lin, Weisi},
+  booktitle={ICIP 2026 Satellite Workshop (Fourth IEEE Workshop on Coding for Machines)},
+  pages={},
+  volume={},
+  year={2026},
+  selected={false},
+  bibtex_show={true},
+  arxiv={},
+  preview={prune.png},
+  html={},
+  code={},
+  abstract={Visual token pruning is an effective strategy for accelerating vision--language models (VLMs) by discarding or merging tokens deemed to have low downstream utility. However, existing pruning methods typically rely on deterministic point estimates of token importance and ignore uncertainty, leading to brittle decisions under distribution shift, ambiguous visual content, and prompt-dependent reasoning. We introduce an uncertainty-aware token pruning framework that augments both text-agnostic and text-aware pruning strategies with a calibrated per-token uncertainty estimate. Our approach quantifies uncertainty using the variance of token-wise signals across transformer attention heads, yielding a lightweight proxy that is readily available at inference time without additional forward passes. We integrate uncertainty with conventional importance scores through a risk-sensitive retention rule that preserves tokens that are uncertain yet potentially informative, mitigating irreversible information loss. The proposed framework is plug-and-play, requires no architectural modifications, and is compatible with a broad class of attention- and similarity-based pruning methods. Experiments on vision and vision--language benchmarks demonstrate consistent improvements in the accuracy--latency trade-off, achieving greater robustness at fixed computational budgets and comparable speedups at matched accuracy.},
+}
+
 @inproceedings{nema2026longvqubench,
   abbr={ECCV 2026},
   title={LongVQUBench: Benchmarking Long-Term Video Quality Understanding of Vision-Language Models},
