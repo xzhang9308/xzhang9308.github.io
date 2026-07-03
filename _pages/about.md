@@ -22,7 +22,7 @@ social: true # includes social icons at the bottom of the page
 
 I am currently a Research Scientist in the Alibaba-NTU Global e-Sustainability CorpLab (ANGEL) at Nanyang Technological University (NTU),
 working with Prof [Weisi Lin](https://personal.ntu.edu.sg/wslin/Home.html).
-Before that, I was a postdoctoral fellow at McMaster University, Canada from July 2022 to August 2024,
+Before that, I was a postdoctoral fellow at McMaster University, Canada,
 supervised by Prof [Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ).
 I received my Ph.D. in Electrical Engineering from Shanghai Jiao Tong University (SJTU) in June 2022, and my bachelor's degree in Mathematics and Physics Basic Science from University of Electronic Science and Technology of China (UESTC) in 2015.
 
