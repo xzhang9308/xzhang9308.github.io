@@ -2,7 +2,8 @@
 layout: page
 permalink: /arxiv/
 title: arXiv
-nav: true
+nav: false
+published: false
 nav_order: 3
 ---
 
