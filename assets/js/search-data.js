@@ -16,13 +16,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-arxiv",
-          title: "arXiv",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/arxiv/";
-          },
         },{id: "news-one-paper-on-talking-head-video-decompression-is-accepted-by-cvpr-2020",
           title: 'One paper on talking head video decompression is accepted by CVPR 2020.',
           description: "",
