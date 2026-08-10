@@ -73,6 +73,12 @@ ninja.data = [{
           section: "News",},{id: "news-longvqubench-is-accepted-by-eccv-2026-dataset-is-available-on-hugging-face",
           title: 'LongVQUBench is accepted by ECCV 2026. Dataset is available on Hugging Face.',
           description: "",
+          section: "News",},{id: "news-one-paper-on-vlm-token-selection-is-accepted-by-icip-2026-workshop",
+          title: 'One paper on VLM token selection is accepted by ICIP 2026 Workshop.',
+          description: "",
+          section: "News",},{id: "news-one-paper-on-iqa-coreset-selection-is-accepted-by-eccv-2026-workshop",
+          title: 'One paper on IQA coreset selection is accepted by ECCV 2026 Workshop.',
+          description: "",
           section: "News",},{
       id: 'light-theme',
       title: 'Change theme to light',
