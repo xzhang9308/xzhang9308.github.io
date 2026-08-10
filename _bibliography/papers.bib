@@ -1,6 +1,19 @@
 ---
 ---
 
+@inproceedings{nema2026adore,
+  abbr={ECCV 2026 Workshop},
+  title={ADORE: Attribution-guided and Distribution-constrained Coreset Selection for Image Quality Assessment},
+  author={Nema, Arpita and Zhu, Hanwei and Zhang, Xi and Lin, Weisi},
+  booktitle={ECCV 2026 Workshop on Curated Data for Efficient Learning (CDEL)},
+  year={2026},
+  selected={false},
+  bibtex_show={true},
+  preview={adore.png},
+  html={},
+  abstract={Coreset selection for image quality assessment reduces the cost of training deep neural network quality regressors by selecting a small, representative subset of labeled images from a larger candidate. Existing IQA-specific selection methods are label-free and purely geometric: they select images by feature diversity or latent space coverage, without assessing whether a given image actually improves a trained model's predictions. We introduce ADORE, an \textbf{A}ttribution-guided, \textbf{D}istribution-constrained c\textbf{ORE}set selection method for IQA. ADORE scores each candidate image directly on the frozen target network with the image's training-loss gradient and the mean validation-loss gradient, tractable at scale by a Johnson--Lindenstrauss random projection of per-example gradients, with no proxy model and no unrolled training trajectory required. This score is combined with quota-constrained mean-opinion-score (MOS) coverage and facility-location diversity within a greedy submodular selection procedure with a $(1-1/e)$ approximation guarantee. ADORE achieves SRCC and PLCC values within 0.042 and 0.040, respectively, of full-data training while using only 10\% of the dataset on average.}
+}
+
 @inproceedings{zhu2026prunewithconfidence,
   abbr={ICIP 2026 Workshop},
   title={Prune with Confidence: Uncertainty-Calibrated Token Selection for Vision--Language Models},
@@ -11,7 +24,6 @@
   bibtex_show={true},
   preview={prune.png},
   html={},
-  code={},
   abstract={Visual token pruning is an effective strategy for accelerating vision--language models (VLMs) by discarding or merging tokens deemed to have low downstream utility. However, existing pruning methods typically rely on deterministic point estimates of token importance and ignore uncertainty, leading to brittle decisions under distribution shift, ambiguous visual content, and prompt-dependent reasoning. We introduce an uncertainty-aware token pruning framework that augments both text-agnostic and text-aware pruning strategies with a calibrated per-token uncertainty estimate. Our approach quantifies uncertainty using the variance of token-wise signals across transformer attention heads, yielding a lightweight proxy that is readily available at inference time without additional forward passes. We integrate uncertainty with conventional importance scores through a risk-sensitive retention rule that preserves tokens that are uncertain yet potentially informative, mitigating irreversible information loss. The proposed framework is plug-and-play, requires no architectural modifications, and is compatible with a broad class of attention- and similarity-based pruning methods. Experiments on vision and vision--language benchmarks demonstrate consistent improvements in the accuracy--latency trade-off, achieving greater robustness at fixed computational budgets and comparable speedups at matched accuracy.},
 }
 
@@ -26,7 +38,7 @@
   arxiv={2607.01086},
   preview={longvqu.png},
   html={},
-  code={},
+  code={https://github.com/LongVQUBench/longvqubench.github.io},
   dataset={https://huggingface.co/datasets/Aarna004/LongVQUBench},
   abstract={The evaluation of long-term video quality understanding remains an open challenge for large vision--language models (LVLMs). Existing video quality benchmarks predominantly focus on short clips and isolated distortions, overlooking the temporal continuity, cumulative degradation, and reasoning complexity inherent in long-duration content. To address these limitations, we present LongVQUBench, a comprehensive benchmark for long-term video quality understanding. LongVQUBench contains over $1{,}200$ diverse videos spanning movies, documentaries, surveillance footage, egocentric recordings, and animated content, accompanied by $1{,}500$ multiple-choice and open-ended questions for validation and testing. To assess perceptual reasoning across different temporal scopes, we introduce three progressively complex evaluation levels: (i) local event quality understanding (LQU) for analyzing localized distortions; (ii) cross-event quality reasoning (CQR) for integrating multiple degraded events; and (iii) global quality understanding (GQU) for holistic perceptual evaluation over extended durations. Furthermore, a needle distortion question-answering (NDQA) paradigm is embedded across all three levels, where subtle spatial or temporal artifacts are sparsely inserted to probe fine-grained detection and reasoning capabilities. Extensive experiments on $14$ state-of-the-art LVLMs reveal significant performance degradation with increasing video length and reasoning depth, highlighting their limited capacity for long-range temporal integration and perceptual attribution. We envision LongVQUBench as a foundational step toward the systematic, hierarchical, and explainable evaluation of LVLMs' long-term video quality understanding.}
 }
@@ -91,7 +103,7 @@
   selected={false},
   bibtex_show={true},
   preview={coreset_iqa.png},
-  html={https://openaccess.thecvf.com/content/WACV2026/papers/Nema_Diversity_Preserving_Coresets_for_Image_Quality_Assessment_WACV_2026_paper.pdf},
+  html={https://openaccess.thecvf.com/content/WACV2026/html/Nema_Diversity_Preserving_Coresets_for_Image_Quality_Assessment_WACV_2026_paper.html},
   abstract={Coresets are compact, representative subsets of large datasets. While coreset selection methods have been extensively investigated in image classification, their direct application to Image Quality Assessment (IQA) is hindered by the incoherent and structurally distinct nature of content and quality representations in IQA tasks. To address this gap, we propose Q-Diverse coreset, a framework tailored for IQA. Our method begins by extracting dual-view embeddings that are both content-aware and quality-aware, capturing semantic and perceptual nuances. Rather than directly combining these heterogeneous features, we construct separate pairwise distance matrices and fuse them in the distance space. This fusion transforms into a graph-based structure from which spectral embeddings are derived. Finally, a geometric diversity-based sampling strategy is applied in the spectral space to select a coreset that maximizes representativeness. Notably, Q-Diverse operates in a label-free manner, making it especially valuable in IQA, where collecting subjective quality annotations is computationally expensive and time-consuming. Experimental results on seven IQA benchmarks demonstrate that Q-Diverse enables the effective training of deep learning-based IQA architectures, even with limited data, impressively retaining performance. It achieves SRCC and PLCC values within 0.045 and 0.042 of those obtained from full-data training, using only 10% of the dataset on average. Our results establish Q-Diverse as a coreset selection method that enables efficient dataset curation as well as training and fine-tuning deep learning–based IQA models.}
 }
 

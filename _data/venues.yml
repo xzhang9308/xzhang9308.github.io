@@ -10,6 +10,10 @@
   url: https://eccv.ecva.net/
   color: "#1f77b4"
 
+"ECCV 2026 Workshop":
+  url: https://curateddata.github.io/
+  color: "#1f77b4"
+
 "ICCV":
   url: https://iccv.thecvf.com/
   color: "#9467bd"
