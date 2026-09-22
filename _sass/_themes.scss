@@ -10,10 +10,26 @@
   --global-code-bg-color: #{$code-bg-color-light};
   --global-text-color: #{$black-color};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  --global-theme-color-rgb: #{color.channel($purple-color, "red", $space: rgb)}, #{color.channel($purple-color, "green", $space: rgb)}, #{color.channel($purple-color, "blue", $space: rgb)};
+  --global-text-color-muted: #{color.adjust($grey-color, $lightness: -18%)};
+  --global-theme-color: #{$brand-color};
+  --global-theme-color-rgb: #{color.channel($brand-color, "red", $space: rgb)}, #{color.channel($brand-color, "green", $space: rgb)}, #{color.channel($brand-color, "blue", $space: rgb)};
+  --global-link-color: #{$brand-color};
   --publication-highlight-alpha: 0.12;
-  --global-hover-color: #{$purple-color};
+  --badge-conference-color: #{$badge-conference-color};
+  --badge-conference-bg: #{color.change($badge-conference-color, $alpha: 0.15)};
+  --badge-conference-border: #{color.change($badge-conference-color, $alpha: 0.25)};
+  --news-badge-conference-color: #3e6b8c;
+  --news-badge-conference-bg: #edf3f8;
+  --news-badge-conference-border: #cbdce9;
+  --badge-journal-color: #{$badge-journal-color};
+  --badge-journal-bg: #{color.change($badge-journal-color, $alpha: 0.15)};
+  --badge-journal-border: #{color.change($badge-journal-color, $alpha: 0.25)};
+  --badge-honor-color: #{$badge-honor-color};
+  --badge-honor-bg: #{color.change($badge-honor-color, $alpha: 0.15)};
+  --badge-honor-border: #{color.change($badge-honor-color, $alpha: 0.25)};
+  --publication-accent-conference: #{color.change($badge-conference-color, $alpha: 0.5)};
+  --publication-accent-journal: #{color.change($badge-journal-color, $alpha: 0.5)};
+  --global-hover-color: #{$brand-color};
   --global-hover-text-color: #{$white-color};
   --global-footer-bg-color: #{$grey-color-dark};
   --global-footer-text-color: #{$grey-color-light};
@@ -21,6 +37,8 @@
   --global-distill-app-color: #{$grey-color};
   --global-divider-color: rgba(0, 0, 0, 0.1);
   --global-card-bg-color: #{$white-color};
+  --publication-item-bg: #fbfbfc;
+  --publication-item-border: rgba(0, 0, 0, 0.05);
   --global-highlight-color: #{$red-color-dark};
   --global-back-to-top-bg-color: rgba(
     #{color.channel($black-color, "red", $space: rgb)},
@@ -75,17 +93,35 @@ html[data-theme="dark"] {
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$purple-color};
-  --global-theme-color-rgb: #{color.channel($purple-color, "red", $space: rgb)}, #{color.channel($purple-color, "green", $space: rgb)}, #{color.channel($purple-color, "blue", $space: rgb)};
+  --global-text-color-muted: #{color.adjust($grey-color, $lightness: 18%)};
+  --global-theme-color: #{$brand-color-dark};
+  --global-theme-color-rgb: #{color.channel($brand-color-dark, "red", $space: rgb)}, #{color.channel($brand-color-dark, "green", $space: rgb)}, #{color.channel($brand-color-dark, "blue", $space: rgb)};
+  --global-link-color: #{$brand-color-dark};
   --publication-highlight-alpha: 0.12;
-  --global-hover-color: #{$purple-color};
-  --global-hover-text-color: #{$white-color};
+  --badge-conference-color: #{$badge-conference-color-dark};
+  --badge-conference-bg: #{color.change($badge-conference-color-dark, $alpha: 0.16)};
+  --badge-conference-border: #{color.change($badge-conference-color-dark, $alpha: 0.3)};
+  --news-badge-conference-color: #92b8d4;
+  --news-badge-conference-bg: rgba(130, 176, 210, 0.12);
+  --news-badge-conference-border: rgba(130, 176, 210, 0.28);
+  --badge-journal-color: #{$badge-journal-color-dark};
+  --badge-journal-bg: #{color.change($badge-journal-color-dark, $alpha: 0.16)};
+  --badge-journal-border: #{color.change($badge-journal-color-dark, $alpha: 0.3)};
+  --badge-honor-color: #{$badge-honor-color-dark};
+  --badge-honor-bg: #{color.change($badge-honor-color-dark, $alpha: 0.16)};
+  --badge-honor-border: #{color.change($badge-honor-color-dark, $alpha: 0.3)};
+  --publication-accent-conference: #{color.change($badge-conference-color-dark, $alpha: 0.55)};
+  --publication-accent-journal: #{color.change($badge-journal-color-dark, $alpha: 0.55)};
+  --global-hover-color: #{$brand-color-dark};
+  --global-hover-text-color: #{$grey-color-dark};
   --global-footer-bg-color: #{$grey-color-light};
   --global-footer-text-color: #{$grey-color-dark};
   --global-footer-link-color: #{$black-color};
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
   --global-card-bg-color: #{$grey-900};
+  --publication-item-bg: rgba(255, 255, 255, 0.02);
+  --publication-item-border: rgba(255, 255, 255, 0.07);
   --global-back-to-top-bg-color: rgba(
     #{color.channel($white-color, "red", $space: rgb)},
     #{color.channel($white-color, "green", $space: rgb)},

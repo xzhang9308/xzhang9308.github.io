@@ -59,16 +59,16 @@ table {
 
 a,
 table.table a {
-  color: var(--global-theme-color);
+  color: var(--global-link-color);
   text-decoration: none;
-  background-image: linear-gradient(var(--global-theme-color), var(--global-theme-color));
+  background-image: linear-gradient(var(--global-link-color), var(--global-link-color));
   background-size: 0% 1px;
   background-position: 0 100%;
   background-repeat: no-repeat;
   transition: background-size 0.3s ease, color 0.3s ease;
 
   &:hover {
-    color: var(--global-theme-color);
+    color: var(--global-link-color);
     text-decoration: none;
     background-size: 100% 1px;
   }
@@ -242,7 +242,7 @@ ul.task-list input[type="checkbox"] {
 .about-text {
   flex: 1;
   min-width: 0;
-  text-align: justify;
+  text-align: left;
 }
 
 .about-profile {
@@ -250,9 +250,15 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 }
 
+hr.section-divider {
+  margin: 28px 0;
+}
+
 @media (max-width: 576px) {
+  // column-reverse, not column: the photo follows the bio in the DOM so that
+  // row-reverse can put it on the left on wide screens.
   .about-content-wrapper {
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     gap: 1.5rem;
   }
@@ -281,13 +287,12 @@ ul.task-list input[type="checkbox"] {
   .more-info {
     margin-bottom: 5px;
     margin-top: 12px;
-    font-family: "Inter", monospace;
     font-size: 0.85rem;
     color: var(--global-text-color-light);
     line-height: 1.6;
 
     p {
-      display: inline-block;
+      display: block;
       margin: 0;
     }
   }
@@ -540,23 +545,28 @@ html[data-theme="dark"] .navbar {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem 1rem;
+    font-size: 1.75rem;
 
     a {
       img {
-        width: 3.2rem;
-        height: 3.2rem;
-        margin-bottom: 1rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-bottom: 0;
       }
 
       svg {
-        width: 3.5rem;
-        height: 4rem;
-        margin-bottom: 0.5rem;
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-bottom: 0;
 
         image {
-          width: 3.5rem;
-          height: 3.5rem;
+          width: 1.75rem;
+          height: 1.75rem;
         }
       }
 
@@ -636,13 +646,26 @@ footer.fixed-bottom {
 }
 
 footer.sticky-bottom {
+  background-color: var(--global-bg-color);
   border-top: 1px solid var(--global-divider-color);
-  padding-top: 40px;
-  padding-bottom: 40px;
-  font-size: 0.9rem;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  font-size: 0.8rem;
 
   .container {
     text-align: center;
+    color: var(--global-text-color-light);
+  }
+
+  a {
+    color: var(--global-text-color);
+    background-image: none;
+
+    &:hover {
+      color: var(--global-link-color);
+      text-decoration: none;
+      background-size: 0;
+    }
   }
 }
 
@@ -731,6 +754,16 @@ footer.sticky-bottom {
 .post-title {
   mjx-container[jax="CHTML"][display="true"] {
     display: unset;
+  }
+}
+
+.post-header .desc {
+  color: var(--global-text-color-muted);
+  font-size: 1.02rem;
+  line-height: 1.5;
+
+  a {
+    color: var(--global-link-color);
   }
 }
 
@@ -893,15 +926,15 @@ footer.sticky-bottom {
   }
 
   abbr.abbr-conference {
-    color: var(--global-theme-color) !important;
-    background-color: rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.15) !important;
-    border-color: rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.25);
+    color: var(--badge-conference-color) !important;
+    background-color: var(--badge-conference-bg) !important;
+    border-color: var(--badge-conference-border);
   }
 
   abbr.abbr-journal {
-    color: #0b7285 !important;
-    background-color: rgba(11, 114, 133, 0.15) !important;
-    border-color: rgba(11, 114, 133, 0.25);
+    color: var(--badge-journal-color) !important;
+    background-color: var(--badge-journal-bg) !important;
+    border-color: var(--badge-journal-border);
   }
 }
 
@@ -924,20 +957,36 @@ footer.sticky-bottom {
   }
 
   h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-family: "Lora", "Georgia", serif;
-
-    span {
-      font-size: 1.5rem;
-    }
   }
 
   h2.bibliography {
-    color: var(--global-text-color);
-    border-top: 1px solid var(--global-divider-color);
-    padding-top: 1rem;
-    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--global-text-color-light);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1;
+    white-space: nowrap;
+    border-top: none;
+    padding-top: 0;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
     text-align: right;
+
+    &::before {
+      content: "";
+      flex: 1 1 auto;
+      height: 1px;
+      background-color: var(--global-divider-color);
+    }
+
+    &:first-of-type {
+      margin-top: 0.35rem;
+    }
   }
 
   ol.bibliography {
@@ -946,10 +995,43 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      padding: 0.75rem 0;
-      margin-bottom: 0.25rem;
+      padding: 0.4rem 1rem 0.35rem 1.05rem;
+      margin-bottom: 0.65rem;
+      background-color: var(--publication-item-bg);
+      border: 1px solid var(--publication-item-border);
+      border-left-width: 3px;
       border-radius: 8px;
-      transition: background-color 0.3s ease;
+      box-shadow: none;
+      transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+
+      // The left rule echoes the venue badge so the list reads as conference
+      // vs. journal at a glance without adding another accent hue.
+      &:has(.abbr-conference) {
+        border-left-color: var(--publication-accent-conference);
+
+        &:hover {
+          border-left-color: var(--badge-conference-color);
+        }
+      }
+
+      &:has(.abbr-journal) {
+        border-left-color: var(--publication-accent-journal);
+
+        &:hover {
+          border-left-color: var(--badge-journal-color);
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media (max-width: 576px) {
+        padding-right: 0.55rem;
+        padding-left: 0.7rem;
+      }
 
       .preview {
       }
@@ -989,32 +1071,75 @@ footer.sticky-bottom {
           font-weight: 600;
 
           a,
-          div {
+          div,
+          span {
             color: inherit !important;
           }
         }
 
         abbr.abbr-conference {
-          color: var(--global-theme-color) !important;
-          background-color: rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.15) !important;
-          border: 1px solid rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.25);
+          color: var(--badge-conference-color) !important;
+          background-color: var(--badge-conference-bg) !important;
+          border: 1px solid var(--badge-conference-border);
         }
 
         abbr.abbr-journal {
-          color: #0b7285 !important;
-          background-color: rgba(11, 114, 133, 0.15) !important;
-          border: 1px solid rgba(11, 114, 133, 0.25);
+          color: var(--badge-journal-color) !important;
+          background-color: var(--badge-journal-bg) !important;
+          border: 1px solid var(--badge-journal-border);
         }
 
         .award {
-          color: var(--global-theme-color) !important;
-          border: 1px solid var(--global-theme-color);
+          color: var(--badge-honor-color) !important;
+          border: 1px solid var(--badge-honor-border);
         }
       }
 
       .title {
-        font-weight: bolder;
-        margin-bottom: 0.1rem;
+        font-size: 1.05rem;
+        font-weight: 600;
+        line-height: 1.35;
+        margin-bottom: 0.15rem;
+      }
+
+      .publication-venue-row {
+        margin-top: 0.2rem;
+
+        .publication-venue-badge {
+          display: inline-block;
+          margin-right: 0.4rem;
+          margin-bottom: 0;
+          vertical-align: baseline;
+
+          abbr {
+            display: inline-block;
+            width: auto !important;
+            margin-bottom: 0;
+            padding: 0.14rem 0.48rem;
+            font-size: 0.7rem;
+            line-height: 1.35;
+            white-space: nowrap;
+          }
+        }
+
+        // Oral / Highlight / Spotlight share one honor color; the label text
+        // carries the distinction instead of a separate hue for each.
+        .publication-distinction {
+          display: inline-block;
+          margin-right: 0.4rem;
+          margin-bottom: 0;
+          vertical-align: baseline;
+          padding: 0.14rem 0.48rem;
+          font-size: 0.7rem;
+          font-weight: 600;
+          line-height: 1.35;
+          letter-spacing: 0.02em;
+          border-radius: 4px;
+          white-space: nowrap;
+          color: var(--badge-honor-color);
+          background-color: var(--badge-honor-bg);
+          border: 1px solid var(--badge-honor-border);
+        }
       }
 
       .author {
@@ -1059,13 +1184,14 @@ footer.sticky-bottom {
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-divider-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
+          padding-left: 0.55rem;
+          padding-right: 0.55rem;
+          padding-top: 0.1rem;
+          padding-bottom: 0.1rem;
           margin-left: 0;
-          border-radius: 6px;
-          font-size: 0.85rem;
+          border-radius: 5px;
+          font-size: 0.72rem;
+          line-height: 1.5;
           transition: all 0.3s ease;
           background-image: none;
 
@@ -1077,7 +1203,16 @@ footer.sticky-bottom {
           }
         }
         a.award.btn {
-          border-color: var(--global-highlight-color);
+          color: var(--badge-honor-color);
+          background-color: var(--badge-honor-bg);
+          border-color: var(--badge-honor-border);
+          font-weight: 700;
+
+          &:hover {
+            color: var(--badge-honor-color);
+            background-color: var(--badge-honor-bg);
+            border-color: var(--badge-honor-color);
+          }
         }
       }
 
@@ -1129,18 +1264,18 @@ footer.sticky-bottom {
       }
 
       div.abstract.hidden {
-        border: dashed 1px var(--global-bg-color);
+        border: none;
       }
 
       div.abstract.hidden.open {
-        border-color: var(--global-text-color);
+        border: dashed 1px var(--global-divider-color);
       }
     }
     div.award.hidden {
-      border: dashed 1px var(--global-bg-color);
+      border: none;
     }
     div.award.hidden.open {
-      border-color: var(--global-highlight-color);
+      border: dashed 1px var(--global-highlight-color);
     }
   }
 }

@@ -12,7 +12,42 @@
           line-height: 1.5;
           color: inherit;
         }
+
+        // Shrink-to-fit so the date never wraps and the gap to the headline
+        // stays constant instead of scaling with the container.
+        th {
+          width: 1%;
+          white-space: nowrap;
+          padding-right: 1.25rem;
+        }
       }
+    }
+  }
+
+  // Too narrow for two columns: stack the date above the headline.
+  @media (max-width: 576px) {
+    table,
+    tbody,
+    tr,
+    th,
+    td {
+      display: block;
+      width: auto !important;
+    }
+
+    tr {
+      padding: 0.35rem 0;
+    }
+
+    th {
+      padding: 0 0 0.1rem 0 !important;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--global-text-color-light);
+    }
+
+    td {
+      padding: 0 !important;
     }
   }
 
@@ -20,8 +55,9 @@
     display: inline-flex;
     align-items: center;
     padding: 0.1rem 0.45rem;
-    margin-left: 0.35rem;
-    margin-right: 0.15rem;
+    // No trailing margin: the badge is usually followed directly by a period,
+    // which would otherwise be pushed away from the text.
+    margin-left: 0.15rem;
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -30,35 +66,63 @@
   }
 
   .news-badge-conference {
-    color: var(--global-theme-color);
-    background-color: rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.15);
-    border: 1px solid rgba(var(--global-theme-color-rgb, 78, 42, 132), 0.25);
+    color: var(--news-badge-conference-color);
+    background-color: var(--news-badge-conference-bg);
+    border: 1px solid var(--news-badge-conference-border);
   }
 
   .news-badge-journal {
-    color: #0b7285;
-    background-color: rgba(11, 114, 133, 0.15);
-    border: 1px solid rgba(11, 114, 133, 0.25);
+    color: var(--badge-journal-color);
+    background-color: var(--badge-journal-bg);
+    border: 1px solid var(--badge-journal-border);
   }
 
-  .news-badge-highlight {
-    color: #b46900;
-    background-color: rgba(180, 105, 0, 0.18);
-    border: 1px solid rgba(180, 105, 0, 0.25);
-  }
-
+  .news-badge-highlight,
   .news-badge-honor {
-    color: #ab2346;
-    background-color: rgba(171, 35, 70, 0.18);
-    border: 1px solid rgba(171, 35, 70, 0.25);
+    color: var(--badge-honor-color);
+    background-color: var(--badge-honor-bg);
+    border: 1px solid var(--badge-honor-border);
+  }
+
+  .news-badge-honor:has(.fa-trophy) {
+    border-radius: 5px;
+    font-weight: 700;
+
+    .fa-trophy {
+      margin-right: 0.2rem;
+    }
+  }
+
+  a.news-badge-honor {
+    background-image: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--badge-honor-color);
+      background-color: var(--badge-honor-bg);
+      border-color: var(--badge-honor-color);
+      background-image: none;
+    }
   }
 
   .news-title {
-    color: var(--global-theme-color);
+    color: var(--global-link-color);
 
     &:hover {
-      color: var(--global-hover-color);
+      color: var(--global-link-color);
     }
   }
 }
 
+.btn-outline-theme {
+  color: var(--global-theme-color);
+  border-color: var(--global-theme-color);
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: var(--global-hover-text-color);
+    background-color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+  }
+}

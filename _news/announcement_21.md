@@ -4,4 +4,4 @@ date: 2026-08-10 00:00:00-0400
 inline: true
 related_posts: false
 ---
-One paper on IQA coreset selection is accepted by <span class="news-badge news-badge-conference">ECCV 2026 Workshop</span>.
+One paper on IQA coreset selection is accepted by the <span class="news-badge news-badge-conference">CDEL Workshop @ ECCV 2026</span>.

@@ -37,8 +37,21 @@ $black-color: #000000 !default;
 
 // Theme colors
 
-$code-bg-color-light: rgba($purple-color, 0.05);
+$brand-color: #32658a !default;
+$brand-color-dark: #82b0d2 !default;
+$code-bg-color-light: rgba($brand-color, 0.05);
 $code-bg-color-dark: #2c3237 !default;
+
+// Badge palette. The site sticks to three accent hues: the brand color for
+// conference venues, a forest green for journals, and an amber for distinctions
+// (oral / highlight / spotlight / honors). The `-dark` variants are lightened
+// so they stay above 4.5:1 contrast on the dark background.
+$badge-conference-color: $brand-color !default;
+$badge-conference-color-dark: $brand-color-dark;
+$badge-journal-color: #2f6f4e !default;
+$badge-journal-color-dark: #83c5a6 !default;
+$badge-honor-color: #b46900 !default;
+$badge-honor-color-dark: color.adjust($badge-honor-color, $saturation: -15%, $lightness: 25%);
 
 // Font awesome location
 $fa-font-path: "../webfonts";

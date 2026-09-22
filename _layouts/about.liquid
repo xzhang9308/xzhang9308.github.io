@@ -51,7 +51,7 @@ layout: default
     {% endif %}
 
     <!-- Line Separator with Spacing -->
-    <hr style="margin: 28px 0;">
+    <hr class="section-divider">
 
     <!-- News -->
     {% if page.news and site.announcements and site.announcements.enabled %}
@@ -62,7 +62,7 @@ layout: default
     {% endif %}
 
     <!-- Line Separator with Spacing -->
-    <hr style="margin: 28px 0;">
+    <hr class="section-divider">
 
     <!-- Latest posts -->
     {% comment %} {% if site.latest_posts and site.latest_posts.enabled %}
@@ -85,10 +85,14 @@ layout: default
 
     <!-- Social -->
     {% if page.social %}
+      <hr class="section-divider">
+
       <div class="social">
         <div class="contact-icons">{% include social.liquid %}</div>
 
-        <div class="contact-note">{{ site.contact_note }}</div>
+        {% if site.contact_note != blank %}
+          <div class="contact-note">{{ site.contact_note }}</div>
+        {% endif %}
       </div>
     {% endif %}
 
