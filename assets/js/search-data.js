@@ -85,6 +85,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-at-the-cfm-workshop-icip-2026-received-the-best-paper-award-runner-up",
           title: 'Our paper at the CfM Workshop @ ICIP 2026 received the Best Paper...',
           description: "",
+          section: "News",},{id: "news-one-paper-on-efficient-visual-token-pruning-is-accepted-by-neurips-2026",
+          title: 'One paper on efficient visual token pruning is accepted by NeurIPS 2026.',
+          description: "",
           section: "News",},{
       id: 'light-theme',
       title: 'Change theme to light',
