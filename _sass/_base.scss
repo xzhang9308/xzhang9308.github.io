@@ -1145,6 +1145,11 @@ footer.sticky-bottom {
       .author {
         color: var(--global-text-color);
 
+        sup[aria-label="Corresponding author"] {
+          font-size: 0.85em;
+          margin-left: 0.12em;
+        }
+
         a {
           color: inherit;
           border-bottom: none;

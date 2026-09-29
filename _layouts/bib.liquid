@@ -75,6 +75,7 @@
     <div class="title">{{ entry.title }}</div>
     <!-- Author -->
     <div class="author">
+      {% assign corresponding_authors = entry.corresponding_authors | split: '; ' %}
       {% assign author_array_size = entry.author_array | size %}
 
       {% assign author_array_limit = author_array_size %}
@@ -86,6 +87,10 @@
         {% assign author_is_self = false %}
         {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
         {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {% assign author_full_name = author.first | append: ' ' | append: author_last_name %}
+        {% if corresponding_authors contains author_full_name %}
+          {% assign author_last_html = author_last_html | append: '<sup title="Corresponding author" aria-label="Corresponding author">✉</sup>' %}
+        {% endif %}
         {% if site.scholar.last_name contains author_last_name %}
           {% if site.scholar.first_name contains author.first %}
             {% assign author_is_self = true %}
@@ -133,11 +138,15 @@
         {% assign more_authors_show = '' %}
         {%- for author in entry.author_array offset: author_array_limit -%}
           {% assign more_authors_show = more_authors_show | append: author.first | append: ' ' | append: author.last %}
+          {% assign author_full_name = author.first | append: ' ' | append: author.last %}
+          {% if corresponding_authors contains author_full_name %}
+            {% assign more_authors_show = more_authors_show | append: '✉' %}
+          {% endif %}
           {% unless forloop.last %}
             {% assign more_authors_show = more_authors_show | append: ', ' %}
           {% endunless %}
         {%- endfor -%}
-        {%- assign more_authors_show = more_authors_show | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+        {%- assign more_authors_show = more_authors_show | regex_replace: '([*∗†‡§¶‖&^✉]+)', '<sup>\1</sup>' -%}
         , and
         <span
           class="more-authors"
