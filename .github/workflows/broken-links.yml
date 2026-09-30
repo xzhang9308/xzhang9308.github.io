@@ -6,6 +6,7 @@ on:
       - master
       - main
     paths:
+      - ".lycheeignore"
       - "assets/**"
       - "**.html"
       - "**.js"
@@ -23,6 +24,7 @@ on:
       - master
       - main
     paths:
+      - ".lycheeignore"
       - "assets/**"
       - "**.html"
       - "**.js"
@@ -46,5 +48,10 @@ jobs:
         uses: lycheeverse/lychee-action@v2.1.0
         with:
           fail: true
-          # removed md files that include liquid tags
-          args: --user-agent 'curl/7.54' --exclude-path README.md --exclude-path _pages/404.md --verbose --no-progress './**/*.md' './**/*.html'
+          # Liquid URLs are resolved by Jekyll and checked in broken-links-site.yml.
+          args: >-
+            --user-agent 'curl/7.54'
+            --exclude-path README.md
+            --exclude-path _pages/404.md
+            --exclude '(?i)(\{\{|%7b%7b).*?(\}\}|%7d%7d)'
+            --verbose --no-progress './**/*.md' './**/*.html'

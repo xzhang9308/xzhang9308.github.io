@@ -1,2 +1,4 @@
 linkedin.com
 reddit.com
+# Google Scholar blocks automated requests from GitHub runners (HTTP 403).
+^https?://scholar\.google\.com/
