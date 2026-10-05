@@ -89,7 +89,7 @@
         {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
         {% assign author_full_name = author.first | append: ' ' | append: author_last_name %}
         {% if corresponding_authors contains author_full_name %}
-          {% assign author_last_html = author_last_html | append: '<sup title="Corresponding author" aria-label="Corresponding author">✉</sup>' %}
+          {% assign author_last_html = author_last_html | append: '<sup class="corresponding-author-mark" title="Corresponding author" aria-label="Corresponding author">✉</sup>' %}
         {% endif %}
         {% if site.scholar.last_name contains author_last_name %}
           {% if site.scholar.first_name contains author.first %}

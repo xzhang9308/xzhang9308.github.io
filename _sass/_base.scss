@@ -1145,7 +1145,7 @@ footer.sticky-bottom {
       .author {
         color: var(--global-text-color);
 
-        sup[aria-label="Corresponding author"] {
+        .corresponding-author-mark {
           font-size: 0.85em;
           margin-left: 0.3em;
           font-style: normal;
