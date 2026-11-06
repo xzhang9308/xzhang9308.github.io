@@ -18,9 +18,9 @@
   --badge-conference-color: #{$badge-conference-color};
   --badge-conference-bg: #{color.change($badge-conference-color, $alpha: 0.15)};
   --badge-conference-border: #{color.change($badge-conference-color, $alpha: 0.25)};
-  --news-badge-conference-color: #3e6b8c;
-  --news-badge-conference-bg: #edf3f8;
-  --news-badge-conference-border: #cbdce9;
+  --news-badge-conference-color: var(--badge-conference-color);
+  --news-badge-conference-bg: var(--badge-conference-bg);
+  --news-badge-conference-border: var(--badge-conference-border);
   --badge-journal-color: #{$badge-journal-color};
   --badge-journal-bg: #{color.change($badge-journal-color, $alpha: 0.15)};
   --badge-journal-border: #{color.change($badge-journal-color, $alpha: 0.25)};
@@ -101,9 +101,9 @@ html[data-theme="dark"] {
   --badge-conference-color: #{$badge-conference-color-dark};
   --badge-conference-bg: #{color.change($badge-conference-color-dark, $alpha: 0.16)};
   --badge-conference-border: #{color.change($badge-conference-color-dark, $alpha: 0.3)};
-  --news-badge-conference-color: #92b8d4;
-  --news-badge-conference-bg: rgba(130, 176, 210, 0.12);
-  --news-badge-conference-border: rgba(130, 176, 210, 0.28);
+  --news-badge-conference-color: var(--badge-conference-color);
+  --news-badge-conference-bg: var(--badge-conference-bg);
+  --news-badge-conference-border: var(--badge-conference-border);
   --badge-journal-color: #{$badge-journal-color-dark};
   --badge-journal-bg: #{color.change($badge-journal-color-dark, $alpha: 0.16)};
   --badge-journal-border: #{color.change($badge-journal-color-dark, $alpha: 0.3)};
