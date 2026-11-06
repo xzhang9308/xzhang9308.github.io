@@ -1,0 +1,35 @@
+# Years mark the start of each stage.
+- year: "2011"
+  flag: "🇨🇳"
+  country: China
+  role: Bachelor's Student
+  institution: University of Electronic Science and Technology of China
+  institution_lines:
+    - University of Electronic Science
+    - and Technology of China
+  detail: Mathematics & Physics
+- year: "2015"
+  flag: "🇨🇳"
+  country: China
+  role: Ph.D. Student
+  institution: Shanghai Jiao Tong University
+  detail: Electronic Science and Technology
+- year: "2022"
+  flag: "🇨🇦"
+  country: Canada
+  role: Postdoctoral Fellow
+  institution: McMaster University
+  detail: Electrical & Computer Engineering
+- year: "2024"
+  flag: "🇸🇬"
+  country: Singapore
+  role: Research Scientist
+  institution: Nanyang Technological University
+  detail: Alibaba–NTU ANGEL Lab
+- year: "2026"
+  flag: "🇨🇳"
+  country: China
+  role: Associate Professor
+  institution: Shanghai University
+  detail: School of Computer Engineering and Science
+  current: true

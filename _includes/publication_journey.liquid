@@ -1,0 +1,31 @@
+<section class="publication-journey" aria-labelledby="publication-journey-title">
+  <div class="publication-journey-header">
+    <h2 id="publication-journey-title">Publication Journey</h2>
+  </div>
+  <div class="publication-journey-route">
+    {% for row in site.data.publication_journey.rows %}
+      {% assign row_parity = forloop.index0 | modulo: 2 %}
+      {% assign start_number = forloop.index0 | times: 5 | plus: 1 %}
+      <ol class="publication-journey-row{% if row_parity == 1 %} publication-journey-reverse{% endif %}" start="{{ start_number }}" style="--row-count: {{ row.size }}">
+        {% for group in row %}
+          <li class="publication-journey-paper">
+            <span class="publication-journey-year">{{ group.year }} <span aria-hidden="true">{% if row_parity == 1 %}&larr;{% else %}&rarr;{% endif %}</span></span>
+            <span class="publication-journey-dot" aria-hidden="true"></span>
+            <ul class="publication-journey-items">
+              {% for paper in group.papers %}
+                <li>
+                  <a class="publication-journey-item{% if paper.award != empty %} publication-journey-item-awarded{% endif %}{% if paper.distinction %} publication-journey-item-honored{% endif %}" href="#{{ paper.key }}" aria-label="{{ paper.title | escape }} · {{ paper.role }}">
+                    <span class="publication-journey-venue{% if paper.journal %} publication-journey-journal{% endif %}">{{ paper.venue | escape }}</span>
+                    {% if paper.award != empty %}<span class="publication-journey-distinction" aria-label="{{ paper.award_name | escape }}">{{ paper.award }}</span>{% endif %}
+                    {% if paper.award == empty %}<span class="publication-journey-short-title">{{ paper.short_title | escape }}</span>{% endif %}
+                    {% if paper.distinction %}<span class="publication-journey-distinction">{{ paper.distinction }}</span>{% endif %}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ol>
+    {% endfor %}
+  </div>
+</section>

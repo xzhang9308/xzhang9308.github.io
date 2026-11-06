@@ -1,0 +1,158 @@
+.career-journey {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem 0.85rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  background: rgba(var(--global-theme-color-rgb), 0.025);
+}
+
+.career-journey-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+
+  h2 {
+    margin: 0 0 0.65rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+}
+
+.career-journey-hint {
+  display: none;
+  font-size: 0.75rem;
+  color: var(--global-text-color-light);
+}
+
+.career-journey-scroll {
+  overflow-x: auto;
+  padding: 5px 0 3px;
+  scrollbar-width: thin;
+
+  &:focus-visible {
+    outline: 2px solid var(--global-theme-color);
+    outline-offset: 5px;
+  }
+}
+
+.career-timeline {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(min-content, 1fr));
+  min-width: 800px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.career-stage {
+  position: relative;
+  padding: 0 12px 0 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 29px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(var(--global-theme-color-rgb), 0.24);
+  }
+
+  &:last-child::before {
+    display: none;
+  }
+
+  &:nth-last-child(2)::before {
+    right: -24px;
+  }
+
+  h3 {
+    margin: 0 0 4px;
+    font-size: 0.94rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+}
+
+.career-year {
+  display: block;
+  height: 25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--global-theme-color);
+}
+
+.career-marker {
+  position: relative;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-bottom: 10px;
+  border: 2px solid var(--global-theme-color);
+  border-radius: 50%;
+  background: var(--global-bg-color);
+}
+
+.career-flag {
+  margin-left: 0.35rem;
+  font-size: 1rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.career-institution {
+  white-space: nowrap;
+  margin: 0 0 4px;
+  font-size: 0.83rem;
+  line-height: 1.35;
+}
+
+.career-detail {
+  margin: 0;
+  font-size: 0.73rem;
+  line-height: 1.35;
+  color: var(--global-text-color-light);
+}
+
+.career-institution-line {
+  display: block;
+}
+
+.career-stage-current {
+  padding-left: 24px;
+  padding-right: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 29px;
+    left: 40px;
+    right: 0;
+    height: 2px;
+    background: repeating-linear-gradient(
+      to right,
+      var(--global-theme-color) 0,
+      var(--global-theme-color) 5px,
+      transparent 5px,
+      transparent 10px
+    );
+    opacity: 0.55;
+    -webkit-mask-image: linear-gradient(to right, #000, transparent);
+    mask-image: linear-gradient(to right, #000, transparent);
+  }
+  h3 { color: var(--global-theme-color); }
+  .career-marker {
+    background: var(--global-theme-color);
+    box-shadow: 0 0 0 5px rgba(var(--global-theme-color-rgb), 0.12);
+  }
+}
+
+@media (max-width: 900px) {
+  .career-journey-hint { display: inline; }
+}
+
+@media (max-width: 576px) {
+  .career-journey { padding: 0.85rem 1rem 0.75rem; }
+  .career-journey-heading h2 { font-size: 1.05rem; }
+}

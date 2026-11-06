@@ -1,0 +1,34 @@
+# Display labels for the timeline. Use established method names where available;
+# otherwise use a short descriptive label rather than inventing an acronym.
+zhang2017illumination: NRR
+zhang2019nonlinear: PredNet
+zhang2019near: ℓ∞-CNN
+zhang2020numerosity: Numerosity
+zhang2020davd: DAVD-Net
+zhang2021attention: AGDL
+zhang2020ultra: ℓ∞-ED²
+zhang2022multi: MDVD-Net
+zhang2023lvqac: LVQAC
+zhang2024learning: OLVQ
+zhang2025learning: GLVQ
+zhang2025badiff: BADiff
+zhang2026modalityaware: MABA
+zhu2026robustpruner: RobustPruner
+
+# Descriptive labels are retained when the original paper has no unique method acronym.
+wu2019cognitive: Subitizing
+xu2025multirate: Adaptive LVQ
+xu2024fast: CRCIR
+xu2026salvq: SALVQ
+nema2026longvqubench: LongVQUBench
+guo2020deep: MMSD-Net
+
+# Verified source pointers for labels revised in the timeline:
+# ℓ∞-CNN: https://arxiv.org/pdf/1801.07987 (Introduction)
+# MDVD-Net: https://arxiv.org/html/2107.05548 (Introduction)
+# MABA: https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_Modality-Aware_Bit_Allocation_for_Mixed-Precision_Quantization_of_Vision-Language_Models_CVPRF_2026_paper.html
+# CRCIR: https://arxiv.org/html/2408.02966 (Introduction)
+# Adaptive LVQ: CVPR 2025 paper uses "adaptive LVQ", not an expanded ALVQ acronym.
+# MMSD-Net: https://arxiv.org/pdf/2008.01652 (Figure 2 / Methodology)
+
+zhu2026prunewithconfidence: Prune with Confidence

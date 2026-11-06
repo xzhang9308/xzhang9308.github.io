@@ -24,6 +24,6 @@ Previously, I was a Research Scientist in the Alibaba-NTU Global e-Sustainabilit
 working with Prof [Weisi Lin](https://personal.ntu.edu.sg/wslin/Home.html).
 Before that, I was a postdoctoral fellow at McMaster University, Canada,
 supervised by Prof [Xiaolin Wu](https://scholar.google.com/citations?user=ZuQnEIgAAAAJ).
-I received my Ph.D. in Electrical Engineering from Shanghai Jiao Tong University (SJTU) in June 2022, and my bachelor's degree in Mathematics and Physics Basic Science from University of Electronic Science and Technology of China (UESTC) in 2015.
+I received my Ph.D. in Electronic Science and Technology from Shanghai Jiao Tong University (SJTU) in June 2022, and my bachelor's degree in Mathematics and Physics Basic Science from University of Electronic Science and Technology of China (UESTC) in 2015.
 
 My current research focuses on Green AI, particularly on efficient model design, sustainable system architectures, and resource-aware compression techniques. In this line, I work on lightweight architectures, quantization, and compression methods to reduce energy, memory, and computational costs of large-scale models while maintaining strong performance.

@@ -1,0 +1,27 @@
+<section class="career-journey" aria-labelledby="career-journey-title">
+  <div class="career-journey-heading">
+    <h2 id="career-journey-title">Academic Journey</h2>
+    <span class="career-journey-hint" aria-hidden="true">Swipe to explore &rarr;</span>
+  </div>
+  <div class="career-journey-scroll" tabindex="0" role="region" aria-label="Academic journey, scroll horizontally to explore">
+    <ol class="career-timeline">
+      {% for stage in site.data.career %}
+        <li class="career-stage{% if stage.current %} career-stage-current{% endif %}">
+          <span class="career-year">{{ stage.year }} <span class="career-flag" role="img" aria-label="{{ stage.country }}">{{ stage.flag }}</span></span>
+          <span class="career-marker" aria-hidden="true"></span>
+          <h3>{{ stage.role }}</h3>
+          <p class="career-institution">
+            {% if stage.institution_lines %}
+              {% for line in stage.institution_lines %}
+                <span class="career-institution-line">{{ line }}</span>
+              {% endfor %}
+            {% else %}
+              {{ stage.institution }}
+            {% endif %}
+          </p>
+          <p class="career-detail">{{ stage.detail }}</p>
+        </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
