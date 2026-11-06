@@ -38,10 +38,10 @@
     top: 25px;
     right: -16px;
     width: 16px;
-    // Border-box includes both strokes: extend by one stroke so the bottom
-    // border lands exactly on the next row's 2px horizontal line.
+    // Span from this row's line to the next row's line, including its 2px
+    // stroke. Insets avoid calc additions broken by production CSS minification.
     box-sizing: border-box;
-    height: calc(100% + 2px);
+    bottom: -27px;
     border: 2px solid rgba(var(--global-theme-color-rgb), 0.3);
     border-left: 0;
     border-radius: 0 16px 16px 0;
@@ -64,7 +64,8 @@
   right: calc((6 - var(--row-count)) * 20% - 17px);
 }
 .publication-journey-reverse:last-child::before {
-  left: calc((5 - var(--row-count)) * 20% + 17px);
+  left: calc((5 - var(--row-count)) * 20%);
+  margin-left: 17px;
   right: 0;
 }
 
