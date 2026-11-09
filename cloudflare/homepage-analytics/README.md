@@ -37,3 +37,12 @@ PATH="/Users/zhangxi/.cache/codex-runtimes/codex-primary-runtime/dependencies/no
 
 The CSV token is stored as the Cloudflare Worker secret `ADMIN_TOKEN`.
 Do not commit the token to this repository.
+
+## Public statistics page
+
+`/visitors/` opens in a new tab from the homepage map. `/public-stats` also returns
+`periods` (today, yesterday, week, month, views), 30 zero-filled `daily` counts,
+per-country counts for each period, and the response generation time. All date
+boundaries use Beijing time (UTC+8); 7/30-day ranges include today and the previous
+6/29 calendar days. Future-dated records are excluded. The existing `total` and
+country `views` fields remain compatible with the homepage globe.
