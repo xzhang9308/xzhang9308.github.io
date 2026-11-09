@@ -8,6 +8,14 @@ Private visit logging for `xzhang9308.github.io`.
 - `GET /admin?token=...`: shows recent visits in a browser table.
 - `GET /admin.csv?token=...`: downloads recent visits as CSV.
 - `GET /health`: health check.
+- `GET /public-stats`: public country/region page-view totals for the homepage globe
+  (cached for five minutes). No visit-level fields or admin credentials are exposed.
+
+The homepage's expandable Visitor Map uses the existing visit history. Counts are
+page views, not deduplicated visitors, and may include bots. Unknown locations remain
+in the total and table. Globe markers use approximate country/region label positions;
+small regions missing from the boundary data still appear in the statistics table.
+Deploy the Worker before publishing the frontend. No database migration is required.
 
 ## Deploy
 

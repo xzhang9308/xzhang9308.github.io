@@ -40,6 +40,10 @@ export default {
       return exportHtml(request, env);
     }
 
+    if (url.pathname === "/public-stats" && request.method === "GET") {
+      return publicStats(request, env);
+    }
+
     if (url.pathname === "/health" && request.method === "GET") {
       return jsonResponse({ ok: true }, request, env);
     }
@@ -47,6 +51,23 @@ export default {
     return jsonResponse({ error: "Not found" }, request, env, 404);
   },
 };
+
+// Public output is deliberately restricted to aggregate country/region counts.
+// Counts represent recorded page views, not unique people or verified humans.
+async function publicStats(request, env) {
+  const { results = [] } = await env.DB.prepare(
+    `SELECT CASE WHEN length(country) = 2 AND country NOT IN ('XX', 'T1')
+       THEN upper(country) ELSE 'Unknown' END AS country, COUNT(*) AS views
+     FROM visits GROUP BY 1 ORDER BY views DESC, country ASC`
+  ).all();
+  const countries = results.map(({ country, views }) => ({ country, views: Number(views) }));
+  const response = jsonResponse({
+    total: countries.reduce((sum, row) => sum + row.views, 0),
+    countries,
+  }, request, env);
+  response.headers.set("cache-control", "public, max-age=300");
+  return response;
+}
 
 async function collectVisit(request, env, responseType = "json") {
   if (!isAllowedOrigin(request, env)) {

@@ -1,0 +1,24 @@
+.visitor-map { margin: 2rem auto 0; text-align: center; }
+.visitor-map-disclosure > summary { display: inline-flex; align-items: center; gap: .5rem; cursor: pointer; color: var(--global-text-color); font-size: .95rem; list-style: none; }
+.visitor-map-disclosure > summary::-webkit-details-marker { display: none; }
+.visitor-map-disclosure > summary::after { content: "⌄"; transition: transform .2s; }
+.visitor-map-disclosure[open] > summary::after { transform: rotate(180deg); }
+.visitor-map-panel { max-width: 500px; margin: 1.25rem auto 0; }
+.visitor-map-status { font-size: .9rem; margin-bottom: .25rem; color: var(--global-text-color); }
+.visitor-map-globe svg { display: block; width: 100%; height: auto; cursor: grab; touch-action: pan-y; }
+.visitor-map-globe svg:active { cursor: grabbing; }
+.visitor-map-ocean { fill: var(--global-bg-color); stroke: var(--global-divider-color); stroke-width: 1.2; }
+.visitor-map-land { fill: var(--global-text-color); opacity: .18; stroke: var(--global-bg-color); stroke-width: .5; }
+.visitor-map-grid { fill: none; stroke: var(--global-text-color); opacity: .08; stroke-width: .6; }
+.visitor-map-dot { fill: var(--global-theme-color); stroke: var(--global-bg-color); stroke-width: 1.3; }
+.visitor-map-controls { display: flex; justify-content: center; align-items: center; gap: 1rem; }
+.visitor-map-controls[hidden], .visitor-map [hidden] { display: none; }
+.visitor-map-controls span, .visitor-map-note { color: var(--global-text-color); opacity: .65; font-size: .78rem; }
+.visitor-map button { background: transparent; color: var(--global-theme-color); border: 1px solid var(--global-divider-color); border-radius: 6px; padding: .2rem .75rem; cursor: pointer; }
+.visitor-map :focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 4px; }
+.visitor-map-breakdown { margin: 1rem auto; max-width: 360px; font-size: .85rem; }
+.visitor-map-breakdown summary { color: var(--global-theme-color); cursor: pointer; }
+.visitor-map table { width: 100%; text-align: left; margin-top: .75rem; }
+.visitor-map th, .visitor-map td { padding: .35rem .6rem; border-bottom: 1px solid var(--global-divider-color); }
+.visitor-map th:last-child, .visitor-map td:last-child { text-align: right; }
+.visitor-map-note { margin: 1rem auto 0; max-width: 360px; line-height: 1.6; }

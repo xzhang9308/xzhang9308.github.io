@@ -1,0 +1,26 @@
+{% if site.enable_homepage_analytics and site.homepage_analytics_endpoint %}
+  <link rel="stylesheet" href="{{ '/assets/css/visitor-map.css' | relative_url | bust_file_cache }}">
+  <section class="visitor-map" aria-label="Visitor map"
+    data-endpoint="{{ site.homepage_analytics_endpoint | replace: '/collect', '/public-stats' | escape }}"
+    data-assets="{{ '/assets/lib/visitor-map/' | relative_url }}">
+    <details class="visitor-map-disclosure">
+      <summary>🌍 Visitor Map</summary>
+      <div class="visitor-map-panel">
+        <p class="visitor-map-status" role="status" aria-live="polite">Loading visitor map…</p>
+        <div class="visitor-map-globe"></div>
+        <div class="visitor-map-controls" hidden>
+          <button type="button" data-turn="-25" aria-label="Rotate globe west">←</button>
+          <span>Drag to explore</span>
+          <button type="button" data-turn="25" aria-label="Rotate globe east">→</button>
+        </div>
+        <button class="visitor-map-retry" type="button" hidden>Try again</button>
+        <details class="visitor-map-breakdown" hidden>
+          <summary>View visitor statistics</summary>
+          <table><thead><tr><th scope="col">Country / region</th><th scope="col">Page views</th></tr></thead><tbody></tbody></table>
+        </details>
+        <p class="visitor-map-note">Recorded page views, not unique visitors. Locations are approximate and grouped by country / region.</p>
+      </div>
+    </details>
+  </section>
+  <script defer src="{{ '/assets/js/visitor-map.js' | relative_url | bust_file_cache }}"></script>
+{% endif %}
