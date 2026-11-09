@@ -82,7 +82,7 @@ is still needed before mainland recording can be considered working.
 ## Netlify entry point (2026-11-09)
 
 The mainland reachability issue above is addressed by the production entry point
-https://xzhang9308-visitors.netlify.app. It forwards platform-derived city data
+https://xzhang9308-visitors.netlify.app/health. It forwards platform-derived city data
 through an HMAC-authenticated `/relay-collect` route and proxies public statistics.
 See ../../netlify/homepage-analytics/README.md for deployment and mainland test
 results. The homepage no longer calls ipify or workers.dev directly. Existing

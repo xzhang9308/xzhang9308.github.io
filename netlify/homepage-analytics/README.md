@@ -1,6 +1,6 @@
 # Netlify analytics entry point
 
-Production: https://xzhang9308-visitors.netlify.app
+Production: https://xzhang9308-visitors.netlify.app/health
 
 Netlify project ID: `7a5548ce-680a-4996-b7d5-89eb12806c52`.
 
