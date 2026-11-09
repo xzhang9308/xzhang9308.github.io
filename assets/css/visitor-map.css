@@ -5,7 +5,8 @@
 .visitor-map-disclosure[open] > summary::after { transform: rotate(180deg); }
 .visitor-map-panel { max-width: 500px; margin: 1.25rem auto 0; }
 .visitor-map-status { font-size: .9rem; margin-bottom: .25rem; color: var(--global-text-color); }
-.visitor-map-globe svg { display: block; width: 100%; height: auto; cursor: grab; touch-action: pan-y; }
+.visitor-map-globe { display: block; background-image: none !important; }
+.visitor-map-globe svg { display: block; width: 100%; height: auto; cursor: pointer; touch-action: pan-y; }
 .visitor-map-globe svg:active { cursor: grabbing; }
 .visitor-map-ocean { fill: var(--global-bg-color); stroke: var(--global-divider-color); stroke-width: 1.2; }
 .visitor-map-land { fill: var(--global-text-color); opacity: .18; stroke: var(--global-bg-color); stroke-width: .5; }

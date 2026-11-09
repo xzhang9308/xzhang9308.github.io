@@ -94,13 +94,23 @@
       });
     }
     let drag;
+    let moved = false;
+    const globeLink = root.querySelector('.visitor-map-globe');
+    globeLink.addEventListener('dragstart', (event) => event.preventDefault());
+    globeLink.addEventListener('click', (event) => {
+      if (moved && event.detail !== 0) event.preventDefault();
+      moved = false;
+    });
     svg.addEventListener('pointerdown', (event) => {
       if (event.button !== 0) return;
+      moved = false;
       drag = { x: event.clientX, y: event.clientY, rotation: projection.rotate() };
       svg.setPointerCapture(event.pointerId);
     });
     svg.addEventListener('pointermove', (event) => {
       if (!drag) return;
+      if (Math.hypot(event.clientX - drag.x, event.clientY - drag.y) > 6) moved = true;
+      if (!moved) return;
       const scale = 180 / svg.getBoundingClientRect().width;
       projection.rotate([
         drag.rotation[0] + (event.clientX - drag.x) * scale,
@@ -108,6 +118,7 @@
       ]);
       render();
     });
+    svg.addEventListener('pointercancel', () => { moved = true; });
     ['pointerup', 'pointercancel', 'lostpointercapture'].forEach((name) => svg.addEventListener(name, () => { drag = null; }));
     root.querySelectorAll('[data-turn]').forEach((button) => {
       button.onclick = () => {

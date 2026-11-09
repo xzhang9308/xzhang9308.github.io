@@ -7,10 +7,10 @@
       <summary>🌍 Visitor Map</summary>
       <div class="visitor-map-panel">
         <p class="visitor-map-status" role="status" aria-live="polite">Loading visitor map…</p>
-        <div class="visitor-map-globe"></div>
+        <a class="visitor-map-globe" href="{{ '/visitors/' | relative_url }}" target="_blank" rel="noopener" aria-label="Open visitor statistics in a new tab"></a>
         <div class="visitor-map-controls" hidden>
           <button type="button" data-turn="-25" aria-label="Rotate globe west">←</button>
-          <span>Drag to explore</span>
+          <span>Drag to rotate · Click for statistics</span>
           <button type="button" data-turn="25" aria-label="Rotate globe east">→</button>
         </div>
         <button class="visitor-map-retry" type="button" hidden>Try again</button>
