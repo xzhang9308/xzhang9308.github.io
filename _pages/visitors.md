@@ -28,7 +28,7 @@ description: Page views and visitor locations
       </details>
     </section>
     <section class="stats-section" aria-labelledby="regions-title">
-      <h2 id="regions-title">Countries / regions</h2>
+      <h2 id="regions-title">Visitor locations</h2>
       <div class="stats-filters" role="group" aria-label="Filter locations by time period">
         <button type="button" data-period="today" aria-pressed="false">Today</button>
         <button type="button" data-period="week" aria-pressed="true">Last 7 days</button>
@@ -36,6 +36,9 @@ description: Page views and visitor locations
         <button type="button" data-period="views" aria-pressed="false">All time</button>
       </div>
       <p class="stats-region-summary" role="status" aria-live="polite"></p>
+      <h3>Cities</h3>
+      <div style="overflow-x: auto"><table class="stats-cities"><thead><tr><th scope="col">City</th><th scope="col">Region</th><th scope="col">Country</th><th scope="col">Page views</th></tr></thead><tbody></tbody></table></div>
+      <h3>Countries / regions</h3>
       <table class="stats-regions"><thead><tr><th scope="col">Country / region</th><th scope="col">Page views</th></tr></thead><tbody></tbody></table>
     </section>
   </div>

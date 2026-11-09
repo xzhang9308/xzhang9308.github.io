@@ -45,7 +45,7 @@
       status.textContent = stats.total
         ? `${number.format(stats.total)} page views · ${number.format(count)} countries / regions`
         : 'No visits recorded yet.';
-      drawGlobe(world, rows);
+      drawGlobe(world, rows, stats.cities || []);
       loaded = true;
     } catch (error) {
       status.textContent = 'Visitor map is temporarily unavailable.';
@@ -55,7 +55,7 @@
     }
   }
 
-  function drawGlobe(world, rows) {
+  function drawGlobe(world, rows, cities) {
     const d3 = window.d3;
     const ns = 'http://www.w3.org/2000/svg';
     const make = (tag, attributes, parent) => {
@@ -64,7 +64,7 @@
       if (parent) parent.append(node);
       return node;
     };
-    const svg = make('svg', { viewBox: '0 0 480 430', role: 'img', 'aria-label': 'Visitor locations by country or region. Use the rotation buttons or drag to explore.' });
+    const svg = make('svg', { viewBox: '0 0 480 430', role: 'img', 'aria-label': 'Approximate visitor cities; older visits without coordinates are grouped by country. Use the rotation buttons or drag to explore.' });
     const projection = d3.geoOrthographic().translate([240, 215]).scale(195).rotate([-105, -20]);
     const path = d3.geoPath(projection);
     make('path', { class: 'visitor-map-ocean', d: path({ type: 'Sphere' }) }, svg);
@@ -76,10 +76,24 @@
     regions.set('SG', [103.82, 1.35]);
     regions.set('HK', [114.17, 22.32]);
     regions.set('MO', [113.54, 22.2]);
-    const points = rows.filter((row) => regions.has(row.country)).map((row) => {
-      const circle = make('circle', { class: 'visitor-map-dot', r: Math.min(11, 3 + Math.log2(row.views + 1)) }, dots);
-      make('title', {}, circle).textContent = `${regionName(row.country)}: ${number.format(row.views)} page views`;
-      return { circle, coordinates: regions.get(row.country) };
+    const located = cities.filter((city) => Number.isFinite(city.latitude) && Number.isFinite(city.longitude) && city.views > 0);
+    const mappedCounts = new Map();
+    const markers = located.map((city) => {
+      mappedCounts.set(city.country, (mappedCounts.get(city.country) || 0) + city.views);
+      return { coordinates: [city.longitude, city.latitude], views: city.views,
+        label: `${city.city || 'Unknown city'}, ${regionName(city.country)}` };
+    });
+    rows.forEach((row) => {
+      const remaining = row.views - (mappedCounts.get(row.country) || 0);
+      if (remaining > 0 && regions.has(row.country)) markers.push({
+        coordinates: regions.get(row.country), views: remaining,
+        label: `${regionName(row.country)} (city coordinates unavailable)`,
+      });
+    });
+    const points = markers.map((marker) => {
+      const circle = make('circle', { class: 'visitor-map-dot', r: Math.min(11, 3 + Math.log2(marker.views + 1)) }, dots);
+      make('title', {}, circle).textContent = `${marker.label}: ${number.format(marker.views)} page views`;
+      return { circle, coordinates: marker.coordinates };
     });
     const graticule = d3.geoGraticule10();
     function render() {

@@ -27,6 +27,16 @@
       /^[A-Z]{2}$/.test(country.country) ? names.of(country.country) : 'Unknown',
       number.format(country[selected]),
     ]));
+    const cityBody = root.querySelector('.stats-cities tbody');
+    cityBody.replaceChildren();
+    const cities = (stats.cities || []).filter((city) => city[selected] > 0)
+      .sort((a, b) => b[selected] - a[selected]);
+    cities.forEach((city) => row(cityBody, [
+      city.city || 'Unknown city', city.region || '—',
+      /^[A-Z]{2}$/.test(city.country) ? names.of(city.country) : 'Unknown',
+      number.format(city[selected]),
+    ]));
+    root.querySelector('.stats-cities').hidden = !cities.length;
     root.querySelectorAll('[data-period]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.period === selected)));
     root.querySelector('.stats-region-summary').textContent = countries.length
       ? `${number.format(stats.periods[selected])} page views · ${countries.filter((country) => country.country !== 'Unknown').length} countries / regions`

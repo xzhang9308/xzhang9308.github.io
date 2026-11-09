@@ -17,14 +17,23 @@
     visitorLabel = "";
   }
 
-  var params = new URLSearchParams();
-  params.set("page", window.location.pathname + window.location.search);
-  params.set("title", document.title);
-  params.set("referrer", document.referrer);
-  params.set("visitor_label", visitorLabel);
-  params.set("t", String(Date.now()));
-
-  var image = new Image(1, 1);
-  image.referrerPolicy = "strict-origin-when-cross-origin";
-  image.src = endpoint + ".gif?" + params.toString();
+  async function record() {
+    var ipv4 = '';
+    try {
+      var response = await fetch('https://api.ipify.org?format=json', { signal: AbortSignal.timeout(1800) });
+      if (response.ok) ipv4 = (await response.json()).ip || '';
+    } catch (_) { /* Cloudflare geolocation remains available if ipify fails. */ }
+    try {
+      await fetch(endpoint, {
+        method: 'POST', keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify({
+          page: window.location.pathname + window.location.search,
+          title: document.title, referrer: document.referrer,
+          visitor_label: visitorLabel, ipv4: ipv4,
+        }),
+      });
+    } catch (_) { /* Analytics must never interrupt the page. */ }
+  }
+  record();
 })();

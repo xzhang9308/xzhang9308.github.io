@@ -52,7 +52,7 @@ export default {
   },
 };
 
-// Public output is deliberately restricted to aggregate country/region counts.
+// Public output is restricted to aggregate country and city counts.
 // Counts represent recorded page views, not unique people or verified humans.
 async function publicStats(request, env) {
   const now = new Date();
@@ -63,7 +63,7 @@ async function publicStats(request, env) {
   const iso = (time) => new Date(time).toISOString();
   const start7 = today - 6 * day;
   const start30 = today - 29 * day;
-  const [grouped, dailyResult] = await env.DB.batch([
+  const [grouped, dailyResult, cityResult] = await env.DB.batch([
     env.DB.prepare(
       `SELECT CASE WHEN length(country) = 2 AND country NOT IN ('XX', 'T1')
          THEN upper(country) ELSE 'Unknown' END AS country,
@@ -78,6 +78,18 @@ async function publicStats(request, env) {
       `SELECT date(visited_at, '+8 hours') AS date, COUNT(*) AS views
        FROM visits WHERE visited_at >= ? AND visited_at <= ? GROUP BY 1 ORDER BY 1`
     ).bind(iso(start30), now.toISOString()),
+    env.DB.prepare(
+      `SELECT CASE WHEN length(country) = 2 AND country NOT IN ('XX', 'T1')
+         THEN upper(country) ELSE 'Unknown' END AS country,
+       COALESCE(region, '') AS region, COALESCE(city, '') AS city,
+       ROUND(AVG(latitude), 1) AS latitude, ROUND(AVG(longitude), 1) AS longitude,
+       COUNT(*) AS views,
+       SUM(CASE WHEN visited_at >= ? THEN 1 ELSE 0 END) AS today,
+       SUM(CASE WHEN visited_at >= ? AND visited_at < ? THEN 1 ELSE 0 END) AS yesterday,
+       SUM(CASE WHEN visited_at >= ? THEN 1 ELSE 0 END) AS week,
+       SUM(CASE WHEN visited_at >= ? THEN 1 ELSE 0 END) AS month
+       FROM visits WHERE visited_at <= ? GROUP BY 1, 2, 3 ORDER BY views DESC, country, region, city`
+    ).bind(iso(today), iso(today - day), iso(today), iso(start7), iso(start30), now.toISOString()),
   ]);
   const countries = (grouped.results || []).map((row) => ({
     country: row.country,
@@ -93,11 +105,47 @@ async function publicStats(request, env) {
     return { date, views: dailyCounts.get(date) || 0 };
   });
   const response = jsonResponse({
-    total: periods.views, countries, periods, daily,
+    total: periods.views, countries, cities: cityResult.results || [], periods, daily,
     timezone: 'Asia/Shanghai', updated_at: now.toISOString(),
   }, request, env);
   response.headers.set('cache-control', 'public, max-age=300');
   return response;
+}
+
+function coordinate(value, bound) {
+  if (value === null || value === undefined || value === '') return null;
+  const number = Number(value);
+  return Number.isFinite(number) && Math.abs(number) <= bound ? Math.round(number * 10) / 10 : null;
+}
+
+function validIpv4(value) {
+  if (typeof value !== 'string' || !/^(?:\d{1,3}\.){3}\d{1,3}$/.test(value)) return false;
+  const parts = value.split('.').map(Number);
+  return parts.every((part) => part <= 255) && parts[0] > 0 && parts[0] < 224 &&
+    parts[0] !== 10 && parts[0] !== 127 && !(parts[0] === 192 && parts[1] === 168) &&
+    !(parts[0] === 172 && parts[1] >= 16 && parts[1] <= 31) && !(parts[0] === 169 && parts[1] === 254);
+}
+
+async function visitorLocation(ipv4, cf) {
+  const fallback = {
+    country: cleanText(cf.country, 128), region: cleanText(cf.region, 256),
+    city: cleanText(cf.city, 256), timezone: cleanText(cf.timezone, 128),
+    latitude: coordinate(cf.latitude, 90), longitude: coordinate(cf.longitude, 180), source: 'cloudflare',
+  };
+  if (!validIpv4(ipv4)) return fallback;
+  try {
+    const url = new URL(`https://ipwho.is/${ipv4}`);
+    url.searchParams.set('fields', 'success,ip,country_code,region,city,latitude,longitude,timezone.id');
+    const response = await fetch(url, { signal: AbortSignal.timeout(1400) });
+    if (!response.ok) return fallback;
+    const data = await response.json();
+    if (!data.success || data.ip !== ipv4 || !/^[A-Z]{2}$/.test(data.country_code) || !data.city) return fallback;
+    return {
+      country: cleanText(data.country_code, 128), region: cleanText(data.region, 256),
+      city: cleanText(data.city, 256), timezone: cleanText(data.timezone?.id, 128),
+      latitude: coordinate(data.latitude, 90), longitude: coordinate(data.longitude, 180), source: 'ipwhois',
+    };
+  } catch { return fallback; }
 }
 
 async function collectVisit(request, env, responseType = "json") {
@@ -110,6 +158,7 @@ async function collectVisit(request, env, responseType = "json") {
   if (!payload) return jsonResponse({ error: "Invalid JSON" }, request, env, 400);
 
   const cf = request.cf || {};
+  const location = await visitorLocation(payload.ipv4, cf);
   const page = cleanText(payload.page, 2048) || "/";
   const title = cleanText(payload.title, 512);
   const referrer = cleanText(payload.referrer || request.headers.get("referer"), 2048);
@@ -121,8 +170,8 @@ async function collectVisit(request, env, responseType = "json") {
   await env.DB.prepare(
     `INSERT INTO visits (
       visited_at, page, title, referrer, source, country, region, city,
-      timezone, colo, visitor_label, language, user_agent
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+      timezone, colo, visitor_label, language, user_agent, latitude, longitude, location_source
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
   )
     .bind(
       new Date().toISOString(),
@@ -130,14 +179,17 @@ async function collectVisit(request, env, responseType = "json") {
       title,
       referrer,
       source,
-      cleanText(cf.country, 128),
-      cleanText(cf.region, 256),
-      cleanText(cf.city, 256),
-      cleanText(cf.timezone, 128),
+      location.country,
+      location.region,
+      location.city,
+      location.timezone,
       cleanText(cf.colo, 64),
       visitorLabel,
       language,
-      userAgent
+      userAgent,
+      location.latitude,
+      location.longitude,
+      location.source
     )
     .run();
 
