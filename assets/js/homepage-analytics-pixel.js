@@ -18,11 +18,6 @@
   }
 
   async function record() {
-    var ipv4 = '';
-    try {
-      var response = await fetch('https://api.ipify.org?format=json', { signal: AbortSignal.timeout(1800) });
-      if (response.ok) ipv4 = (await response.json()).ip || '';
-    } catch (_) { /* Cloudflare geolocation remains available if ipify fails. */ }
     try {
       await fetch(endpoint, {
         method: 'POST', keepalive: true,
@@ -30,7 +25,7 @@
         body: JSON.stringify({
           page: window.location.pathname + window.location.search,
           title: document.title, referrer: document.referrer,
-          visitor_label: visitorLabel, ipv4: ipv4,
+          visitor_label: visitorLabel,
         }),
       });
     } catch (_) { /* Analytics must never interrupt the page. */ }

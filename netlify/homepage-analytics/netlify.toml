@@ -1,0 +1,8 @@
+[build]
+  command = "node --check edge-functions/analytics.js"
+  publish = "public"
+  edge_functions = "edge-functions"
+
+[[edge_functions]]
+  function = "analytics"
+  path = "/*"

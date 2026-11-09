@@ -24,6 +24,10 @@ export default {
       return new Response(null, { headers: corsHeaders(request, env) });
     }
 
+    if (url.pathname === "/relay-collect" && request.method === "POST") {
+      return collectRelay(request, env);
+    }
+
     if (url.pathname === "/collect" && request.method === "POST") {
       return collectVisit(request, env);
     }
@@ -148,7 +152,39 @@ async function visitorLocation(ipv4, cf) {
   } catch { return fallback; }
 }
 
-async function collectVisit(request, env, responseType = "json") {
+// Only authenticated server-to-server requests may override Cloudflare location.
+async function collectRelay(request, env) {
+  const timestamp = request.headers.get('x-relay-timestamp') || '';
+  const signature = request.headers.get('x-relay-signature') || '';
+  if (!env.ANALYTICS_RELAY_SECRET || !/^\d+$/.test(timestamp) ||
+      Math.abs(Date.now() - Number(timestamp)) > 60000 || !/^[a-f0-9]{64}$/.test(signature)) {
+    return jsonResponse({ error: 'Unauthorized relay' }, request, env, 401);
+  }
+  const body = await request.text();
+  const encoder = new TextEncoder();
+  if (encoder.encode(body).length > 16384) return jsonResponse({ error: 'Payload too large' }, request, env, 413);
+  const key = await crypto.subtle.importKey('raw', encoder.encode(env.ANALYTICS_RELAY_SECRET),
+    { name: 'HMAC', hash: 'SHA-256' }, false, ['verify']);
+  const bytes = Uint8Array.from(signature.match(/../g), byte => parseInt(byte, 16));
+  if (!await crypto.subtle.verify('HMAC', key, bytes, encoder.encode(timestamp + '.' + body))) {
+    return jsonResponse({ error: 'Unauthorized relay' }, request, env, 401);
+  }
+  let data;
+  try { data = JSON.parse(body); } catch { return jsonResponse({ error: 'Invalid JSON' }, request, env, 400); }
+  if (!data?.payload || !data?.location) return jsonResponse({ error: 'Invalid payload' }, request, env, 400);
+  const geo = data.location;
+  const location = {
+    country: cleanText(geo.country, 128), region: cleanText(geo.region, 256),
+    city: cleanText(geo.city, 256), timezone: cleanText(geo.timezone, 128),
+    latitude: coordinate(geo.latitude, 90), longitude: coordinate(geo.longitude, 180), source: 'netlify',
+  };
+  const forwarded = new Request(new URL('/collect', request.url), {
+    method: 'POST', headers: request.headers, body: JSON.stringify(data.payload),
+  });
+  return collectVisit(forwarded, env, 'json', location);
+}
+
+async function collectVisit(request, env, responseType = "json", trustedLocation = null) {
   if (!isAllowedOrigin(request, env)) {
     return jsonResponse({ error: "Forbidden origin" }, request, env, 403);
   }
@@ -158,7 +194,7 @@ async function collectVisit(request, env, responseType = "json") {
   if (!payload) return jsonResponse({ error: "Invalid JSON" }, request, env, 400);
 
   const cf = request.cf || {};
-  const location = await visitorLocation(payload.ipv4, cf);
+  const location = trustedLocation || await visitorLocation(payload.ipv4, cf);
   const page = cleanText(payload.page, 2048) || "/";
   const title = cleanText(payload.title, 512);
   const referrer = cleanText(payload.referrer || request.headers.get("referer"), 2048);

@@ -13,3 +13,6 @@ node_modules/
 vendor
 .idea
 .wrangler/
+
+# Netlify local link state and build artifacts
+.netlify/

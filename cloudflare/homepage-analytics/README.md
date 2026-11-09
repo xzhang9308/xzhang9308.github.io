@@ -78,3 +78,12 @@ This is evidence for this tested network, not a nationwide reachability claim.
 No Cloudflare zones are currently available in this account. A reachable custom
 domain (as used by the reference), or another verified reachable hosting route,
 is still needed before mainland recording can be considered working.
+
+## Netlify entry point (2026-11-09)
+
+The mainland reachability issue above is addressed by the production entry point
+https://xzhang9308-visitors.netlify.app. It forwards platform-derived city data
+through an HMAC-authenticated `/relay-collect` route and proxies public statistics.
+See ../../netlify/homepage-analytics/README.md for deployment and mainland test
+results. The homepage no longer calls ipify or workers.dev directly. Existing
+Cloudflare collection routes remain available for compatibility.
