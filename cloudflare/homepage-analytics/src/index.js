@@ -55,17 +55,48 @@ export default {
 // Public output is deliberately restricted to aggregate country/region counts.
 // Counts represent recorded page views, not unique people or verified humans.
 async function publicStats(request, env) {
-  const { results = [] } = await env.DB.prepare(
-    `SELECT CASE WHEN length(country) = 2 AND country NOT IN ('XX', 'T1')
-       THEN upper(country) ELSE 'Unknown' END AS country, COUNT(*) AS views
-     FROM visits GROUP BY 1 ORDER BY views DESC, country ASC`
-  ).all();
-  const countries = results.map(({ country, views }) => ({ country, views: Number(views) }));
+  const now = new Date();
+  const day = 86400000;
+  const offset = 8 * 3600000;
+  const dateKey = (time) => new Date(time + offset).toISOString().slice(0, 10);
+  const today = Date.parse(`${dateKey(now.getTime())}T00:00:00+08:00`);
+  const iso = (time) => new Date(time).toISOString();
+  const start7 = today - 6 * day;
+  const start30 = today - 29 * day;
+  const [grouped, dailyResult] = await env.DB.batch([
+    env.DB.prepare(
+      `SELECT CASE WHEN length(country) = 2 AND country NOT IN ('XX', 'T1')
+         THEN upper(country) ELSE 'Unknown' END AS country,
+       COUNT(*) AS views,
+       SUM(CASE WHEN visited_at >= ? THEN 1 ELSE 0 END) AS today,
+       SUM(CASE WHEN visited_at >= ? AND visited_at < ? THEN 1 ELSE 0 END) AS yesterday,
+       SUM(CASE WHEN visited_at >= ? THEN 1 ELSE 0 END) AS week,
+       SUM(CASE WHEN visited_at >= ? THEN 1 ELSE 0 END) AS month
+       FROM visits WHERE visited_at <= ? GROUP BY 1 ORDER BY views DESC, country ASC`
+    ).bind(iso(today), iso(today - day), iso(today), iso(start7), iso(start30), now.toISOString()),
+    env.DB.prepare(
+      `SELECT date(visited_at, '+8 hours') AS date, COUNT(*) AS views
+       FROM visits WHERE visited_at >= ? AND visited_at <= ? GROUP BY 1 ORDER BY 1`
+    ).bind(iso(start30), now.toISOString()),
+  ]);
+  const countries = (grouped.results || []).map((row) => ({
+    country: row.country,
+    views: Number(row.views), today: Number(row.today), yesterday: Number(row.yesterday),
+    week: Number(row.week), month: Number(row.month),
+  }));
+  const periods = Object.fromEntries(['views', 'today', 'yesterday', 'week', 'month'].map((key) =>
+    [key, countries.reduce((sum, row) => sum + row[key], 0)]
+  ));
+  const dailyCounts = new Map((dailyResult.results || []).map((row) => [row.date, Number(row.views)]));
+  const daily = Array.from({ length: 30 }, (_, index) => {
+    const date = dateKey(start30 + index * day);
+    return { date, views: dailyCounts.get(date) || 0 };
+  });
   const response = jsonResponse({
-    total: countries.reduce((sum, row) => sum + row.views, 0),
-    countries,
+    total: periods.views, countries, periods, daily,
+    timezone: 'Asia/Shanghai', updated_at: now.toISOString(),
   }, request, env);
-  response.headers.set("cache-control", "public, max-age=300");
+  response.headers.set('cache-control', 'public, max-age=300');
   return response;
 }
 

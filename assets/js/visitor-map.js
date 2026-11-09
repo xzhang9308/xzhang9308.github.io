@@ -45,18 +45,6 @@
       status.textContent = stats.total
         ? `${number.format(stats.total)} page views · ${number.format(count)} countries / regions`
         : 'No visits recorded yet.';
-      const tbody = root.querySelector('tbody');
-      tbody.replaceChildren();
-      rows.forEach((row) => {
-        const tr = document.createElement('tr');
-        [regionName(row.country), number.format(row.views)].forEach((value) => {
-          const td = document.createElement('td');
-          td.textContent = value;
-          tr.append(td);
-        });
-        tbody.append(tr);
-      });
-      root.querySelector('.visitor-map-breakdown').hidden = !rows.length;
       drawGlobe(world, rows);
       loaded = true;
     } catch (error) {

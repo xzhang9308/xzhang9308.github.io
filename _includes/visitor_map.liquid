@@ -14,10 +14,7 @@
           <button type="button" data-turn="25" aria-label="Rotate globe east">→</button>
         </div>
         <button class="visitor-map-retry" type="button" hidden>Try again</button>
-        <details class="visitor-map-breakdown" hidden>
-          <summary>View visitor statistics</summary>
-          <table><thead><tr><th scope="col">Country / region</th><th scope="col">Page views</th></tr></thead><tbody></tbody></table>
-        </details>
+        <p class="visitor-map-breakdown"><a href="{{ '/visitors/' | relative_url }}" target="_blank" rel="noopener">View visitor statistics ↗</a></p>
         <p class="visitor-map-note">Recorded page views, not unique visitors. Locations are approximate and grouped by country / region.</p>
       </div>
     </details>
