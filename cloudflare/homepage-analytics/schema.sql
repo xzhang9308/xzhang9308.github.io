@@ -12,7 +12,10 @@ CREATE TABLE IF NOT EXISTS visits (
   colo TEXT,
   visitor_label TEXT,
   language TEXT,
-  user_agent TEXT
+  user_agent TEXT,
+  latitude REAL,
+  longitude REAL,
+  location_source TEXT
 );
 
 CREATE INDEX IF NOT EXISTS idx_visits_visited_at ON visits (visited_at);
