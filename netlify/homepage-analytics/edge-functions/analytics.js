@@ -3,7 +3,7 @@ const UPSTREAM = 'https://homepage-analytics.zx19930818.workers.dev';
 const encoder = new TextEncoder();
 
 export default async function analytics(request, context) {
-  const path = new URL(request.url).pathname;
+  const { pathname: path, search } = new URL(request.url);
   const headers = {
     'access-control-allow-origin': ORIGIN,
     'access-control-allow-methods': 'GET, POST, OPTIONS',
@@ -22,10 +22,10 @@ export default async function analytics(request, context) {
   if (path === '/diagnostic' && request.method === 'GET') return json({ country: location.country, city: location.city, source: 'netlify' });
   if (path === '/health' && request.method === 'GET') return json({ ok: true });
   try {
-    if (path === '/public-stats' && request.method === 'GET') {
-      const response = await fetch(UPSTREAM + '/public-stats', { signal: AbortSignal.timeout(12000) });
+    if (['/public-stats', '/public-visits'].includes(path) && request.method === 'GET') {
+      const response = await fetch(UPSTREAM + path + (path === '/public-visits' ? search : ''), { signal: AbortSignal.timeout(12000) });
       if (!response.ok) return json({ error: 'Statistics unavailable' }, 502);
-      return new Response(await response.text(), { headers: { ...headers, 'content-type': 'application/json', 'cache-control': 'public, max-age=60' } });
+      return new Response(await response.text(), { headers: { ...headers, 'content-type': 'application/json', 'cache-control': path === '/public-visits' ? 'no-store' : 'public, max-age=60' } });
     }
     if (path !== '/collect' || request.method !== 'POST') return json({ error: 'Not found' }, 404);
     if (Number(request.headers.get('content-length')) > 8192) return json({ error: 'Payload too large' }, 413);

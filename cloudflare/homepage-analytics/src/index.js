@@ -44,6 +44,10 @@ export default {
       return exportHtml(request, env);
     }
 
+    if (url.pathname === "/public-visits" && request.method === "GET") {
+      return publicVisits(request, env, url.searchParams);
+    }
+
     if (url.pathname === "/public-stats" && request.method === "GET") {
       return publicStats(request, env);
     }
@@ -55,6 +59,38 @@ export default {
     return jsonResponse({ error: "Not found" }, request, env, 404);
   },
 };
+
+async function publicVisits(request, env, params) {
+  const days = { today: 1, week: 7, month: 30, views: 0 };
+  const period = params.get('period') || 'today';
+  const offset = Number(params.get('offset') || 0);
+  const now = Date.now();
+  const asOf = params.has('as_of') ? Date.parse(params.get('as_of')) : now;
+  if (!Object.hasOwn(days, period) || !Number.isSafeInteger(offset) || offset < 0 ||
+      !Number.isFinite(asOf) || asOf < 0 || asOf > now) {
+    return jsonResponse({ error: 'Invalid visit filter' }, request, env, 400);
+  }
+
+  const day = 86400000;
+  const zoneOffset = 8 * 3600000;
+  const midnight = Math.floor((asOf + zoneOffset) / day) * day - zoneOffset;
+  const start = days[period] ? new Date(midnight - (days[period] - 1) * day).toISOString() : '';
+  const snapshot = new Date(asOf).toISOString();
+  const limit = 100;
+  const { results } = await env.DB.prepare(
+    `SELECT substr(visited_at, 1, 16) || ':00Z' AS time, city, region,
+       CASE WHEN length(country) = 2 AND country NOT IN ('XX', 'T1')
+         THEN upper(country) ELSE 'Unknown' END AS country
+       FROM visits WHERE visited_at >= ? AND visited_at <= ?
+       ORDER BY visited_at DESC, id DESC LIMIT ? OFFSET ?`
+  ).bind(start, snapshot, limit + 1, offset).all();
+  const response = jsonResponse({
+    visits: results.slice(0, limit),
+    next_offset: results.length > limit ? offset + limit : null,
+  }, request, env);
+  response.headers.set('cache-control', 'no-store');
+  return response;
+}
 
 // Public output is restricted to aggregate country and city counts.
 // Counts represent recorded page views, not unique people or verified humans.

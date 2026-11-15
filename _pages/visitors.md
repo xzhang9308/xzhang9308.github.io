@@ -30,14 +30,16 @@ description: Page views and visitor locations
     <section class="stats-section" aria-labelledby="regions-title">
       <h2 id="regions-title">Visitor locations</h2>
       <div class="stats-filters" role="group" aria-label="Filter locations by time period">
-        <button type="button" data-period="today" aria-pressed="false">Today</button>
-        <button type="button" data-period="week" aria-pressed="true">Last 7 days</button>
+        <button type="button" data-period="today" aria-pressed="true">Today</button>
+        <button type="button" data-period="week" aria-pressed="false">Last 7 days</button>
         <button type="button" data-period="month" aria-pressed="false">Last 30 days</button>
         <button type="button" data-period="views" aria-pressed="false">All time</button>
       </div>
       <p class="stats-region-summary" role="status" aria-live="polite"></p>
-      <h3>Cities</h3>
-      <div style="overflow-x: auto"><table class="stats-cities"><thead><tr><th scope="col">City</th><th scope="col">Region</th><th scope="col">Country</th><th scope="col">Page views</th></tr></thead><tbody></tbody></table></div>
+      <h3>Visit log</h3>
+      <p class="stats-visit-status" role="status"></p>
+      <div style="overflow-x: auto"><table class="stats-visits" hidden><thead><tr><th scope="col">Time (Beijing)</th><th scope="col">City</th><th scope="col">Region</th><th scope="col">Country</th></tr></thead><tbody></tbody></table></div>
+      <button class="stats-more-visits" type="button" hidden>Load more visits</button>
       <h3>Countries / regions</h3>
       <table class="stats-regions"><thead><tr><th scope="col">Country / region</th><th scope="col">Page views</th></tr></thead><tbody></tbody></table>
     </section>
